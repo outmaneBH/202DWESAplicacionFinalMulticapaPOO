@@ -75,13 +75,7 @@
         </form>
         <hr>
         
-<!--       <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-            <input style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"  name="codProv" value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-            <input type="submit" style="padding: 4px;" class="w3-btn w3-teal" name="submitbtn" value="Buscar"/><br>
-            <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br>
-
-        </form>-->
-        <hr>
+       
         <h1 id="srt"></h1>
         <div class="cont">
 
@@ -119,24 +113,6 @@
                     ?>
             </table>
             <hr>
-            <!-- Tabla de rest de Aroa -->
-<!--            <table style="margin-bottom: 500px;">
-                <tr>
-                    <th>Id Provincia</th>
-                    <th>Provincia</th>
-                    <th>Descripcion</th>
-                    <th>Tiempo</th> 
-                    <th>Min</th> 
-                    <th>Max</th> 
-                </tr>
-                <tr>
-                    <td><?php echo $aResultado['idprovincia']; ?></td>
-                    <td><?php echo $aResultado['provincia'] ;?></td>
-                    <td> <?php echo $aResultado['descripcion']; ?></td>
-                    <td><?php echo $aResultado['tiempo']; ?></td>
-                    <td><?php echo $aResultado['min']; ?></td>
-                     <td><?php echo $aResultado['max']; ?></td>
-                </tr>
-            </table>-->
+
         </div>
         <div style="height:200px;"></div>

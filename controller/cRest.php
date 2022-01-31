@@ -64,18 +64,7 @@ if ($entradaOK) {
         $aRespuestas[$i]['state_profince'] = $value->getState_province();
         $i++;
     }
-    /*
-     * llamar a api rest de Aroa
-     */
-//    $oResultadoProv = REST::provincia("04");
-//    $aResultado = [
-//        "provincia" => $oResultadoProv->getProvincia(),
-//        "idprovincia" => $oResultadoProv->getIdProvincia(),
-//        "descripcion" => $oResultadoProv->getDescripcion(),
-//        "tiempo" => $oResultadoProv->getTiempo(),
-//        "min" => $oResultadoProv->getTemperaturaMin(),
-//        "max" => $oResultadoProv->getTemperaturaMax()
-//    ];
+    
 }
 
 
