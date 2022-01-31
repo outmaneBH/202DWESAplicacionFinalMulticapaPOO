@@ -1,5 +1,14 @@
 
 <?php
+
+/**
+ * @author OUTMANE BOUHOU
+ * @updated: 31/01/2022
+ * @version 1.0
+ * 
+ * Clase para el usar los el constuoctor y los metodos en el la clase REST
+ */
+
 /**
  * Uso de mi clase universidad 
  */

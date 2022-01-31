@@ -57,7 +57,7 @@
                 text-align: center;
                 line-height: 300px;
             }
-            #forms{
+            #form2{
                 display: flex;
                 justify-content: space-around;
             }
@@ -77,19 +77,19 @@
         <hr>
         <div id="forms">
             <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-                <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-                <input type="submit" style="padding: 4px;" class="w3-btn w3-teal" name="submitbtn" value="Buscar"/><br>
-                <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>
-                <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir <br> en el input el nombre del Pais y pulsa <strong>Buscar</strong> para mostrar los resultados ,<br> Por ejemplo ( Spain , Morocco , Canada , France ...)</p>
-            </form>
+                <div>
+                    <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
+                    <input id="btn1" type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>
+                    <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir <br> en el input el nombre del Pais y pulsa <strong>Buscar</strong> para mostrar los resultados ,<br> Por ejemplo ( Spain , Morocco , Canada , France ...)</p>
 
-
-            <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-                <input style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"  name="codProv" value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-                <input type="submit" style="padding: 4px;" class="w3-btn w3-teal" name="submitbtn" value="Buscar"/><br>
-                <p id="sp1">Este api busca  provincia con codigo y devuelve datos.</p>
-           <!--    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br>-->
-
+                </div>
+                <div>
+                    <input name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
+                    <input id="btn2" name="submitbtn"  type="submit" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <p id="sp1">Este api busca  provincia con codigo y devuelve sus  datos.</p>
+                    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> 
+                </div>
             </form> 
         </div>
 
@@ -130,27 +130,33 @@
             </table>
             <hr>
             <!-- Tabla de rest de Aroa -->
-            <table style="margin-bottom: 500px;display: none;">
-                <tr>
-                    <th>Id Provincia</th>
-                    <th>Provincia</th>
-                    <th>Descripcion</th>
-                    <th>Tiempo</th> 
-                    <th>Min</th> 
-                    <th>Max</th> 
-                </tr>
-                <tr>
+            <?php
+            if (isset($aResultado)) {
+                ?>
+                <table style="margin-bottom: 500px;">
+                    <tr>
+                        <th>Id Provincia</th>
+                        <th>Provincia</th>
+                        <th>Descripcion</th>
+                        <th>Tiempo</th> 
+                        <th>Min</th> 
+                        <th>Max</th> 
+                    </tr>
 
-                    <td><?php 
-                      var_dump($aResultado['idprovincia']);
-                    echo $aResultado['idprovincia']; ?></td>
-                    <td><?php echo $aResultado['provincia']; ?></td>
-                    <td> <?php echo $aResultado['descripcion']; ?></td>
-                    <td><?php echo $aResultado['tiempo']; ?></td>
-                    <td><?php echo $aResultado['min']; ?></td>
-                    <td><?php echo $aResultado['max']; ?></td>
-                </tr>
+                    <tr>
+
+                        <td><?php echo $aResultado['idprovincia']; ?></td>
+                        <td><?php echo $aResultado['provincia']; ?></td>
+                        <td> <?php echo $aResultado['descripcion']; ?></td>
+                        <td><?php echo $aResultado['tiempo']; ?></td>
+                        <td><?php echo $aResultado['min']; ?></td>
+                        <td><?php echo $aResultado['max']; ?></td>
+                    </tr>
+    <?php
+}
+?>
             </table>
 
         </div>
         <div style="height:200px;"></div>
+

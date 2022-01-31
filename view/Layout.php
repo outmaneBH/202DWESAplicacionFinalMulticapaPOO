@@ -21,11 +21,12 @@ require_once $views[$_SESSION['paginaEnCurso']];
 
     </div>
 </div>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <footer style="bottom: 0;position: fixed;width: 100%" class="bg-dark text-center text-white">
     <!-- Grid container -->
     <div class="container p-2 pb-0">
         <!-- Section: Social media -->
+        <span style="color: white; font-size: 20px;font-family: cursive;opacity: 0.5 ;" id="demo3"></span>
         <section class="mb-1">
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: orange"  href="#!" role="button"><i class="fa fa-rss" ></i></a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: green"  href="#!" role="button"><i class="fas fa-atom"></i></a>
@@ -34,6 +35,7 @@ require_once $views[$_SESSION['paginaEnCurso']];
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"  role="button"><i class="far fa-comments"></i></a>
             <button onclick="document.getElementById('idHer').style.display = 'block'" class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!" target="_blank" role="button"><i class="fas fa-code"></i></button>
         </section>
+          
     </div>
 
     <!-- Grid container -->
