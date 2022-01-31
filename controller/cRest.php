@@ -67,15 +67,17 @@ if ($entradaOK) {
     /*
      * llamar a api rest de Aroa
      */
-//    $oResultadoProv = REST::provincia("04");
-//    $aResultado = [
-//        "provincia" => $oResultadoProv->getProvincia(),
-//        "idprovincia" => $oResultadoProv->getIdProvincia(),
-//        "descripcion" => $oResultadoProv->getDescripcion(),
-//        "tiempo" => $oResultadoProv->getTiempo(),
-//        "min" => $oResultadoProv->getTemperaturaMin(),
-//        "max" => $oResultadoProv->getTemperaturaMax()
-//    ];
+    $oResultadoProv = REST::provincia("22");
+     
+    $aResultado = [
+        "provincia" => $oResultadoProv->getProvincia(),
+        "idprovincia" => $oResultadoProv->getIdProvincia(),
+        "descripcion" => $oResultadoProv->getDescripcion(),
+        "tiempo" => $oResultadoProv->getTiempo(),
+        "min" => $oResultadoProv->getTemperaturaMin(),
+        "max" => $oResultadoProv->getTemperaturaMax()
+    ];
+  
 }
 
 

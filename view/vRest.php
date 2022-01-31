@@ -8,7 +8,7 @@
         <script src="webroot/js/bootstrap.bundle.min.js"></script>
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
-            
+
             table,tr,td,th{
                 border-collapse: collapse;
                 border: 2px solid black;
@@ -25,6 +25,10 @@
                 width: 90vw;
                 height: 99vh;
                 margin: auto;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                gap:20px;
             }
             .cont{
                 margin-bottom: 100px;
@@ -53,6 +57,10 @@
                 text-align: center;
                 line-height: 300px;
             }
+            #forms{
+                display: flex;
+                justify-content: space-around;
+            }
         </style>
     </head>
     <body>
@@ -67,20 +75,24 @@
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Uso de REST </p>
         </div>
         <hr>
-        <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-            <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-            <input type="submit" style="padding: 4px;" class="w3-btn w3-teal" name="submitbtn" value="Buscar"/><br>
-            <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>
-            <span id="sp1">Por ejemplo ( Spain , Morocco , Canada , France ...)</span><br><br>
-        </form>
-        <hr>
-        
-<!--       <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-            <input style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"  name="codProv" value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-            <input type="submit" style="padding: 4px;" class="w3-btn w3-teal" name="submitbtn" value="Buscar"/><br>
-            <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br>
+        <div id="forms">
+            <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
+                <input type="submit" style="padding: 4px;" class="w3-btn w3-teal" name="submitbtn" value="Buscar"/><br>
+                <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>
+                <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir <br> en el input el nombre del Pais y pulsa <strong>Buscar</strong> para mostrar los resultados ,<br> Por ejemplo ( Spain , Morocco , Canada , France ...)</p>
+            </form>
 
-        </form>-->
+
+            <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                <input style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"  name="codProv" value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
+                <input type="submit" style="padding: 4px;" class="w3-btn w3-teal" name="submitbtn" value="Buscar"/><br>
+                <p id="sp1">Este api busca  provincia con codigo y devuelve datos.</p>
+           <!--    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br>-->
+
+            </form> 
+        </div>
+
         <hr>
         <h1 id="srt"></h1>
         <div class="cont">
@@ -89,7 +101,7 @@
             if (isset($aUniversidades)) {
                 if ($aRespuestas != null && !($aErrores["country"])) {
                     ?>
-                    <a href="http://universities.hipolabs.com/search?country=spain" target="_blank"> Aqui esta el Api de Universidades</a> <br> 
+                    <a href="http://universities.hipolabs.com/search?country=spain" target="_blank"> Aqui esta el Api de Universidades</a> <br><br> 
                     <table>
                         <tr>
                             <th>Name</th>
@@ -113,14 +125,12 @@
                         } else {
                             echo '<h2>No hay Datos !!</h2>';
                         }
-                    } else {
-                        echo '<h2>Busca con un país las Universidades para ver los Datos. </h2>';
                     }
                     ?>
             </table>
             <hr>
             <!-- Tabla de rest de Aroa -->
-<!--            <table style="margin-bottom: 500px;">
+            <table style="margin-bottom: 500px;display: none;">
                 <tr>
                     <th>Id Provincia</th>
                     <th>Provincia</th>
@@ -130,13 +140,17 @@
                     <th>Max</th> 
                 </tr>
                 <tr>
-                    <td><?php echo $aResultado['idprovincia']; ?></td>
-                    <td><?php echo $aResultado['provincia'] ;?></td>
+
+                    <td><?php 
+                      var_dump($aResultado['idprovincia']);
+                    echo $aResultado['idprovincia']; ?></td>
+                    <td><?php echo $aResultado['provincia']; ?></td>
                     <td> <?php echo $aResultado['descripcion']; ?></td>
                     <td><?php echo $aResultado['tiempo']; ?></td>
                     <td><?php echo $aResultado['min']; ?></td>
-                     <td><?php echo $aResultado['max']; ?></td>
+                    <td><?php echo $aResultado['max']; ?></td>
                 </tr>
-            </table>-->
+            </table>
+
         </div>
         <div style="height:200px;"></div>
