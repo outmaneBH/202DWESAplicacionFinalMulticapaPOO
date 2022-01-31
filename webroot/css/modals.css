@@ -1,0 +1,27 @@
+#demo {
+    padding: 30px;
+    display: flex;
+    width: 800px;
+    position: relative;
+    background: rgb(93, 0, 180);
+
+}
+
+#demos {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+
+
+
+
+img {
+    object-fit: contain;
+}
+
+

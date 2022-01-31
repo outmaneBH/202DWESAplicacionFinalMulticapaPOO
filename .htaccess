@@ -1,0 +1,5 @@
+ErrorDocument 403 /AplicaciónLoginLogoutMulticapaPOO/error/403.html
+ErrorDocument 404 /AplicaciónLoginLogoutMulticapaPOO/error/404.html
+
+DirectoryIndex index.php
+
