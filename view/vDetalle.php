@@ -11,7 +11,7 @@
             body{
                 background-image: url(webroot/media/water-g93351de39_1920.jpg);
                 background-repeat: no-repeat;
-                background-size: cover;
+                 background-size:  cover;
             }
             input{
                 margin: 10px;

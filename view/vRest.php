@@ -26,9 +26,9 @@
                 height: 99vh;
                 margin: auto;
                 display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-between;
+                flex-flow: column nowrap;
                 gap:20px;
+                
             }
             .cont{
                 margin-bottom: 100px;
@@ -42,7 +42,7 @@
                 font-weight: bold;
                 font-family: cursive;
             }
-            #sp2{
+            .sp2{
                 color: red;
                 font-size: 15px;
                 font-weight: bold;
@@ -86,8 +86,8 @@
                 </div>
                 <div>
                     <input name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-                    <input id="btn2" name="submitbtn"  type="submit" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
-                    <p id="sp1">Este api busca  provincia con codigo y devuelve sus  datos.</p>
+                    <input id="btn1" name="submitbtn"  type="submit" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <p id="sp1">Este Web service busca una provincia con un codigo y devuelve sus datos.</p>
                     <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> 
                 </div>
             </form> 
@@ -95,12 +95,49 @@
 
         <hr>
         <h1 id="srt"></h1>
+    
         <div class="cont">
 
+           
+            <!-- Tabla de rest de Aroa -->
             <?php
-            if (isset($aUniversidades)) {
-                if ($aRespuestas != null && !($aErrores["country"])) {
+            if (isset($oResultadoProv)) {
+               
+                if ($aResultado!=null) {
                     ?>
+                    <hr>
+                    <a href="https://www.el-tiempo.net/api/json/v2/provincias/$codProvincia" target="_blank"> Aqui esta el Api de Provincias</a> <br><br> 
+                    <table>
+                        <tr>
+                            <th>Id Provincia</th>
+                            <th>Provincia</th>
+                            <th>Descripcion</th>
+                            <th>Tiempo</th> 
+                            <th>Min</th> 
+                            <th>Max</th> 
+                        </tr>
+
+                        <tr>
+
+                            <td><?php echo $aResultado['idprovincia']; ?></td>
+                            <td><?php echo $aResultado['provincia']; ?></td>
+                            <td> <?php echo $aResultado['descripcion']; ?></td>
+                            <td><?php echo $aResultado['tiempo']; ?></td>
+                            <td><?php echo $aResultado['min']; ?></td>
+                            <td><?php echo $aResultado['max']; ?></td>
+                        </tr>
+                        <?php
+                    }else {
+                        echo '<h2>No hay resultados sobre provincia   !!</h2>';
+                    } 
+                }
+                ?>
+            </table>
+                     <?php
+            if (isset($aUniversidades)) {
+                if ($aRespuestas != null) {
+                    ?>
+                   
                     <a href="http://universities.hipolabs.com/search?country=spain" target="_blank"> Aqui esta el Api de Universidades</a> <br><br> 
                     <table>
                         <tr>
@@ -123,40 +160,16 @@
                                 <?php
                             }
                         } else {
-                            echo '<h2>No hay Datos !!</h2>';
+                            echo ' <hr><h2>No hay resultados sobre el pais buscado!!</h2>';
                         }
                     }
                     ?>
             </table>
-            <hr>
-            <!-- Tabla de rest de Aroa -->
-            <?php
-            if (isset($aResultado)) {
-                ?>
-                <table style="margin-bottom: 500px;">
-                    <tr>
-                        <th>Id Provincia</th>
-                        <th>Provincia</th>
-                        <th>Descripcion</th>
-                        <th>Tiempo</th> 
-                        <th>Min</th> 
-                        <th>Max</th> 
-                    </tr>
-
-                    <tr>
-
-                        <td><?php echo $aResultado['idprovincia']; ?></td>
-                        <td><?php echo $aResultado['provincia']; ?></td>
-                        <td> <?php echo $aResultado['descripcion']; ?></td>
-                        <td><?php echo $aResultado['tiempo']; ?></td>
-                        <td><?php echo $aResultado['min']; ?></td>
-                        <td><?php echo $aResultado['max']; ?></td>
-                    </tr>
-    <?php
-}
-?>
-            </table>
 
         </div>
         <div style="height:200px;"></div>
+
+
+
+
 

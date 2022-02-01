@@ -11,7 +11,7 @@
             body{
                 background-image: url(webroot/media/sky2.jpg);
                 background-repeat: no-repeat;
-                 background-size:  cover;
+                  background-size:  cover;
             }
             form{
                 height:  350px;

@@ -12,8 +12,9 @@
 
 if (isset($_REQUEST['cancel'])) {
     unset($_SESSION['apisRest']);
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     $_SESSION['paginaAnterior'] = 'inicioPrivado';
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    
     header("Location:index.php");
     exit;
 }
@@ -85,8 +86,6 @@ if ($entradaOK) {
     }
 
 }
-
-
 
 require_once $views['layout'];
 ?>

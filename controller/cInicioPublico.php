@@ -22,6 +22,5 @@ if (isset($_REQUEST['btnregister'])) {
     exit;
 }
 
-
 require_once $views['layout'];
 ?>
