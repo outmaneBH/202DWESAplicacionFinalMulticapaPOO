@@ -9,26 +9,18 @@
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
 
-            table,tr,td,th{
-                border-collapse: collapse;
-                border: 2px solid black;
-                text-align: center;
-                padding: 5px;
-            }
             table{
-
                 width: 100%;
                 height: 40px;
             }
             .cont{
-
                 width: 90vw;
                 height: 99vh;
                 margin: auto;
                 display: flex;
                 flex-flow: column nowrap;
                 gap:20px;
-                
+
             }
             .cont{
                 margin-bottom: 100px;
@@ -61,6 +53,16 @@
                 display: flex;
                 justify-content: space-around;
             }
+
+
+            #forms div{
+                margin-left: 20px;
+                width: 500px;
+                padding: 10px;
+            }
+            h4{
+                text-decoration: underline blue 2px;
+            }
         </style>
     </head>
     <body>
@@ -74,40 +76,44 @@
             </form>
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Uso de REST </p>
         </div>
-        <hr>
+
         <div id="forms">
             <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-                <div>
+                <div class="w3-panel w3-card">
+
+<!--            <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>-->
+                    <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir  en el input el nombre del Pais  y pulsa <strong>Buscar</strong>  para mostrar los resultados , Por ejemplo ( Spain , Morocco , Canada , France ...)
+                        para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
+                    </p>
                     <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
                     <input id="btn1" type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
-                    <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>
-                    <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir <br> en el input el nombre del Pais y pulsa <strong>Buscar</strong> para mostrar los resultados ,<br> Por ejemplo ( Spain , Morocco , Canada , France ...)</p>
+                </div>
+                <div class="w3-panel w3-card">
+                    <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia y devuelve el estado de Meteo.<br>
+                        Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.<br>
 
+                    </p>
+<!--                    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> -->
+                    <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
+                    <input id="btn2" name="submitbtn"  type="submit" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
-                <div>
-                    <input name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-                    <input id="btn1" name="submitbtn"  type="submit" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
-                    <p id="sp1">Este Web service busca una provincia con un codigo y devuelve sus datos.</p>
-                    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> 
-                </div>
+
             </form> 
         </div>
 
         <hr>
         <h1 id="srt"></h1>
-    
+
         <div class="cont">
 
-           
             <!-- Tabla de rest de Aroa -->
             <?php
             if (isset($oResultadoProv)) {
-               
-                if ($aResultado!=null) {
+
+                if ($aResultado) {
                     ?>
-                    <hr>
-                    <a href="https://www.el-tiempo.net/api/json/v2/provincias/$codProvincia" target="_blank"> Aqui esta el Api de Provincias</a> <br><br> 
-                    <table>
+                    <h4>Provincia <?php echo $aResultado['name']; ?> :</h4>
+                    <table class="table table-hover">
                         <tr>
                             <th>Id Provincia</th>
                             <th>Provincia</th>
@@ -116,9 +122,7 @@
                             <th>Min</th> 
                             <th>Max</th> 
                         </tr>
-
                         <tr>
-
                             <td><?php echo $aResultado['idprovincia']; ?></td>
                             <td><?php echo $aResultado['provincia']; ?></td>
                             <td> <?php echo $aResultado['descripcion']; ?></td>
@@ -127,19 +131,20 @@
                             <td><?php echo $aResultado['max']; ?></td>
                         </tr>
                         <?php
-                    }else {
+                    } else {
                         echo '<h2>No hay resultados sobre provincia   !!</h2>';
-                    } 
+                    }
                 }
                 ?>
             </table>
-                     <?php
+
+            <?php
             if (isset($aUniversidades)) {
                 if ($aRespuestas != null) {
                     ?>
-                   
-                    <a href="http://universities.hipolabs.com/search?country=spain" target="_blank"> Aqui esta el Api de Universidades</a> <br><br> 
-                    <table>
+
+                    <h4>Universidades en  <?php echo $_REQUEST['country']; ?> :</h4>
+                    <table class="table table-hover">
                         <tr>
                             <th>Name</th>
                             <th>Country</th>
@@ -168,6 +173,7 @@
 
         </div>
         <div style="height:200px;"></div>
+        
 
 
 

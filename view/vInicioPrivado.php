@@ -48,7 +48,8 @@
                 flex-flow: column;                
             }
             #form2 input{
-                width: 150px;
+                width: 200px;
+                margin-bottom: 2px;
             }
             h6{
                 color: black;
@@ -76,12 +77,14 @@
                        <!-- <input type="submit" class="btn btn-primary" name="detalle" value="Detalle" type="button"/>-->
 
                         <input name="logout" type="submit" class="btn btn-info"  value="LogOut <?php echo $aInicioPrivado['codUsuario']; ?> " type="button"/>
+
                         <div class="w3-dropdown-hover w3-right">
-                            <img src="webroot/media/icons8-usuario-masculino-en-círculo-48.png" alt="Avatar" style="width:38px;height: 38px;margin-top:10px;" class="w3-circle">
+                            <img src="webroot/media/icons8-usuario-masculino-en-círculo-48.png" alt="Avatar" style="width:38px;height: 38px;margin-top: 10px;" class="w3-circle">
                             <div class="w3-dropdown-content w3-bar-block " style="right:0;margin-top: 20%;">
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="editPerfil" type="submit">Editar Perfil </button>
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="deleteAccount" type="submit">Delete Account </button>
-                                <?php // <button class="w3-bar-item w3-button btn-info w3-hover-blue" name="logout" type="submit">Logout <?php echo $aInicioPrivado['codUsuario'];  </button> ?>
+<!--                                <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="logout" type="submit">LogOut <?php echo $aInicioPrivado['codUsuario']; ?> </button>-->
+
                             </div>
                         </div>
                     </form>
@@ -93,12 +96,15 @@
                <!-- <span class="closebtn" onclick="this.parentElement.style.display = 'none';">&times;</span> -->
                 <p><?php echo ($aInicioPrivado['numConexiones'] > 1) ? $aInicioPrivado['descUsuario'] . ' es la ' . $aInicioPrivado['numConexiones'] . ' vez que se connecta y su ultima connexion anterior fue "' . date("d/m/Y H:i:s", $aInicioPrivado['fechaHoraUltimaConexionAnterior']) . '"' : $aInicioPrivado['descUsuario'] . ' esta es la primera vez que se connecta.'; ?></p>
             </div>
-            <div style="float: right;width: 220px;background: white;" class="alert">
+            <div style="float: right;width: 270px;background: white;" class="alert">
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST"  id="form2"> 
-                    <h6>Funciones de mi aplicaciones</h6>
+                    <h6>Funciones de mi aplicacion</h6>
                     <input type="submit" name="detalle" class="w3-bar-item w3-button w3-black w3-hover-blue" value="Detalle">
                     <input type="submit" name="mtoDepartamentos" class="w3-bar-item w3-button w3-black w3-hover-blue" value="MtoDepartamentos"> 
                     <input name="apirest" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="Api REST"  type="button"/>
+                    <input name="consultaropinion" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="ConsultarModificarOpinion"  type="button"/>
+                    <input name="mtousuarios" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoUsuarios"  type="button"/>
+                    <input name="mtocuestiones" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoCuestiones"  type="button"/>
                 </form>
             </div>
         </div>

@@ -11,7 +11,7 @@
 /* Si el usuario ha pulsado en cancelar cambiamos la vista y devolver la pagina de login */
 if (isset($_REQUEST['btncancelar'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    $_SESSION['paginaAnterior'] = 'inicioPublico';
+    $_SESSION['paginaEnCurso'] = 'inicioPublico';
     header("Location:index.php");
     exit;
 }
@@ -78,6 +78,7 @@ if ($entradaOK) {
         $_SESSION['usuario202DWESLoginLogoutMulticapaPOO'] = $oUsuario;
 
         /* LLevamos el usuario a la pagina de inicio */
+        $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
         header('Location: index.php');
         exit;

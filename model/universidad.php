@@ -77,13 +77,15 @@ class Provincia {
 
     private $provincia;
     private $idProvincia;
+    private $name;
     private $descripcion;
     private $tiempo;
     private $temperaturaMax;
     private $temperaturaMin;
 
-    function __construct($provincia, $idProvincia, $descripcion, $tiempo, $temperaturaMax, $temperaturaMin) {
+    function __construct($provincia, $idProvincia,$name, $descripcion, $tiempo, $temperaturaMax, $temperaturaMin) {
         $this->provincia = $provincia;
+        $this->name = $name;
         $this->idProvincia = $idProvincia;
         $this->descripcion = $descripcion;
         $this->tiempo = $tiempo;
@@ -98,6 +100,11 @@ class Provincia {
     function getIdProvincia() {
         return $this->idProvincia;
     }
+     function getName() {
+        return $this->name;
+    }
+
+    
 
     function getDescripcion() {
         return $this->descripcion;

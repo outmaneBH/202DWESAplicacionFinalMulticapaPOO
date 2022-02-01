@@ -46,6 +46,7 @@ class REST {
         if ($provincia) {
             $oProvincia = new Provincia($provincia['title'],
                     $provincia['ciudades']['0']['idProvince'],
+                    $provincia['ciudades']['0']['nameProvince'],
                     $provincia['ciudades']['0']['stateSky']['description'],
                     $provincia['today']['p'],
                     $provincia['ciudades']['0']['temperatures']['max'],

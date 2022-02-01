@@ -15,7 +15,6 @@
                 background-image: url(webroot/media/sky2.jpg);
                 background-repeat: no-repeat;
                 background-size:  cover;
-
             }
 
             h3{
@@ -161,9 +160,7 @@
             #demo {
                 padding: 30px;
                 display: flex;
-                width: 800px;
-              
-
+                width: 500px;  
             }
           
             #demos h3{
@@ -173,8 +170,20 @@
             .content{
                 margin-top: -20px;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 height: 99vh;
+            }
+            .datos{
+                margin-top: 30px;
+                margin-left: 20px;
+                padding: 10px;
+                width: 300px;
+                height: 400px;
+                background: white;  
+                border-radius: 0 10px 10px 0;
+            }
+            .datos h3{
+                   color: black; 
             }
         </style>
     </head>
@@ -197,7 +206,9 @@
                 </div>
             </nav>
             <div class="content">
-              
+                <div class="datos">
+                   
+                </div>
 
                 <div id="demos">
                     <div id="demo" class="carousel slide" data-bs-ride="carousel">
