@@ -8,7 +8,6 @@
         <script src="webroot/js/bootstrap.bundle.min.js"></script>
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
-
             table{
                 width: 100%;
                 height: 40px;
@@ -86,12 +85,11 @@
                         para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
                     </p>
                     <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-                    <input id="btn1" type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn1"  type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
-                    <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia y devuelve el estado de Meteo.<br>
-                        Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.<br>
-
+                    <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia ( 01,02 , ...) y devuelve el estado de Meteo.<br>
+                        Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.
                     </p>
 <!--                    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> -->
                     <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
@@ -108,7 +106,8 @@
 
             <!-- Tabla de rest de Aroa -->
             <?php
-            if (isset($oResultadoProv)) {
+            echo $error;
+            if (isset($oResultadoProv) && $oResultadoProv != null) {
 
                 if ($aResultado) {
                     ?>
@@ -137,7 +136,7 @@
                 }
                 ?>
             </table>
-
+            <!--Comprobar si hay una universidad y el array de Respuestas no sea null-->
             <?php
             if (isset($aUniversidades)) {
                 if ($aRespuestas != null) {
@@ -173,8 +172,19 @@
 
         </div>
         <div style="height:200px;"></div>
-        
 
+        <script>
+
+           function fn1(event) {
+            var clave = prompt("El clave para usar el Api Rest:");
+            if (clave) {
+                window.alert("Hola");
+            }else{
+                ev.preventdefault();
+            }
+        }
+
+        </script>
 
 
 

@@ -69,9 +69,8 @@ if ($entradaOK) {
     }
 
     if ($_REQUEST['codProv'] != "") {
-        $oResultadoProv = REST::provincia($_REQUEST['codProv']); //almacenar el objeto de provincia 
-
-        if ($oResultadoProv) {//comorobar que sea true no false ,y rellenar el array 
+        $oResultadoProv = REST::provincia($_REQUEST['codProv']); //almacenar el objeto de provincia    
+        if ($oResultadoProv!=null) {//comorobar que sea true no false ,y rellenar el array 
             $aResultado = [
                 "provincia" => $oResultadoProv->getProvincia(),
                 "idprovincia" => $oResultadoProv->getIdProvincia(),
@@ -81,6 +80,8 @@ if ($entradaOK) {
                 "min" => $oResultadoProv->getTemperaturaMin(),
                 "max" => $oResultadoProv->getTemperaturaMax()
             ];
+        } else {
+            $error="<h2>No hay Provincias Con este Codigo.</h2>";
         }
     }
 }

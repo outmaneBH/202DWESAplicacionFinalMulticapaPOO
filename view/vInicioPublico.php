@@ -160,7 +160,8 @@
             #demo {
                 padding: 30px;
                 display: flex;
-                width: 500px;  
+                width: 600px;  
+                height: 500px;
             }
           
             #demos h3{
