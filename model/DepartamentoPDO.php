@@ -3,21 +3,33 @@
 /**
  * @author OUTMANE BOUHOU
  * @updated: 02/02/2022
- * @version 1.0
+ * @version 2.0
  * 
- * Clase para defenido de atributos y metodos de Deparatemto
+ * Este clase DepartamentoPDO contiene un static metodo buscaDepartamentoPorCod
  */
 class DepartamentoPDO {
+    /**
+     * 
+     * @param int $codDepartamento
+     * @return objeto 
+     */
 
     public static function buscaDepartamentoPorCod($codDepartamento) {
         $validDepartamento = null;
 
-        $sql = "SELECT T02_Departamento FROM T01_Usuario WHERE T02_CodDepartamento='" . $validDepartamento . "'";
+        $sql = "SELECT * FROM T02_Departamento WHERE T02_CodDepartamento='" . $validDepartamento . "'";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultado = $resultadoConsulta->fetchObject();
         if ($resultado != null) {
-            $CodNoExiste = "Ya hay Cuenta con este Usuario.";
+            $validDepartamento = new Departamento(
+                    $resultado->T02_CodDepartamento,
+                    $resultado->T02_DescDepartamento,
+                    $resultado->T02_FechaCreacionDepartamento,
+                    $resultado->T02_VolumenNegocio,
+                    $resultado->T02_FechaBajaDepartamento
+            );
         }
+
         return $validDepartamento;
     }
 
