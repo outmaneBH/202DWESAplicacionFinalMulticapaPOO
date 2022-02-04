@@ -66,7 +66,6 @@ if ($entradaOK) {
     $_SESSION['usuario202DWESLoginLogoutMulticapaPOO'] = $oUsuario;
 
     /* LLevamos el usuario a la pagina de inicio */
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header('Location: index.php');
     exit;
