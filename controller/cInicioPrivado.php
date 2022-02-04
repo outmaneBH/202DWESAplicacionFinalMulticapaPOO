@@ -8,7 +8,6 @@
  * Controlador del inicioPrivado.
  * Requiere la vista del de inicioPrivado.
  */
-
 /* Volvernos a login cuando se pulsaado logout */
 if (isset($_REQUEST['logout'])) {
     session_destroy();
@@ -17,7 +16,8 @@ if (isset($_REQUEST['logout'])) {
 }
 /* Volvernos a login cuando se pulsaado apiRest */
 if (isset($_REQUEST['apirest'])) {
-   $_SESSION['paginaEnCurso'] = 'rest';
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'rest';
     header("Location:index.php");
     exit;
 }
@@ -26,6 +26,7 @@ if (isset($_REQUEST['apirest'])) {
  * Si ha pulasdo detalle devlover controlador de detalle
  */
 if (isset($_REQUEST['detalle'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'detalle';
     header("Location:index.php");
     exit;
@@ -35,6 +36,7 @@ if (isset($_REQUEST['detalle'])) {
  * solamente devolver pagina en progress
  */
 if (isset($_REQUEST['mtoDepartamentos'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'wip';
     header("Location:index.php");
     exit;
@@ -44,6 +46,7 @@ if (isset($_REQUEST['mtoDepartamentos'])) {
  * Si ha pulasdo editPerfil devlover controlador de ededitPerfil.
  */
 if (isset($_REQUEST['editPerfil'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'editar';
     header("Location:index.php");
     exit;
@@ -53,8 +56,9 @@ if (isset($_REQUEST['editPerfil'])) {
  * Si ha pulasdo deleteAccount devlover controlador de borrarCuenta.
  */
 if (isset($_REQUEST['deleteAccount'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'borrar';
-    header("Location:index.php");
+    header("Location:index.php"); 
     exit;
 }
 

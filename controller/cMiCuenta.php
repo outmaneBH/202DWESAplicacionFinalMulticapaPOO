@@ -10,6 +10,7 @@
  */
 /* Si el usuario ha pulsado en borrarcuenta cambiamos la vista y devolver la pagina de borrarcuenta */
 if (isset($_REQUEST['btndelete'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'borrar';
     header("Location:index.php");
     exit;
@@ -17,13 +18,14 @@ if (isset($_REQUEST['btndelete'])) {
 
 /* Si el usuario ha pulsado en cancelar cambiamos la vista y devolver la pagina de inicio */
 if (isset($_REQUEST['btncancelar'])) {
-     $_SESSION['paginaEnCurso'] =$_SESSION['paginaAnterior'] ;
-    $_SESSION['paginaAnterior']='inicioPrivado';
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header("Location:index.php");
     exit;
 }
 /* Si el usuario ha pulsado en cambiarpassword cambiamos la vista y devolver la pagina de Password */
 if (isset($_REQUEST['btnupdatePass'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'cambiarpassword';
     header("Location:index.php");
     exit;
@@ -70,8 +72,9 @@ if ($entradaOK) {
     //Si los datos estan correctos
     $oUsuario = $_SESSION['usuario202DWESLoginLogoutMulticapaPOO']; //metemos el codigo de la session en un variable
 
-     UsuarioPDO::modificarUsuario($oUsuario, $_REQUEST['DescUsuario']); //hagamos la actualizacion y mostramos la pagina inicioPrivado
-
+    UsuarioPDO::modificarUsuario($oUsuario, $_REQUEST['DescUsuario']); //hagamos la actualizacion y mostramos la pagina inicioPrivado
+    
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header('Location: index.php');
     exit;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author OUTMANE BOUHOU
  *  @updated: 31/01/2022
@@ -29,7 +30,34 @@ class REST {
         }
         return $aUniversidad;
     }
- 
+
+
+    /**
+     * buscar Datos de una provincia con un codigo dado como parametro
+     * 
+     * @param Int $codProvincia
+     * @return objeto dcon datos de la provincia
+     */
+
+    public static function provincia($codProvincia) {
+
+        $oProvincia = null;
+        $jsonFile = @file_get_contents("https://www.el-tiempo.net/api/json/v2/provincias/$codProvincia");
+        $provincia = json_decode($jsonFile, true);
+        if ($provincia) {
+            $oProvincia = new Provincia($provincia['title'],
+                    $provincia['ciudades']['0']['idProvince'],
+                    $provincia['ciudades']['0']['nameProvince'],
+                    $provincia['ciudades']['0']['stateSky']['description'],
+                    $provincia['today']['p'],
+                    $provincia['ciudades']['0']['temperatures']['max'],
+                    $provincia['ciudades']['0']['temperatures']['min']
+            );
+        }
+
+        return $oProvincia;
+    }
+
 
 }
 ?>

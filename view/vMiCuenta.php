@@ -47,8 +47,9 @@
                 margin-bottom: -20px;
             }
             td input:nth-of-type(1){
-                border: 1px solid yellow;
-                border-radius: 25px;
+                border: none;
+                border-bottom:  2px solid yellow;
+               
                 padding: 2px;
                 width: 98%;
 

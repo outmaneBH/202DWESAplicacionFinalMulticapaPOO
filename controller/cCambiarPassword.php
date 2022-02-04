@@ -8,13 +8,12 @@
  * Controlador del cambiarPassword.
  * Requiere la vista del de cambiarPassword.
  */
-
 /**
  * Si ha pulasdo cancel devlover controlador de paginaAnterior
  */
 if (isset($_REQUEST['btncancelar'])) {
-      $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    $_SESSION['paginaAnterior']='editar';
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'editar';
     header("Location:index.php");
     exit;
 }
@@ -87,6 +86,7 @@ if ($entradaOK) {
 
     if ($cambiarUsuario) {
         /* LLevamos el usuario a la pagina de inicio */
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'editar';
         header('Location: index.php');
         exit;

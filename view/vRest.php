@@ -8,23 +8,18 @@
         <script src="webroot/js/bootstrap.bundle.min.js"></script>
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
-            
-            table,tr,td,th{
-                border-collapse: collapse;
-                border: 2px solid black;
-                text-align: center;
-                padding: 5px;
-            }
             table{
-
                 width: 100%;
                 height: 40px;
             }
             .cont{
-
                 width: 90vw;
                 height: 99vh;
                 margin: auto;
+                display: flex;
+                flex-flow: column nowrap;
+                gap:20px;
+
             }
             .cont{
                 margin-bottom: 100px;
@@ -38,7 +33,7 @@
                 font-weight: bold;
                 font-family: cursive;
             }
-            #sp2{
+            .sp2{
                 color: red;
                 font-size: 15px;
                 font-weight: bold;
@@ -53,6 +48,20 @@
                 text-align: center;
                 line-height: 300px;
             }
+            #form2{
+                display: flex;
+                justify-content: space-around;
+            }
+
+
+            #forms div{
+                margin-left: 20px;
+                width: 500px;
+                padding: 10px;
+            }
+            h4{
+                text-decoration: underline blue 2px;
+            }
         </style>
     </head>
     <body>
@@ -66,25 +75,76 @@
             </form>
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Uso de REST </p>
         </div>
+
+        <div id="forms">
+            <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                <div class="w3-panel w3-card">
+
+<!--            <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>-->
+                    <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir  en el input el nombre del Pais  y pulsa <strong>Buscar</strong>  para mostrar los resultados , Por ejemplo ( Spain , Morocco , Canada , France ...)
+                        para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
+                    </p>
+                    <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
+                    <input id="btn1"  type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                </div>
+                <div class="w3-panel w3-card">
+                    <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia ( 01,02 , ...) y devuelve el estado de Meteo.<br>
+                        Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.
+                    </p>
+<!--                    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> -->
+                    <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
+                    <input id="btn2" name="submitbtn"  type="submit" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                </div>
+
+            </form> 
+        </div>
+
         <hr>
-        <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-            <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-            <input type="submit" style="padding: 4px;" class="w3-btn w3-teal" name="submitbtn" value="Buscar"/><br>
-            <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>
-            <span id="sp1">Por ejemplo ( Spain , Morocco , Canada , France ...)</span><br><br>
-        </form>
-        <hr>
-        
-       
+
         <h1 id="srt"></h1>
+
         <div class="cont">
 
+            <!-- Tabla de rest de Aroa -->
+            <?php
+            echo $error;
+            if (isset($oResultadoProv) && $oResultadoProv != null) {
+
+                if ($aResultado) {
+                    ?>
+                    <h4>Provincia <?php echo $aResultado['name']; ?> :</h4>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Id Provincia</th>
+                            <th>Provincia</th>
+                            <th>Descripcion</th>
+                            <th>Tiempo</th> 
+                            <th>Min</th> 
+                            <th>Max</th> 
+                        </tr>
+                        <tr>
+                            <td><?php echo $aResultado['idprovincia']; ?></td>
+                            <td><?php echo $aResultado['provincia']; ?></td>
+                            <td> <?php echo $aResultado['descripcion']; ?></td>
+                            <td><?php echo $aResultado['tiempo']; ?></td>
+                            <td><?php echo $aResultado['min']; ?></td>
+                            <td><?php echo $aResultado['max']; ?></td>
+                        </tr>
+                        <?php
+                    } else {
+                        echo '<h2>No hay resultados sobre provincia   !!</h2>';
+                    }
+                }
+                ?>
+            </table>
+            <!--Comprobar si hay una universidad y el array de Respuestas no sea null-->
             <?php
             if (isset($aUniversidades)) {
-                if ($aRespuestas != null && !($aErrores["country"])) {
+                if ($aRespuestas != null) {
                     ?>
-                    <a href="http://universities.hipolabs.com/search?country=spain" target="_blank"> Aqui esta el Api de Universidades</a> <br> 
-                    <table>
+
+                    <h4>Universidades en  <?php echo $_REQUEST['country']; ?> :</h4>
+                    <table class="table table-hover">
                         <tr>
                             <th>Name</th>
                             <th>Country</th>
@@ -105,14 +165,28 @@
                                 <?php
                             }
                         } else {
-                            echo '<h2>No hay Datos !!</h2>';
+                            echo ' <hr><h2>No hay resultados sobre el pais buscado!!</h2>';
                         }
-                    } else {
-                        echo '<h2>Busca con un país las Universidades para ver los Datos. </h2>';
                     }
                     ?>
             </table>
-            <hr>
 
         </div>
         <div style="height:200px;"></div>
+
+        <script>
+
+           function fn1(event) {
+            var clave = prompt("El clave para usar el Api Rest:");
+            if (clave) {
+                window.alert("Hola");
+            }else{
+                ev.preventdefault();
+            }
+        }
+
+        </script>
+
+
+
+

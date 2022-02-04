@@ -8,8 +8,8 @@
 
 /* Si el usuario ha pulsado el button cancelar */
 if (isset($_REQUEST['btncancelar'])) {
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    $_SESSION['paginaAnterior']='inicioPrivado';
+   $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso']='inicioPrivado';
     header("Location:index.php");
     exit;
 }
@@ -24,6 +24,7 @@ if (isset($_REQUEST['btndelete'])) {
     $borrar = UsuarioPDO::borrarUsuario($USER);
     if ($borrar) {
         session_destroy();
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'login';
         header("Location:index.php");
         exit;

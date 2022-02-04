@@ -8,8 +8,8 @@
  * Requiere la vista del pagina in progress.
  */
 if (isset($_REQUEST['cancelwip'])) {
-    $_SESSION['paginaEnCurso'] =$_SESSION['paginaAnterior'] ;
-    $_SESSION['paginaAnterior']='inicioPrivado';
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso']='inicioPrivado';
     header("Location:index.php");
     exit;
 }
