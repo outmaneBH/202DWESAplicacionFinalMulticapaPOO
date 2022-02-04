@@ -208,7 +208,7 @@
             </nav>
             <div class="content">
                 <div class="datos">
-                   
+                    <h4 style="text-align: center;font-weight: bold;font-size: 20px;">Desarollo  de applicaciones Web</h4>
                 </div>
 
                 <div id="demos">
@@ -292,13 +292,6 @@
                 </div>
 
             </div>   
-
-
-
-
-
-
-
 
 
 

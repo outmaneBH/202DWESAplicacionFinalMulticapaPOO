@@ -8,7 +8,7 @@
  * Controlador principal de la Aplicacion
  * 
  */
-
+ob_start();
 /* llamar a las configuraciones de Toda la applicacion */
 require_once 'config/confApp.php';
 require_once 'config/confDBPDO.php';

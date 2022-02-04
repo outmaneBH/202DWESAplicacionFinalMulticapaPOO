@@ -33,6 +33,8 @@ require_once $views[$_SESSION['paginaEnCurso']];
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: red"  href="../index.html" role="button"><i class="fab fa-firefox-browser"></i></a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/outmaneBH/202DWESAplicacionFinalMulticapaPOO" target="_blank" role="button"><i class="fab fa-github"></i></a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"  role="button"><i class="far fa-comments"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"  role="button"><i class="fas fa-file-pdf"></i></a>
+            
             <button onclick="document.getElementById('idHer').style.display = 'block'" class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!" target="_blank" role="button"><i class="fas fa-code"></i></button>
         </section>
           
@@ -44,7 +46,7 @@ require_once $views[$_SESSION['paginaEnCurso']];
         Copyrights © 2021 
         OUTMANE BOUHOU
         . All rights reserved.
-        <p>Ultima actualizacion : 30 / 01 / 2022 , version 1 </p>
+        <p>Ultima actualizacion : 04 / 01 / 2022 , version 2 </p>
     </div>
     <!-- Copyright -->
 </footer>
