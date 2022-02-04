@@ -84,6 +84,7 @@ if ($entradaOK) {
             $error="<h2>No hay Provincias Con este Codigo.</h2>";
         }
     }
+
 }
 
 require_once $views['layout'];
