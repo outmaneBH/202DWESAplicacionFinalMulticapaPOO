@@ -48,9 +48,10 @@
                 text-align: center;
                 line-height: 300px;
             }
-            #form2{
-                display: flex;
-                justify-content: space-around;
+           
+            #forms{
+                 display: flex;
+                justify-content: space-around; 
             }
 
 
@@ -75,9 +76,9 @@
             </form>
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Uso de REST </p>
         </div>
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+            <div id="forms">
 
-        <div id="forms">
-            <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                 <div class="w3-panel w3-card">
 
 <!--            <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>-->
@@ -85,7 +86,7 @@
                         para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
                     </p>
                     <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-                    <input id="btn1"  type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn1" onclick="document.getElementById('id01').style.display = 'block'" type="button"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia ( 01,02 , ...) y devuelve el estado de Meteo.<br>
@@ -93,15 +94,41 @@
                     </p>
 <!--                    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> -->
                     <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-                    <input id="btn2" name="submitbtn"  type="submit" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn2"  onclick="document.getElementById('id01').style.display = 'block'" type="button"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
 
-            </form> 
-        </div>
+            </div>
 
-        <hr>
+            <hr>
 
-        <h1 id="srt"></h1>
+            <h1 id="srt"><?php echo $error; ?></h1>
+            <div id="id01" class="w3-modal">
+                <div class="w3-modal-content w3-animate-top w3-card-2">
+                    <header class="w3-container w3-teal"> 
+                        <span onclick="document.getElementById('id01').style.display = 'none'" 
+                              class="w3-button w3-display-topright">&times;</span>
+                        <h2>Require key</h2>
+                    </header>
+                    <div class="w3-container w3-padding-16">
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Enter username" name="username">
+                                </div>
+                                <div class="col">
+                                    <input type="password" class="form-control" placeholder="Enter password" name="password">
+                                </div>
+                                <div class="col">
+                                    <button type="submit" name="submitbtn" class="btn btn-primary">use it</button>
+                                </div>
+                            </div>
+
+                        </form> 
+                    </div>
+
+                </div>
+            </div>
+        </form> 
 
         <div class="cont">
 
@@ -176,14 +203,14 @@
 
         <script>
 
-           function fn1(event) {
-            var clave = prompt("El clave para usar el Api Rest:");
-            if (clave) {
-                window.alert("Hola");
-            }else{
-                ev.preventdefault();
+            function fn1(event) {
+                var clave = prompt("El clave para usar el Api Rest:");
+                if (clave) {
+                    window.alert("Hola");
+                } else {
+                    ev.preventdefault();
+                }
             }
-        }
 
         </script>
 

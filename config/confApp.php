@@ -22,6 +22,7 @@ require_once "core/LibreriaValidacion.php";
 define("OBLIGATORIO", 1);
 define("OPCIONAL", 0);
 $error = '';
+$entradaOK=true;
 
 /* Añadir modelsm para usarlos en toda la Aplicacion */
 require_once "model/AppError.php";
@@ -32,6 +33,8 @@ require_once "model/UsuarioPDO.php";
 require_once "model/DBPDO.php";
 require_once "model/Rest.php";
 require_once "model/universidad.php";
+require_once "model/Departamento.php";
+require_once "model/DepartamentoPDO.php";
 
 /* Añadir controladores en Array */
 $controllers = [
@@ -45,7 +48,8 @@ $controllers = [
     "inicioPrivado" => "controller/cInicioPrivado.php",
     "editar" => "controller/cMiCuenta.php",
     "cambiarpassword" => "controller/cCambiarPassword.php",
-    "borrar" => "controller/cBorrarCuenta.php"
+    "borrar" => "controller/cBorrarCuenta.php",
+    "mtodepartamentos" => "controller/cMtoDepartamentos.php"
 ];
 
 /* Añadir vistas en Array */
@@ -61,7 +65,8 @@ $views = [
     "inicioPrivado" => "view/vInicioPrivado.php",
     "editar" => "view/vMiCuenta.php",
     "cambiarpassword" => "view/vCambiarPassword.php",
-    "borrar" => "view/vBorrarCuenta.php"
+    "borrar" => "view/vBorrarCuenta.php",
+    "mtodepartamentos" => "view/vMtoDepartamentos.php"
 ];
 
 /* Iniciamos la session para saber que vista esta en curso y que usuario */

@@ -37,13 +37,13 @@ if (isset($_REQUEST['detalle'])) {
  */
 if (isset($_REQUEST['mtoDepartamentos'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'wip';
+    $_SESSION['paginaEnCurso'] = 'mtodepartamentos';
     header("Location:index.php");
     exit;
 }
 
 /**
- * Si ha pulasdo editPerfil devlover controlador de ededitPerfil.
+ * Si ha pulasdo mtoDeparatamentos devlover controlador de ededitPerfil.
  */
 if (isset($_REQUEST['editPerfil'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];

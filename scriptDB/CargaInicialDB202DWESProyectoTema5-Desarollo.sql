@@ -24,4 +24,5 @@ INSERT INTO T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario)  VALUES
     ('heraclio',SHA2('heracliopaso',256),'HERACLIO'),
     ('amor',SHA2('amorpaso',256),'AMOR'),
     ('antonio',SHA2('antoniopaso',256),'ANTONIO'),
+  ('admin',SHA2('adminpaso',256),'ADMINISTRADOR'),
     ('albertoB',SHA2('albertoBpaso',256),'ALBERTOB');

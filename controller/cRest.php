@@ -21,10 +21,15 @@ if (isset($_REQUEST['cancel'])) {
 /* Variable de entrada correcta inicializada a true */
 $entradaOK = true;
 
-/* definir un array para alamcenar errores del country y codigo De Provincia */
+/* definir un array para alamcenar errores del country y codigo De Provincia,
+ * username y la password */
+
+
 $aErrores = [
     "country" => null,
-    "codProv" => null
+    "codProv" => null,
+    'username' => null,
+    'password' => null
 ];
 $aRespuestas = [
     "country" => null,
@@ -38,6 +43,18 @@ if (isset($_REQUEST['submitbtn'])) {
     //Comprobar si el campo description  esta rellenado 
     //$aErrores["country"] = validacionFormularios::comprobarAlfabetico($_REQUEST['country'], 1000, 2, OBLIGATORIO);
     //$aErrores["codProv"] = validacionFormularios::comprobarEntero($_REQUEST['codProv'], 52, 1, OBLIGATORIO);
+    
+    $aErrores["username"] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['username'], 8, 2, OBLIGATORIO);
+    //Comprobar si el campo password esta rellenado
+    $aErrores["password"] = validacionFormularios::validarPassword($_REQUEST['password'], 8, 3, 2, OBLIGATORIO);
+
+   
+    $objetoUsuario = UsuarioPDO::validarUsuario($_REQUEST['username'], $_REQUEST['password']);
+
+    if (!$objetoUsuario) {
+        $error = "! Algo mal ¡";
+        $entradaOK = false;
+    }
     //recorrer el array de errores
     foreach ($aErrores as $nombreCampo => $value) {
         //Comprobar si el campo ha sido rellenado
@@ -70,7 +87,7 @@ if ($entradaOK) {
 
     if ($_REQUEST['codProv'] != "") {
         $oResultadoProv = REST::provincia($_REQUEST['codProv']); //almacenar el objeto de provincia    
-        if ($oResultadoProv!=null) {//comorobar que sea true no false ,y rellenar el array 
+        if ($oResultadoProv != null) {//comorobar que sea true no false ,y rellenar el array 
             $aResultado = [
                 "provincia" => $oResultadoProv->getProvincia(),
                 "idprovincia" => $oResultadoProv->getIdProvincia(),
@@ -81,10 +98,9 @@ if ($entradaOK) {
                 "max" => $oResultadoProv->getTemperaturaMax()
             ];
         } else {
-            $error="<h2>No hay Provincias Con este Codigo.</h2>";
+            $error = "<h2>No hay Provincias Con este Codigo.</h2>";
         }
     }
-
 }
 
 require_once $views['layout'];
