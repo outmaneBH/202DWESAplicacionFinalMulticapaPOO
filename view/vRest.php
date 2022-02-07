@@ -48,9 +48,9 @@
                 text-align: center;
                 line-height: 300px;
             }
-           
+
             #forms{
-                 display: flex;
+                display: flex;
                 justify-content: space-around; 
             }
 
@@ -140,7 +140,7 @@
         </form> 
 
         <div class="cont">
-            <h5>Los resultados se mostraran por abajo :</h5>
+
 
             <!-- Tabla de rest de Aroa -->
             <?php
@@ -170,6 +170,35 @@
                         <?php
                     } else {
                         echo '<h2>No hay resultados sobre provincia   !!</h2>';
+                    }
+                }
+                ?>
+            </table>
+            <!--El uso de mi propio Api rest-->
+            <?php
+            echo $errorDep;
+            if (isset($oResultadoDep)) {
+
+                if ($aResultadoDep) {
+                    ?>
+                    <h4>Departameto Codigo <strong> <?php echo $aResultadoDep['codigo']; ?> :</strong></h4>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>codigo</th>
+                            <th>descripcion</th>
+                            <th>fecha Creacion</th>
+                            <th>volumen</th> 
+                            <th>fechaBaja</th> 
+                        </tr>
+                        <tr>
+                            <td><?php echo $aResultadoDep['codigo']; ?></td>
+                            <td><?php echo $aResultadoDep['descripcion']; ?></td>
+                            <td> <?php echo date("d- m - Y H:i:s", $aResultadoDep['fechaCrea']); ?></td>
+                            <td><?php echo $aResultadoDep['volumen']; ?></td>
+                            <td><?php echo $aResultadoDep['fechaBaja'] ?? '-'; ?></td>
+
+                        </tr>
+                        <?php
                     }
                 }
                 ?>
@@ -222,7 +251,7 @@
                 }
             }
             function fn2() {
-                document.getElementById("in1").style.border="red";
+                document.getElementById("in1").style.border = "red";
             }
 
         </script>

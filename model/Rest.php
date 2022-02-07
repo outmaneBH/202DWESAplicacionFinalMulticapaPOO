@@ -57,6 +57,31 @@ class REST {
 
         return $oProvincia;
     }
+    /**
+     * La funcion devuelve datos de un departamento buscado con codigo
+     * sacado como json file y devolverlo como objeto
+     * 
+     * @param Int $codDepartamento
+     * @return objeto Departamento
+     */
+    public static function Departamento($codDepartamento) {
+
+        $oDepartamento = null;
+        $jsonFile = @file_get_contents("http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=$codDepartamento");
+        $departamento = json_decode($jsonFile, true);
+     
+        if ($departamento['respuesta']) {
+            $oDepartamento = new Departamento(
+                    $departamento['codigo'],
+                    $departamento['descripcion'],
+                    $departamento['fechaCrea'],
+                    $departamento['volumen'],
+                    $departamento['fechaBaja'],
+            );
+        }
+
+        return $oDepartamento;
+    }
 
 
 }

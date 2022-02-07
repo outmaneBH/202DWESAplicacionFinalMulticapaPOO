@@ -24,11 +24,14 @@ if (isset($_GET["codDepartamento"])) {
             'fechaBaja' => $buscarDepartamento->get_fechaBajaDepartamento()];
     } else {
         $aDepartamento = [
-            'error' => false,
+            'respuesta' => false,
             'msg' => "No se Ha podido encontrar el departamento con el codigo"];
     }
 }
-$json = json_encode($aDepartamento, JSON_PRETTY_PRINT);
-var_dump($json);
+
+$myJSON = json_encode($aDepartamento);
+echo $myJSON ;
+
+//http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=DIW
 ?>
 

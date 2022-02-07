@@ -43,10 +43,10 @@ require_once $views[$_SESSION['paginaEnCurso']];
     <!-- Grid container -->
     <!-- Copyright -->
     <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
-        Copyrights © 2021 
+        Copyrights © 2021-2022 
         OUTMANE BOUHOU
         . All rights reserved.
-        <p>Ultima actualizacion : 04 / 01 / 2022 , version 2 </p>
+        <p>Ultima actualizacion : 07 / 02 / 2022 , version 2 </p>
     </div>
     <!-- Copyright -->
 </footer>

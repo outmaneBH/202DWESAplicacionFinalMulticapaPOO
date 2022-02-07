@@ -36,6 +36,8 @@ $aRespuestas = [
     "codProv" => null
 ];
 $aRespuestas = [];
+$aResultadoDep = [];
+$errorDep="";
 /* comprobar si ha pulsado el button enviar */
 if (isset($_REQUEST['submitbtn'])) {
     //Para cada campo del formulario: Validamos la entrada y actuar en consecuencia
@@ -43,16 +45,16 @@ if (isset($_REQUEST['submitbtn'])) {
     //Comprobar si el campo description  esta rellenado 
     //$aErrores["country"] = validacionFormularios::comprobarAlfabetico($_REQUEST['country'], 1000, 2, OBLIGATORIO);
     //$aErrores["codProv"] = validacionFormularios::comprobarEntero($_REQUEST['codProv'], 52, 1, OBLIGATORIO);
-    
+
     $aErrores["username"] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['username'], 8, 2, OBLIGATORIO);
     //Comprobar si el campo password esta rellenado
     $aErrores["password"] = validacionFormularios::validarPassword($_REQUEST['password'], 8, 3, 2, OBLIGATORIO);
 
-   
+
     $objetoUsuario = UsuarioPDO::validarUsuario($_REQUEST['username'], $_REQUEST['password']);
 
     if (!$objetoUsuario) {
-     
+
         $entradaOK = false;
     }
     //recorrer el array de errores
@@ -98,10 +100,24 @@ if ($entradaOK) {
                 "max" => $oResultadoProv->getTemperaturaMax()
             ];
         } else {
-            $error = "<h2>No hay Provincias Con este Codigo.</h2>";
+            $error = "<h5>No hay Provincias Con este Codigo.</h5>";
+        }
+    }
+    
+    if ($_REQUEST['codDepartamento'] != "") {
+        $oResultadoDep = REST::Departamento($_REQUEST['codDepartamento']); //almacenar el objeto de departamento    
+        if ($oResultadoDep ) {//comorobar que sea true no false ,y rellenar el array 
+            $aResultadoDep = [
+                'codigo' => $oResultadoDep->get_codDepartamento(),
+                'descripcion' => $oResultadoDep->get_descDepartamento(),
+                'fechaCrea' => $oResultadoDep->get_fechaCreacionDepartamento(),
+                'volumen' => $oResultadoDep->get_volumenDeNegocio(),
+                'fechaBaja' => $oResultadoDep->get_fechaBajaDepartamento()];
+        } else {
+            $errorDep = "<h5>No hay departamento Con este Codigo.</h5>";
         }
     }
 }
-//http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=DIW
+
 require_once $views['layout'];
 ?>
