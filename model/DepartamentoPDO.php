@@ -19,13 +19,14 @@ class DepartamentoPDO {
     public static function buscaDepartamentoPorCod($codDepartamento) {
         $validDepartamento = null;
 
-        $sql = "SELECT * FROM T02_Departamento WHERE T02_CodDepartamento='" . $validDepartamento . "'";
+        $sql = "SELECT * FROM T02_Departamento WHERE T02_CodDepartamento='" . $codDepartamento . "'";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultado = $resultadoConsulta->fetchObject();
         if ($resultado != null) {
             $validDepartamento = new Departamento(
                     $resultado->T02_CodDepartamento,
                     $resultado->T02_DescDepartamento,
+                    $resultado->T02_FechaCreacionDepartamento,
                     $resultado->T02_VolumenNegocio,
                     $resultado->T02_FechaBajaDepartamento
             );
@@ -44,7 +45,7 @@ class DepartamentoPDO {
      */
     public static function buscaDepartamentosPorDesc($validDepartamento=null) {
         $aDepartamento = [];
-        $sql = "SELECT * FROM t02_departamento where T02_DescDepartamento  like  '%" . $validDepartamento . "%'";
+        $sql = "SELECT * FROM T02_Departamento where T02_DescDepartamento  like  '%" . $validDepartamento . "%'";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultado = $resultadoConsulta->fetchAll();
         

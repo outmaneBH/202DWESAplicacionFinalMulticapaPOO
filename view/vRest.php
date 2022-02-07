@@ -63,7 +63,9 @@
             h4{
                 text-decoration: underline blue 2px;
             }
+
         </style>
+
     </head>
     <body>
         <div class="w3-bar w3-black  ">
@@ -85,15 +87,22 @@
                     <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir  en el input el nombre del Pais  y pulsa <strong>Buscar</strong>  para mostrar los resultados , Por ejemplo ( Spain , Morocco , Canada , France ...)
                         para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
                     </p>
-                    <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
+                    <input style="margin-left: 10%;" id="in1" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
                     <input id="btn1" onclick="document.getElementById('id01').style.display = 'block'" type="button"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia ( 01,02 , ...) y devuelve el estado de Meteo.<br>
                         Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.
                     </p>
-<!--                    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> -->
                     <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
+                    <input id="btn2"  onclick="document.getElementById('id01').style.display = 'block'" type="button"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                </div>
+                <div class="w3-panel w3-card">
+                    <p id="sp1">Este Web service es mi propio Api Rest , devuelve un deparatamento buscado con el codigo dado en el input de Abajo.
+                        Puedes consultar mas informacion en mi web <a href="" target="_blank"></a>.
+                    </p>
+
+                    <input id="in3" name="codDepartamento" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamento']) ? $_REQUEST['codDepartamento'] : null; ?>"/>
                     <input id="btn2"  onclick="document.getElementById('id01').style.display = 'block'" type="button"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
 
@@ -131,6 +140,7 @@
         </form> 
 
         <div class="cont">
+            <h5>Los resultados se mostraran por abajo :</h5>
 
             <!-- Tabla de rest de Aroa -->
             <?php
@@ -210,6 +220,9 @@
                 } else {
                     ev.preventdefault();
                 }
+            }
+            function fn2() {
+                document.getElementById("in1").style.border="red";
             }
 
         </script>

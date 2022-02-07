@@ -26,3 +26,5 @@ INSERT INTO T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario)  VALUES
     ('antonio',SHA2('antoniopaso',256),'ANTONIO'),
   ('admin',SHA2('adminpaso',256),'ADMINISTRADOR'),
     ('albertoB',SHA2('albertoBpaso',256),'ALBERTOB');
+
+INSERT INTO T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario,T01_Perfil)  VALUES ('admin',SHA2('adminpaso',256),'ADMINISTRADOR','administrador');

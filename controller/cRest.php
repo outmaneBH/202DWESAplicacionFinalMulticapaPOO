@@ -52,7 +52,7 @@ if (isset($_REQUEST['submitbtn'])) {
     $objetoUsuario = UsuarioPDO::validarUsuario($_REQUEST['username'], $_REQUEST['password']);
 
     if (!$objetoUsuario) {
-        $error = "! Algo mal ¡";
+     
         $entradaOK = false;
     }
     //recorrer el array de errores
@@ -102,6 +102,6 @@ if ($entradaOK) {
         }
     }
 }
-
+//http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=DIW
 require_once $views['layout'];
 ?>

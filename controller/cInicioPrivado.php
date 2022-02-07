@@ -37,7 +37,7 @@ if (isset($_REQUEST['detalle'])) {
  */
 if (isset($_REQUEST['mtoDepartamentos'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'mtodepartamentos';
+    $_SESSION['paginaEnCurso'] = 'wip';
     header("Location:index.php");
     exit;
 }
