@@ -3,6 +3,7 @@
 /* Volvernos a inicioPrivado cuando se pulsaado home */
 if (isset($_REQUEST['cancel'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+   
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header("Location:index.php");
     exit;
@@ -49,6 +50,9 @@ if ($entradaOK) {
  * buscamos el departamento con su descripcion metiendole en variable como objeto y reccorerlo para usar
  * el array en la vista de mtodepartamentos.
  */
+$_SESSION ["codDepartamentoEnCurso"]=$aRespuestas["searchTxt"];
+$CodigoDepartamento=$_SESSION ["codDepartamentoEnCurso"];
+
 $objetoDepartamento = DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas["searchTxt"]);
 if ($objetoDepartamento) {
     foreach ($objetoDepartamento as $aDepartamento) {

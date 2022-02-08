@@ -88,14 +88,14 @@
                         para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
                     </p>
                     <input style="margin-left: 10%;" id="in1" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-                    <input id="btn1" onclick="document.getElementById('id01').style.display = 'block'" type="button"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn1" type="submit" name="submitbtn" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia ( 01,02 , ...) y devuelve el estado de Meteo.<br>
                         Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.
                     </p>
                     <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-                    <input id="btn2"  onclick="document.getElementById('id01').style.display = 'block'" type="button"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn2"   type="submit" name="submitbtn" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service es mi propio Api Rest , devuelve un deparatamento buscado con el codigo dado en el input de Abajo.
@@ -103,7 +103,7 @@
                     </p>
 
                     <input id="in3" name="codDepartamento" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamento']) ? $_REQUEST['codDepartamento'] : null; ?>"/>
-                    <input id="btn2"  onclick="document.getElementById('id01').style.display = 'block'" type="button"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn2"   type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
 
             </div>
@@ -111,32 +111,7 @@
             <hr>
 
             <h1 id="srt"><?php echo $error; ?></h1>
-            <div id="id01" class="w3-modal">
-                <div class="w3-modal-content w3-animate-top w3-card-2">
-                    <header class="w3-container w3-teal"> 
-                        <span onclick="document.getElementById('id01').style.display = 'none'" 
-                              class="w3-button w3-display-topright">&times;</span>
-                        <h2>Require key</h2>
-                    </header>
-                    <div class="w3-container w3-padding-16">
-                        <form>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Enter username" name="username">
-                                </div>
-                                <div class="col">
-                                    <input type="password" class="form-control" placeholder="Enter password" name="password">
-                                </div>
-                                <div class="col">
-                                    <button type="submit" name="submitbtn" class="btn btn-primary">use it</button>
-                                </div>
-                            </div>
-
-                        </form> 
-                    </div>
-
-                </div>
-            </div>
+           
         </form> 
 
         <div class="cont">

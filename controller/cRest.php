@@ -46,17 +46,6 @@ if (isset($_REQUEST['submitbtn'])) {
     //$aErrores["country"] = validacionFormularios::comprobarAlfabetico($_REQUEST['country'], 1000, 2, OBLIGATORIO);
     //$aErrores["codProv"] = validacionFormularios::comprobarEntero($_REQUEST['codProv'], 52, 1, OBLIGATORIO);
 
-    $aErrores["username"] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['username'], 8, 2, OBLIGATORIO);
-    //Comprobar si el campo password esta rellenado
-    $aErrores["password"] = validacionFormularios::validarPassword($_REQUEST['password'], 8, 3, 2, OBLIGATORIO);
-
-
-    $objetoUsuario = UsuarioPDO::validarUsuario($_REQUEST['username'], $_REQUEST['password']);
-
-    if (!$objetoUsuario) {
-
-        $entradaOK = false;
-    }
     //recorrer el array de errores
     foreach ($aErrores as $nombreCampo => $value) {
         //Comprobar si el campo ha sido rellenado

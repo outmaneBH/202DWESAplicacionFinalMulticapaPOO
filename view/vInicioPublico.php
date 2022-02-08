@@ -178,13 +178,14 @@
 
                             </li>
                         </ul>
-                        <form action="index.php" method="POST">
-                              <input name="btnapiFree" type="submit" style="margin-right: 5px;" value="Api Propio" class="btn btn-primary" /> 
-                        </form>
-                     
-                   
+                        <!--                        <form action="index.php" method="POST">
+                                                    <input name="btnapiFree" type="button" style="margin-right: 5px;" target="_blank" value="Api Propio" class="btn btn-primary" /> 
+                                                </form>-->
+
+                        <a href="doc/apiRest.php" target="_blank"><input name="btnapiFree" type="button" style="margin-right: 5px;"  value="Api Propio" class="btn btn-primary" /></a>
+
                         <input id="sp1" style="padding-left: 10px;padding-right: 10px;font-size: 20px;" type="button" name="t1" onclick="openNav()" value="&#9776;">
-                        
+
 
                     </div>
                 </div>

@@ -24,10 +24,10 @@ if (isset($_REQUEST['btnregister'])) {
     exit;
 }
 /*Si el usuario ha pulsado en registrar cambiamos la vista y devolver la pagina de registrar*/
-if (isset($_REQUEST['btnapiFree'])) {
-    header("Location:http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=");
-    exit;
-}
+//if (isset($_REQUEST['btnapiFree'])) {
+//    header("Location:doc/apiRest.php");
+//    exit;
+//}
 
 require_once $views['layout'];
 ?>

@@ -19,6 +19,9 @@
                 border: none;
                 background: transparent;
             }
+            td,th{
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -35,14 +38,19 @@
             <form class="row g-3 w3-center">
 
                 <div class="col">
-                    <input type="text" class="form-control" name="searchTxt" placeholder="Codigo de Departamento" >
+                    <input type="text" class="form-control" name="searchTxt" value="<?php echo $CodigoDepartamento ? $CodigoDepartamento : null; ?>"" placeholder="Codigo de Departamento" >
                 </div>
-
                 <div class="col">
+                   
+
                     <button type="submit" name="search" class="btn btn-success mb-3">Serach</button>
+                    <button type="button" name="add" class="btn btn-success mb-3">Add</button>
+                    <button type="button" name="import" class="btn btn-info mb-3">Import</button>
+                    <button type="button" name="export" class="btn btn-dark mb-3">Export</button>
                 </div>
             </form>
             <table class="table table-striped">
+
                 <tr>
                     <th>NO</th>
                     <th>Codigo</th>
@@ -50,6 +58,8 @@
                     <th>Fecha Creacion</th>
                     <th>Volumen</th>
                     <th>Fecha Baja</th>
+                    <th style="text-align: center;" colspan="5">Crud</th>
+
                 </tr>
                 <?php
                 if ($aDepartamentos) {
@@ -64,8 +74,11 @@
                                 <td><?php echo $aDepartamento['fechaCrea']; ?></td>
                                 <td><?php echo $aDepartamento['volumen']; ?></td>
                                 <td><?php echo $aDepartamento['fechaBaja'] ?? '-'; ?></td>
+                                <td><button type="submit" name="more"><img src="webroot/media/more.png"></button></td>
                                 <td><button type="submit" name="update"><img src="webroot/media/update.png"></button></td>
-                                <td><button type="submit" name="update"><img src="webroot/media/delete.png"></button></td>
+                                <td><button type="submit" name="delete"><img src="webroot/media/delete.png"></button></td>
+                                <td><button type="submit" name="up"><img src="webroot/media/up.png"></button></td>
+                                <td><button type="submit" name="down"><img src="webroot/media/down.png"></button></td>
                             </tr>
                         </form>
                         <?php
@@ -81,4 +94,14 @@
                 <?php }
                 ?>
             </table>
+            <div class="w3-center">
+                <div class="w3-bar">
+                    <a href="#" class="w3-button">&laquo;</a>
+                    <a href="#" class="w3-button">1</a>
+                    <a href="#" class="w3-button">2</a>
+                    <a href="#" class="w3-button">3</a>
+                    <a href="#" class="w3-button">4</a>
+                    <a href="#" class="w3-button">&raquo;</a>
+                </div>
+            </div>
         </div>
