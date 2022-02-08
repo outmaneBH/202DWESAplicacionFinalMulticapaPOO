@@ -1,7 +1,7 @@
 <?php
 
 /* Volvernos a inicioPrivado cuando se pulsaado home */
-if (isset($_REQUEST['home'])) {
+if (isset($_REQUEST['cancel'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header("Location:index.php");
