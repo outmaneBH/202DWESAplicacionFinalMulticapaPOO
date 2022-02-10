@@ -66,7 +66,7 @@ if (isset($_REQUEST['deleteAccount'])) {
 /**
  *  Meter la session del usuario en un array de variables 
  */
-$objectUsuario = $_SESSION['usuario202DWESLoginLogoutMulticapaPOO'];
+$objectUsuario = $_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'];
 
 $aInicioPrivado = [
     'codUsuario' => $objectUsuario->get_codUsuario(),

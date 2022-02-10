@@ -99,7 +99,7 @@
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service es mi propio Api Rest , devuelve un deparatamento buscado con el codigo dado en el input de Abajo.
-                        Puedes consultar mas informacion en mi web <a href="" target="_blank"></a>.
+                        Puedes consultar mas informacion en mi web  <a href="https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/doc/apiRest.php" target="_blank">Api Departamento</a>.
                     </p>
 
                     <input id="in3" name="codDepartamento" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamento']) ? $_REQUEST['codDepartamento'] : null; ?>"/>

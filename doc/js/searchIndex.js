@@ -268,8 +268,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentoPorCod\u0028\u0029",
             "name": "buscaDepartamentoPorCod",
-            "summary": "",
+            "summary": "La\u0020funcion\u0020busca\u0020un\u0020departamento\u0020con\u0020codigo\u0020existe\nsino\u0020devuelve\u0020null",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorCod"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosPorDesc\u0028\u0029",
+            "name": "buscaDepartamentosPorDesc",
+            "summary": "La\u0020funcion\u0020busca\u0020departamento\u0020con\u0020descripcion\u0020y\u0020por\u0020defecto\u0020es\u0020null\ndevuelve\u0020un\u0020array\u0020porque\u0020puede\u0020contener\u0020mas\u0020de\u0020un\u0020registro.",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
         },                {
             "fqsen": "\\interfaceDB",
             "name": "interfaceDB",
@@ -305,6 +310,11 @@ Search.appendIndex(
             "name": "provincia",
             "summary": "buscar\u0020Datos\u0020de\u0020una\u0020provincia\u0020con\u0020un\u0020codigo\u0020dado\u0020como\u0020parametro",
             "url": "classes/REST.html#method_provincia"
+        },                {
+            "fqsen": "\\REST\u003A\u003ADepartamento\u0028\u0029",
+            "name": "Departamento",
+            "summary": "La\u0020funcion\u0020devuelve\u0020datos\u0020de\u0020un\u0020departamento\u0020buscado\u0020con\u0020codigo\nsacado\u0020como\u0020json\u0020file\u0020y\u0020devolverlo\u0020como\u0020objeto",
+            "url": "classes/REST.html#method_Departamento"
         },                {
             "fqsen": "\\universidad",
             "name": "universidad",
