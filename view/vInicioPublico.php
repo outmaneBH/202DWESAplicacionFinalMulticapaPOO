@@ -287,7 +287,7 @@
             </div>
             <div  id="divtOtal" class="container-fluid mt-3">
                 <div id="id00" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
                         <div class="w3-center"><br>
                             <span onclick="document.getElementById('id00').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
@@ -297,7 +297,7 @@
                     </div>
                 </div>
                 <div id="id01" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
                         <div class="w3-center"><br>
                             <span onclick="document.getElementById('id01').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
@@ -307,7 +307,7 @@
                 </div>
 
                 <div id="id02" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
                         <div class="w3-center"><br>
                             <span onclick="document.getElementById('id02').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
@@ -317,7 +317,7 @@
                 </div>
 
                 <div id="id03" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
                         <div class="w3-center"><br>
                             <span onclick="document.getElementById('id03').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
@@ -327,7 +327,7 @@
                 </div>
 
                 <div id="id04" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
                         <div class="w3-center"><br>
                             <span onclick="document.getElementById('id04').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
@@ -337,7 +337,7 @@
                 </div>
 
                 <div id="id05" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
                         <div class="w3-center"><br>
                             <span onclick="document.getElementById('id05').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
@@ -347,7 +347,7 @@
                 </div>
 
                 <div id="id06" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
                         <div class="w3-center"><br>
                             <span onclick="document.getElementById('id06').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
@@ -357,7 +357,7 @@
                     </div>
                 </div>
                 <div id="id07" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
                         <div class="w3-center"><br>
                             <span onclick="document.getElementById('id07').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>

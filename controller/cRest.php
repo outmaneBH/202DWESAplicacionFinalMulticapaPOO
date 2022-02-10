@@ -37,7 +37,8 @@ $aRespuestas = [
 ];
 $aRespuestas = [];
 $aResultadoDep = [];
-$errorDep="";
+$errorDep = "";
+$errorDepIs="";
 /* comprobar si ha pulsado el button enviar */
 if (isset($_REQUEST['submitbtn'])) {
     //Para cada campo del formulario: Validamos la entrada y actuar en consecuencia
@@ -45,7 +46,6 @@ if (isset($_REQUEST['submitbtn'])) {
     //Comprobar si el campo description  esta rellenado 
     //$aErrores["country"] = validacionFormularios::comprobarAlfabetico($_REQUEST['country'], 1000, 2, OBLIGATORIO);
     //$aErrores["codProv"] = validacionFormularios::comprobarEntero($_REQUEST['codProv'], 52, 1, OBLIGATORIO);
-
     //recorrer el array de errores
     foreach ($aErrores as $nombreCampo => $value) {
         //Comprobar si el campo ha sido rellenado
@@ -92,10 +92,12 @@ if ($entradaOK) {
             $error = "<h5>No hay Provincias Con este Codigo.</h5>";
         }
     }
-    
+    /**
+     * Api rest Propio 
+     */
     if ($_REQUEST['codDepartamento'] != "") {
         $oResultadoDep = REST::Departamento($_REQUEST['codDepartamento']); //almacenar el objeto de departamento    
-        if ($oResultadoDep ) {//comorobar que sea true no false ,y rellenar el array 
+        if ($oResultadoDep) {//comorobar que sea true no false ,y rellenar el array 
             $aResultadoDep = [
                 'codigo' => $oResultadoDep->get_codDepartamento(),
                 'descripcion' => $oResultadoDep->get_descDepartamento(),
@@ -104,6 +106,23 @@ if ($entradaOK) {
                 'fechaBaja' => $oResultadoDep->get_fechaBajaDepartamento()];
         } else {
             $errorDep = "<h5>No hay departamento Con este Codigo.</h5>";
+        }
+    }
+    /**
+     * Api rest del servidor de mi Compañero 
+     */
+    if ($_REQUEST['codDepartamentoIsabel'] != "") {
+        $aResultadoDepIs=[];
+        $oResultadoDepIs = REST::DepartamentoIsabel($_REQUEST['codDepartamentoIsabel']); //almacenar el objeto de departamento    
+        if ($oResultadoDepIs) {//comorobar que sea true no false ,y rellenar el array 
+            $aResultadoDepIs = [
+                'codigo' => $oResultadoDepIs->get_codDepartamento(),
+                'descripcion' => $oResultadoDepIs->get_descDepartamento(),
+                'fechaCrea' => $oResultadoDepIs->get_fechaCreacionDepartamento(),
+                'volumen' => $oResultadoDepIs->get_volumenDeNegocio(),
+                'fechaBaja' => $oResultadoDepIs->get_fechaBajaDepartamento()];
+        } else {
+            $errorDepIs = "<h5>No hay departamento Con este Codigo en este Api.</h5>";
         }
     }
 }

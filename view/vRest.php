@@ -56,13 +56,14 @@
 
 
             #forms div{
-                margin-left: 20px;
-                width: 500px;
+                margin-left: 10px;
+                width: 450px;
                 padding: 10px;
             }
             h4{
                 text-decoration: underline blue 2px;
             }
+
 
         </style>
 
@@ -88,22 +89,31 @@
                         para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
                     </p>
                     <input style="margin-left: 10%;" id="in1" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-                    <input id="btn1" type="submit" name="submitbtn" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn1" type="submit" name="submitbtn" style="padding: 4px;" class="btn btn-primary"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia ( 01,02 , ...) y devuelve el estado de Meteo.<br>
                         Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.
                     </p>
+                    <br>
                     <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-                    <input id="btn2"   type="submit" name="submitbtn" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn2"   type="submit" name="submitbtn" style="padding: 4px;" class="btn btn-success"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service es mi propio Api Rest , devuelve un deparatamento buscado con el codigo dado en el input de Abajo.
                         Puedes consultar mas informacion en mi web  <a href="https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/doc/apiRest.php" target="_blank">Api Departamento</a>.
-                    </p>
+                    </p><br>
 
                     <input id="in3" name="codDepartamento" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamento']) ? $_REQUEST['codDepartamento'] : null; ?>"/>
-                    <input id="btn2"   type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn2"   type="submit" name="submitbtn"  style="padding: 4px;" class="btn btn-dark"  value="Buscar"/><br>
+                </div>
+                <div class="w3-panel w3-card">
+                    <p id="sp1">Devolver los datos de un depratamento buscado con codigo el input abajo,he sacado la informacion desde el api de Isabel,
+                        Puedes consultar mas informacion en la web de Isabel  <a href="https://daw204.ieslossauces.es/AplicacionFinal/index.php" target="_blank">Api Departamento de Compañero</a>.
+                    </p>
+
+                    <input id="in3" name="codDepartamentoIsabel" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamentoIsabel']) ? $_REQUEST['codDepartamentoIsabel'] : null; ?>"/>
+                    <input id="btn2"   type="submit" name="submitbtn"  style="padding: 4px;" class="btn btn-info"  value="Buscar"/><br>
                 </div>
 
             </div>
@@ -111,7 +121,7 @@
             <hr>
 
             <h1 id="srt"><?php echo $error; ?></h1>
-           
+
         </form> 
 
         <div class="cont">
@@ -178,6 +188,35 @@
                 }
                 ?>
             </table>
+            <!-- Tabla deparatemnto de Isabel -->
+
+            <?php
+            echo $errorDepIs;
+            if (isset($oResultadoDepIs)) {
+                if ($aResultadoDepIs) {
+                    ?>
+                    <h4>Departameto Codigo <strong> <?php echo $aResultadoDepIs['codigo']; ?> :</strong></h4>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>codigo</th>
+                            <th>descripcion</th>
+                            <th>fecha Creacion</th>
+                            <th>volumen</th> 
+                            <th>fechaBaja</th> 
+                        </tr>
+                        <tr>
+                            <td><?php echo $aResultadoDepIs['codigo']; ?></td>
+                            <td><?php echo $aResultadoDepIs['descripcion']; ?></td>
+                            <td> <?php echo date("d- m - Y H:i:s", $aResultadoDepIs['fechaCrea']); ?></td>
+                            <td><?php echo $aResultadoDepIs['volumen']; ?></td>
+                            <td><?php echo $aResultadoDepIs['fechaBaja'] ?? '-'; ?></td>
+
+                        </tr>
+                        <?php
+                    }
+                }
+                ?>
+            </table>
             <!--Comprobar si hay una universidad y el array de Respuestas no sea null-->
             <?php
             if (isset($aUniversidades)) {
@@ -206,7 +245,7 @@
                                 <?php
                             }
                         } else {
-                            echo ' <hr><h2>No hay resultados sobre el pais buscado!!</h2>';
+                            echo ' <hr><h5>No hay resultados sobre el pais buscado!!</h5>';
                         }
                     }
                     ?>

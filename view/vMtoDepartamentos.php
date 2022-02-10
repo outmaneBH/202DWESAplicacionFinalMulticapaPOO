@@ -44,9 +44,9 @@
                    
 
                     <button type="submit" name="search" class="btn btn-success mb-3">Serach</button>
-                    <button type="button" name="add" class="btn btn-success mb-3">Add</button>
-                    <button type="button" name="import" class="btn btn-info mb-3">Import</button>
-                    <button type="button" name="export" class="btn btn-dark mb-3">Export</button>
+                    <button type="button" name="add" class="btn btn-success mb-3" disabled>Add</button>
+                    <button type="button" name="import" class="btn btn-info mb-3"disabled>Import</button>
+                    <button type="button" name="export" class="btn btn-dark mb-3" disabled>Export</button>
                 </div>
             </form>
             <table class="table table-striped">
@@ -74,11 +74,11 @@
                                 <td><?php echo $aDepartamento['fechaCrea']; ?></td>
                                 <td><?php echo $aDepartamento['volumen']; ?></td>
                                 <td><?php echo $aDepartamento['fechaBaja'] ?? '-'; ?></td>
-                                <td><button type="submit" name="more"><img src="webroot/media/more.png"></button></td>
-                                <td><button type="submit" name="update"><img src="webroot/media/update.png"></button></td>
-                                <td><button type="submit" name="delete"><img src="webroot/media/delete.png"></button></td>
-                                <td><button type="submit" name="up"><img src="webroot/media/up.png"></button></td>
-                                <td><button type="submit" name="down"><img src="webroot/media/down.png"></button></td>
+                                <td><button type="button" name="more"><img src="webroot/media/more.png"></button></td>
+                                <td><button type="button" name="update"><img src="webroot/media/update.png"></button></td>
+                                <td><button type="button" name="delete"><img src="webroot/media/delete.png"></button></td>
+                                <td><button type="button" name="up"><img src="webroot/media/up.png"></button></td>
+                                <td><button type="button" name="down"><img src="webroot/media/down.png"></button></td>
                             </tr>
                         </form>
                         <?php
