@@ -22,6 +22,30 @@ if (isset($_REQUEST['apirest'])) {
     exit;
 }
 
+/*  */
+if (isset($_REQUEST['mtousuarios'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'mtousuarios';
+    header("Location:index.php");
+    exit;
+}
+
+if (isset($_REQUEST['mtocuestiones'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'wip';
+    header("Location:index.php");
+    exit;
+}
+
+if (isset($_REQUEST['consultarModificarOpiniones'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'wip';
+    header("Location:index.php");
+    exit;
+}
+
+
+
 /**
  * Si ha pulasdo detalle devlover controlador de detalle
  */

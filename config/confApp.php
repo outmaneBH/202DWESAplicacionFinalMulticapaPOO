@@ -1,5 +1,6 @@
    
 <?php
+
 /**
  * Login Logout de Users y mantimiento de Departamentos.
  * 
@@ -9,7 +10,6 @@
  * @updated: 02/01/2022
  * @version 1.0
  */
-
 /*
  * @author: OUTMANE BOUHOU
  * @updated: 02/1/2022
@@ -22,7 +22,7 @@ require_once "core/LibreriaValidacion.php";
 define("OBLIGATORIO", 1);
 define("OPCIONAL", 0);
 $error = '';
-$entradaOK=true;
+$entradaOK = true;
 
 /* Añadir modelsm para usarlos en toda la Aplicacion */
 require_once "model/AppError.php";
@@ -49,7 +49,9 @@ $controllers = [
     "editar" => "controller/cMiCuenta.php",
     "cambiarpassword" => "controller/cCambiarPassword.php",
     "borrar" => "controller/cBorrarCuenta.php",
-    "mtodepartamentos" => "controller/cMtoDepartamentos.php"
+    "mtodepartamentos" => "controller/cMtoDepartamentos.php",
+    "mtousuarios" => "controller/cMtoUsuarios.php",
+    "consultarModificarOpiniones" => "controller/cConsultarModificarOpiniones.php"
 ];
 
 /* Añadir vistas en Array */
@@ -66,7 +68,9 @@ $views = [
     "editar" => "view/vMiCuenta.php",
     "cambiarpassword" => "view/vCambiarPassword.php",
     "borrar" => "view/vBorrarCuenta.php",
-    "mtodepartamentos" => "view/vMtoDepartamentos.php"
+    "mtodepartamentos" => "view/vMtoDepartamentos.php",
+    "mtousuarios" => "view/vMtoUsuarios.php",
+    "consultarModificarOpiniones" => "view/vConsultarModificarOpiniones.php"
 ];
 
 /* Iniciamos la session para saber que vista esta en curso y que usuario */

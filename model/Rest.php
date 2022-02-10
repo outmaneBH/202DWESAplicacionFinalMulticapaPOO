@@ -79,8 +79,29 @@ class REST {
                     $departamento['fechaBaja'],
             );
         }
-
         return $oDepartamento;
+    }
+
+    /**
+     * Isabel https://daw204.ieslossauces.es/AplicacionFinal/api/buscarDepartamentoPorCodigo.php?codDepartamento=diw
+     */
+    
+    public static function DepartamentoIsabel($codDepartamentoIsabel) {
+        
+        $oDepartamentoIsabel = null;
+        $jsonFile = @file_get_contents("https://daw204.ieslossauces.es/AplicacionFinal/api/buscarDepartamentoPorCodigo.php?codDepartamento=$codDepartamentoIsabel");
+        $departamento = json_decode($jsonFile, true);
+
+        if ($departamento['respuesta']) {
+            $oDepartamentoIsabel = new Departamento(
+                    $departamento['codigo'],
+                    $departamento['descripcion'],
+                    $departamento['fechaCrea'],
+                    $departamento['volumen'],
+                    $departamento['fechaBaja'],
+            );
+        }
+        return $oDepartamentoIsabel;
     }
 
 }
