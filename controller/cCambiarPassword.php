@@ -18,7 +18,7 @@ if (isset($_REQUEST['btncancelar'])) {
     exit;
 }
 
-$oUsuario = $_SESSION['usuario202DWESLoginLogoutMulticapaPOO'];
+$oUsuario = $_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'];
 /* Varible de entrada correcta inicializada a true */
 $entradaOK = true;
 

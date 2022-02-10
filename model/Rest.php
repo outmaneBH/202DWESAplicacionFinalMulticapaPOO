@@ -31,14 +31,12 @@ class REST {
         return $aUniversidad;
     }
 
-
     /**
      * buscar Datos de una provincia con un codigo dado como parametro
      * 
      * @param Int $codProvincia
      * @return objeto dcon datos de la provincia
      */
-
     public static function provincia($codProvincia) {
 
         $oProvincia = null;
@@ -58,6 +56,32 @@ class REST {
         return $oProvincia;
     }
 
+    /**
+     * La funcion devuelve datos de un departamento buscado con codigo
+     * sacado como json file y devolverlo como objeto
+     * 
+     * @param Int $codDepartamento
+     * @return objeto Departamento
+     */
+    public static function Departamento($codDepartamento) {
+        //http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=$codDepartamento
+
+        $oDepartamento = null;
+        $jsonFile = @file_get_contents("https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=$codDepartamento");
+        $departamento = json_decode($jsonFile, true);
+
+        if ($departamento['respuesta']) {
+            $oDepartamento = new Departamento(
+                    $departamento['codigo'],
+                    $departamento['descripcion'],
+                    $departamento['fechaCrea'],
+                    $departamento['volumen'],
+                    $departamento['fechaBaja'],
+            );
+        }
+
+        return $oDepartamento;
+    }
 
 }
 ?>

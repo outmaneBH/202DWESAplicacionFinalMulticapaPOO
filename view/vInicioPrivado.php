@@ -103,8 +103,11 @@
                     <input type="submit" name="mtoDepartamentos" class="w3-bar-item w3-button w3-black w3-hover-blue" value="MtoDepartamentos"> 
                     <input name="apirest" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="Api REST"  type="button"/>
                     <input name="consultaropinion" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="ConsultarModificarOpinion"  type="button"/>
+                    <?php if($aInicioPrivado['perfil']=="administrador"){ ?>
                     <input name="mtousuarios" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoUsuarios"  type="button"/>
-                    <input name="mtocuestiones" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoCuestiones"  type="button"/>
+                     <input name="mtocuestiones" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoCuestiones"  type="button"/>
+                    <?php }?>
+                   
                 </form>
             </div>
         </div>

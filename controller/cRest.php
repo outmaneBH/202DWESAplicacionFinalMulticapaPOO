@@ -21,16 +21,23 @@ if (isset($_REQUEST['cancel'])) {
 /* Variable de entrada correcta inicializada a true */
 $entradaOK = true;
 
-/* definir un array para alamcenar errores del country y codigo De Provincia */
+/* definir un array para alamcenar errores del country y codigo De Provincia,
+ * username y la password */
+
+
 $aErrores = [
     "country" => null,
-    "codProv" => null
+    "codProv" => null,
+    'username' => null,
+    'password' => null
 ];
 $aRespuestas = [
     "country" => null,
     "codProv" => null
 ];
 $aRespuestas = [];
+$aResultadoDep = [];
+$errorDep="";
 /* comprobar si ha pulsado el button enviar */
 if (isset($_REQUEST['submitbtn'])) {
     //Para cada campo del formulario: Validamos la entrada y actuar en consecuencia
@@ -38,6 +45,7 @@ if (isset($_REQUEST['submitbtn'])) {
     //Comprobar si el campo description  esta rellenado 
     //$aErrores["country"] = validacionFormularios::comprobarAlfabetico($_REQUEST['country'], 1000, 2, OBLIGATORIO);
     //$aErrores["codProv"] = validacionFormularios::comprobarEntero($_REQUEST['codProv'], 52, 1, OBLIGATORIO);
+
     //recorrer el array de errores
     foreach ($aErrores as $nombreCampo => $value) {
         //Comprobar si el campo ha sido rellenado
@@ -70,7 +78,7 @@ if ($entradaOK) {
 
     if ($_REQUEST['codProv'] != "") {
         $oResultadoProv = REST::provincia($_REQUEST['codProv']); //almacenar el objeto de provincia    
-        if ($oResultadoProv!=null) {//comorobar que sea true no false ,y rellenar el array 
+        if ($oResultadoProv != null) {//comorobar que sea true no false ,y rellenar el array 
             $aResultado = [
                 "provincia" => $oResultadoProv->getProvincia(),
                 "idprovincia" => $oResultadoProv->getIdProvincia(),
@@ -81,10 +89,23 @@ if ($entradaOK) {
                 "max" => $oResultadoProv->getTemperaturaMax()
             ];
         } else {
-            $error="<h2>No hay Provincias Con este Codigo.</h2>";
+            $error = "<h5>No hay Provincias Con este Codigo.</h5>";
         }
     }
-
+    
+    if ($_REQUEST['codDepartamento'] != "") {
+        $oResultadoDep = REST::Departamento($_REQUEST['codDepartamento']); //almacenar el objeto de departamento    
+        if ($oResultadoDep ) {//comorobar que sea true no false ,y rellenar el array 
+            $aResultadoDep = [
+                'codigo' => $oResultadoDep->get_codDepartamento(),
+                'descripcion' => $oResultadoDep->get_descDepartamento(),
+                'fechaCrea' => $oResultadoDep->get_fechaCreacionDepartamento(),
+                'volumen' => $oResultadoDep->get_volumenDeNegocio(),
+                'fechaBaja' => $oResultadoDep->get_fechaBajaDepartamento()];
+        } else {
+            $errorDep = "<h5>No hay departamento Con este Codigo.</h5>";
+        }
+    }
 }
 
 require_once $views['layout'];

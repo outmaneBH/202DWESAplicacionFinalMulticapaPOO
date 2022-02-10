@@ -63,10 +63,9 @@ if ($entradaOK) {
      * devolver el usuario CAMBIADO y meter lo en la session 
      */
     $oUsuario = UsuarioPDO::registrarUltimaConexion($objetoUsuario);
-    $_SESSION['usuario202DWESLoginLogoutMulticapaPOO'] = $oUsuario;
+    $_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'] = $oUsuario;
 
     /* LLevamos el usuario a la pagina de inicio */
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header('Location: index.php');
     exit;

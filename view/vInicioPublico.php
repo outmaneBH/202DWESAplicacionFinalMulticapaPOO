@@ -154,38 +154,16 @@
                 border: none;
                 color: white;
             }
-            img{
+            ul img{
                 object-fit: contain;
+                width: 80%;
+                height: 300px;
             }
-            #demo {
-                padding: 30px;
-                display: flex;
-                width: 600px;  
-                height: 500px;
+            .w3-ul{
+                background: #F5F2E7;  
             }
-          
-            #demos h3{
-                color: black; 
 
-            }
-            .content{
-                margin-top: -20px;
-                display: flex;
-                justify-content: space-between;
-                height: 99vh;
-            }
-            .datos{
-                margin-top: 30px;
-                margin-left: 20px;
-                padding: 10px;
-                width: 300px;
-                height: 400px;
-                background: white;  
-                border-radius: 0 10px 10px 0;
-            }
-            .datos h3{
-                   color: black; 
-            }
+
         </style>
     </head>
     <body onload="startTime()">
@@ -197,105 +175,116 @@
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
                                 <h3>Last Web Application MVC POO</h3>
-                                
+
                             </li>
                         </ul>
+                        <!--                        <form action="index.php" method="POST">
+                                                    <input name="btnapiFree" type="button" style="margin-right: 5px;" target="_blank" value="Api Propio" class="btn btn-primary" /> 
+                                                </form>-->
+
+                        <a href="doc/apiRest.php" target="_blank"><input name="btnapiFree" type="button" style="margin-right: 5px;"  value="Api Propio" class="btn btn-primary" /></a>
 
                         <input id="sp1" style="padding-left: 10px;padding-right: 10px;font-size: 20px;" type="button" name="t1" onclick="openNav()" value="&#9776;">
+
 
                     </div>
                 </div>
             </nav>
+
             <div class="content">
-                <div class="datos">
-                    <h4 style="text-align: center;font-weight: bold;font-size: 20px;">Desarollo  de applicaciones Web</h4>
+                <div id="mySidenav1" class="sidenav1">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" >
+                        <input name="btnlogin" type="submit" style="margin-right: 5px;" value="Login" class="btn btn-primary" /><br>
+                        <input name="btnregister" type="submit" style="margin-right: 5px;" value="Register" class="btn btn-primary" /><br>
+                        <select name="select" class="bg-primary">      
+                            <option value="">Idioma </option>
+                            <option value="es">Español</option>
+                            <option value="en">Ingles</option>
+                            <option value="ar">العربية</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+
+            <div class="w3-row-padding">
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-blue w3-large w3-padding-4">Estandar deDesarollo</li>
+                        <img  src="webroot/media/pdf/estander.PNG" alt="Estandar"  >
+                        <li class="w3-light-grey w3-padding-12">
+                            <button onclick="document.getElementById('id00').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button> 
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-blue w3-large w3-padding-4">Arbol deNavegacion</li>
+                        <img src="webroot/media/pdf/arbol.PNG" alt="Arbol de Navegacion"  >
+                        <li class="w3-light-grey w3-padding-12">
+                            <button onclick="document.getElementById('id01').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-blue w3-large w3-padding-4">Catalogo deRequisitos</li>
+                        <img src="webroot/media/pdf/catalogo.PNG" alt="Catalogo de Requisitos"  >
+                        <li class="w3-light-grey w3-padding-12">
+                            <button onclick="document.getElementById('id02').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-blue w3-large w3-padding-4">Diagrama de Casos deUso</li>
+                        <img src="webroot/media/pdf/casos.PNG" alt="Diagrama de Casos de Uso"  >
+                        <li class="w3-light-grey w3-padding-12">
+                            <button onclick="document.getElementById('id03').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-blue w3-large w3-padding-4">Diagrama deClases</li>
+                        <img src="webroot/media/pdf/clases.PNG" alt="Diagrama de Clases"  >
+                        <li class="w3-light-grey w3-padding-12">
+                            <button onclick="document.getElementById('id04').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-blue w3-large w3-padding-4">Relacion deFicheros</li>
+                        <img src="webroot/media/pdf/relacion.PNG" alt="Relacion de Ficheros"  >
+                        <li class="w3-light-grey w3-padding-12">
+                            <button onclick="document.getElementById('id05').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-blue w3-large w3-padding-4">Uso deSession</li>
+                        <img src="webroot/media/pdf/session.PNG" alt="Uso de Session"  >
+                        <li class="w3-light-grey w3-padding-12">
+                            <button onclick="document.getElementById('id06').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+                        <li class="w3-blue w3-large w3-padding-4">ModeloFisico deDatos</li>
+                        <img src="webroot/media/pdf/modelofisico.PNG" alt="Uso de Session"  >
+                        <li class="w3-light-grey w3-padding-12">
+                            <button onclick="document.getElementById('id07').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
+                        </li>
+                    </ul>
+                </div>
+                <div style="height: 200px;" class="w3-quarter w3-margin-bottom">
+
                 </div>
 
-                <div id="demos">
-                    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="webroot/media/pdf/estander.PNG" alt="Estandar" class="d-block" style="height: 400px;width:100%">
-                                <div class="carousel-caption">
-                                    <h3>Estandar de Desarollo</h3>
-                                    <button onclick="document.getElementById('id00').style.display = 'block'"
-                                            class="w3-button w3-green w3-large">Lerr EL PDF</button>
-                                </div>
-                            </div>
-                            <div class="carousel-item ">
-                                <img src="webroot/media/pdf/arbol.PNG" alt="Arbol" class="d-block" style="height: 400px;width:100%">
-                                <div class="carousel-caption">
-                                    <h3>Arbol de Navegacion</h3>
-                                    <button onclick="document.getElementById('id01').style.display = 'block'"
-                                            class="w3-button w3-green w3-large">Lerr EL PDF</button>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="webroot/media/pdf/catalogo.PNG" alt="Catalogo" class="d-block" style="height: 400px;width:100%">
-                                <div class="carousel-caption">
-                                    <h3>Catalogo de Requisitos</h3>
-                                    <button onclick="document.getElementById('id02').style.display = 'block'"
-                                            class="w3-button w3-green w3-large">Lerr EL PDF</button>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="webroot/media/pdf/casos.PNG" alt="Caso de Uso" class="d-block" style="height: 400px;width:100%">
-                                <div class="carousel-caption">
-                                    <h3>Diagrama de <br>Casos de Uso</h3>
-                                    <button onclick="document.getElementById('id03').style.display = 'block'"
-                                            class="w3-button w3-green w3-large">Lerr EL PDF</button>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="webroot/media/pdf/clases.PNG" alt="Clases" class="d-block" style="height: 400px;width:100%">
-                                <div class="carousel-caption">
-                                    <h3>Diagrama de Clases</h3>
-                                    <button onclick="document.getElementById('id04').style.display = 'block'"
-                                            class="w3-button w3-green w3-large">Lerr EL PDF</button>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="webroot/media/pdf/relacion.PNG" alt="Rlacion" class="d-block" style="height: 400px;width:100%">
-                                <div class="carousel-caption">
-                                    <h3>Relacion de Ficheros</h3>
-                                    <button onclick="document.getElementById('id05').style.display = 'block'"
-                                            class="w3-button w3-green w3-large">Lerr EL PDF</button>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="webroot/media/pdf/session.PNG" alt="Session" class="d-block" style="height: 400px;width:100%">
-                                <div class="carousel-caption">
-                                    <h3>Uso de Session</h3>
-                                    <button onclick="document.getElementById('id06').style.display = 'block'"
-                                            class="w3-button w3-green w3-large">Lerr EL PDF</button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <button  class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>   
-
-
-
-
+            </div>
             <div  id="divtOtal" class="container-fluid mt-3">
                 <div id="id00" class="w3-modal">
                     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
@@ -367,21 +356,19 @@
                         </div>
                     </div>
                 </div>
-                <div id="mySidenav1" class="sidenav1">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" >
-                        <input name="btnlogin" type="submit" style="margin-right: 5px;" value="Login" class="btn btn-primary" /><br>
-                        <input name="btnregister" type="submit" style="margin-right: 5px;" value="Register" class="btn btn-primary" /><br>
-                        <select name="select" class="bg-primary">      
-                            <option value="">Idioma </option>
-                            <option value="es">Español</option>
-                            <option value="en">Ingles</option>
-                            <option value="ar">العربية</option>
-                        </select>
-                    </form>
+                <div id="id07" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 500px;">
+                        <div class="w3-center"><br>
+                            <span onclick="document.getElementById('id07').style.display = 'none'"
+                                  class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
+                            <iframe src="webroot/media/pdf/201127ModeloFisicoDeDatos20-21.pdf"
+                                    style="width:100%;border:none;height:500px"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
 
         <script>
             function startTime() {

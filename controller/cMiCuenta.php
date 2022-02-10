@@ -32,7 +32,7 @@ if (isset($_REQUEST['btnupdatePass'])) {
 }
 
 /* Meter la session en un array de variables */
-$objectUsuario = $_SESSION['usuario202DWESLoginLogoutMulticapaPOO'];
+$objectUsuario = $_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'];
 $aMiCuenta = [
     'codUsuario' => $objectUsuario->get_codUsuario(),
     'descUsuario' => $objectUsuario->get_descUsuario(),
@@ -70,7 +70,7 @@ if (isset($_REQUEST['btnupdate'])) {
 if ($entradaOK) {
     //Tratamiento del formulario - Tratamiento de datos OK
     //Si los datos estan correctos
-    $oUsuario = $_SESSION['usuario202DWESLoginLogoutMulticapaPOO']; //metemos el codigo de la session en un variable
+    $oUsuario = $_SESSION['usuario202DWESAplicacionFinalMulticapaPOO']; //metemos el codigo de la session en un variable
 
     UsuarioPDO::modificarUsuario($oUsuario, $_REQUEST['DescUsuario']); //hagamos la actualizacion y mostramos la pagina inicioPrivado
     

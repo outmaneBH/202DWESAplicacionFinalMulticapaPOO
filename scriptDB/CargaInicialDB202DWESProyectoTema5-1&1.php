@@ -30,13 +30,24 @@
                       ('DIW', 'departamento DIW', 1406149672, 289.3);
 
                     INSERT INTO T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario)  VALUES 
-                    ('outmane', sha2('outmanepaso',256), "OUTMANE BOUHOU"),
-                    ('heraclio', sha2('heracliopaso',256), "HERACLIO"),
-                    ('amor', sha2('amorpaso',256), "AMOR"),
-                    ('alberto', sha2('albertopaso',256), "ALBERTO"),
-                    ('antoño', sha2('antoñopaso',256), "ANTOÑO");
+                       ('albertoF',SHA2('albertoFpaso',256),'ALBERTOF'),
+                       ('outmane',SHA2('outmanepaso',256),'OUTMANE'),
+                       ('rodrigo',SHA2('rodrigopaso',256),'RODRIGO'),
+                       ('isabel',SHA2('isabelpaso',256),'ISABEL'),
+                       ('david',SHA2('davidpaso',256),'DAVID'),
+                       ('aroa',SHA2('aroapaso',256),'AROA'),
+                       ('johanna',SHA2('johannapaso',256),'JOHANNA'),
+                       ('oscar',SHA2('oscarpaso',256),'OSCAR'),
+                       ('sonia',SHA2('soniapaso',256),'SONIA'),
+                       ('heraclio',SHA2('heracliopaso',256),'HERACLIO'),
+                       ('amor',SHA2('amorpaso',256),'AMOR'),
+                       ('antonio',SHA2('antoniopaso',256),'ANTONIO'),
+                       ('albertoB',SHA2('albertoBpaso',256),'ALBERTOB');
+
+                    INSERT INTO T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario,T01_Perfil) VALUES 
+                       ('admin',SHA2('adminpaso',256),'ADMINISTRADOR','administrador');
             OB;
-            $miDB ->exec($sql);
+            $miDB->exec($sql);
             echo '          <div class="w3-panel w3-blue">
                             <h3>Information!</h3>
                             <p>Se insertado bien.</p>

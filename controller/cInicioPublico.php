@@ -23,6 +23,11 @@ if (isset($_REQUEST['btnregister'])) {
     header("Location:index.php");
     exit;
 }
+/*Si el usuario ha pulsado en registrar cambiamos la vista y devolver la pagina de registrar*/
+//if (isset($_REQUEST['btnapiFree'])) {
+//    header("Location:doc/apiRest.php");
+//    exit;
+//}
 
 require_once $views['layout'];
 ?>

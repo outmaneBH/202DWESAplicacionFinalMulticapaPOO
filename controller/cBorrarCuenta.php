@@ -15,7 +15,7 @@ if (isset($_REQUEST['btncancelar'])) {
 }
 
 /* los variables de la session */
-$objectUsuario = $_SESSION['usuario202DWESLoginLogoutMulticapaPOO'];
+$objectUsuario = $_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'];
 $USER = $objectUsuario->get_codUsuario();
 $Desc = $objectUsuario->get_descUsuario();
 

@@ -48,9 +48,10 @@
                 text-align: center;
                 line-height: 300px;
             }
-            #form2{
+
+            #forms{
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-around; 
             }
 
 
@@ -62,7 +63,9 @@
             h4{
                 text-decoration: underline blue 2px;
             }
+
         </style>
+
     </head>
     <body>
         <div class="w3-bar w3-black  ">
@@ -75,35 +78,44 @@
             </form>
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Uso de REST </p>
         </div>
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+            <div id="forms">
 
-        <div id="forms">
-            <form id="form2"action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                 <div class="w3-panel w3-card">
 
 <!--            <span id="sp2" ><?php echo ($aErrores["country"] != null ? $aErrores['country'] : null); ?></span><br>-->
                     <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir  en el input el nombre del Pais  y pulsa <strong>Buscar</strong>  para mostrar los resultados , Por ejemplo ( Spain , Morocco , Canada , France ...)
                         para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
                     </p>
-                    <input style="margin-left: 10%;" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-                    <input id="btn1"  type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input style="margin-left: 10%;" id="in1" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
+                    <input id="btn1" type="submit" name="submitbtn" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia ( 01,02 , ...) y devuelve el estado de Meteo.<br>
                         Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.
                     </p>
-<!--                    <span id="sp2" ><?php echo ($aErrores["codProv"] != null ? $aErrores['codProv'] : null); ?></span><br> -->
                     <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-                    <input id="btn2" name="submitbtn"  type="submit" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                    <input id="btn2"   type="submit" name="submitbtn" style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
+                </div>
+                <div class="w3-panel w3-card">
+                    <p id="sp1">Este Web service es mi propio Api Rest , devuelve un deparatamento buscado con el codigo dado en el input de Abajo.
+                        Puedes consultar mas informacion en mi web  <a href="https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/doc/apiRest.php" target="_blank">Api Departamento</a>.
+                    </p>
+
+                    <input id="in3" name="codDepartamento" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamento']) ? $_REQUEST['codDepartamento'] : null; ?>"/>
+                    <input id="btn2"   type="submit" name="submitbtn"  style="padding: 4px;" class="w3-btn w3-teal"  value="Buscar"/><br>
                 </div>
 
-            </form> 
-        </div>
+            </div>
 
-        <hr>
+            <hr>
 
-        <h1 id="srt"></h1>
+            <h1 id="srt"><?php echo $error; ?></h1>
+           
+        </form> 
 
         <div class="cont">
+
 
             <!-- Tabla de rest de Aroa -->
             <?php
@@ -133,6 +145,35 @@
                         <?php
                     } else {
                         echo '<h2>No hay resultados sobre provincia   !!</h2>';
+                    }
+                }
+                ?>
+            </table>
+            <!--El uso de mi propio Api rest-->
+            <?php
+            echo $errorDep;
+            if (isset($oResultadoDep)) {
+
+                if ($aResultadoDep) {
+                    ?>
+                    <h4>Departameto Codigo <strong> <?php echo $aResultadoDep['codigo']; ?> :</strong></h4>
+                    <table class="table table-hover">
+                        <tr>
+                            <th>codigo</th>
+                            <th>descripcion</th>
+                            <th>fecha Creacion</th>
+                            <th>volumen</th> 
+                            <th>fechaBaja</th> 
+                        </tr>
+                        <tr>
+                            <td><?php echo $aResultadoDep['codigo']; ?></td>
+                            <td><?php echo $aResultadoDep['descripcion']; ?></td>
+                            <td> <?php echo date("d- m - Y H:i:s", $aResultadoDep['fechaCrea']); ?></td>
+                            <td><?php echo $aResultadoDep['volumen']; ?></td>
+                            <td><?php echo $aResultadoDep['fechaBaja'] ?? '-'; ?></td>
+
+                        </tr>
+                        <?php
                     }
                 }
                 ?>
@@ -176,14 +217,17 @@
 
         <script>
 
-           function fn1(event) {
-            var clave = prompt("El clave para usar el Api Rest:");
-            if (clave) {
-                window.alert("Hola");
-            }else{
-                ev.preventdefault();
+            function fn1(event) {
+                var clave = prompt("El clave para usar el Api Rest:");
+                if (clave) {
+                    window.alert("Hola");
+                } else {
+                    ev.preventdefault();
+                }
             }
-        }
+            function fn2() {
+                document.getElementById("in1").style.border = "red";
+            }
 
         </script>
 

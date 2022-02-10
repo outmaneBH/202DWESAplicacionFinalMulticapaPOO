@@ -37,13 +37,14 @@ if (isset($_REQUEST['detalle'])) {
  */
 if (isset($_REQUEST['mtoDepartamentos'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'wip';
+    $_SESSION ["codDepartamentoEnCurso"] = "";
+    $_SESSION['paginaEnCurso'] = 'mtodepartamentos';
     header("Location:index.php");
     exit;
 }
 
 /**
- * Si ha pulasdo editPerfil devlover controlador de ededitPerfil.
+ * Si ha pulasdo mtoDeparatamentos devlover controlador de ededitPerfil.
  */
 if (isset($_REQUEST['editPerfil'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
@@ -58,14 +59,14 @@ if (isset($_REQUEST['editPerfil'])) {
 if (isset($_REQUEST['deleteAccount'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'borrar';
-    header("Location:index.php"); 
+    header("Location:index.php");
     exit;
 }
 
 /**
  *  Meter la session del usuario en un array de variables 
  */
-$objectUsuario = $_SESSION['usuario202DWESLoginLogoutMulticapaPOO'];
+$objectUsuario = $_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'];
 
 $aInicioPrivado = [
     'codUsuario' => $objectUsuario->get_codUsuario(),
