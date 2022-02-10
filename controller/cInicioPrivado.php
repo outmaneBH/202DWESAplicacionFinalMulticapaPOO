@@ -97,7 +97,8 @@ $aInicioPrivado = [
     'descUsuario' => $objectUsuario->get_descUsuario(),
     'numConexiones' => $objectUsuario->get_numConexiones(),
     'fechaHoraUltimaConexionAnterior' => $objectUsuario->get_fechaHoraUltimaConexionAnterior(),
-    'perfil' => $objectUsuario->get_perfil()
+    'perfil' => $objectUsuario->get_perfil(),
+    'imagen' => $objectUsuario->get_imagenUsuario(),
 ];
 
 

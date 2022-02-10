@@ -92,13 +92,13 @@ class REST {
         $jsonFile = @file_get_contents("https://daw204.ieslossauces.es/AplicacionFinal/api/buscarDepartamentoPorCodigo.php?codDepartamento=$codDepartamentoIsabel");
         $departamento = json_decode($jsonFile, true);
 
-        if ($departamento['respuesta']) {
+        if (!$departamento["error"]) {
             $oDepartamentoIsabel = new Departamento(
-                    $departamento['codigo'],
-                    $departamento['descripcion'],
-                    $departamento['fechaCrea'],
-                    $departamento['volumen'],
-                    $departamento['fechaBaja'],
+                    $departamento['codDepartamento'],
+                    $departamento['descDepartamento'],
+                    $departamento['fechaCreacionDepartamento'],
+                    $departamento['volumenDeNegocio'],
+                    $departamento['fechaBajaDepartamento'],
             );
         }
         return $oDepartamentoIsabel;

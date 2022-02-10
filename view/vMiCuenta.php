@@ -11,21 +11,21 @@
             body{
                 background-image: url(webroot/media/sky2.jpg);
                 background-repeat: no-repeat;
-                 background-size:  cover;
+                background-size:  cover;
             }
             #form1{
 
-                height:  430px;
+                height:  520px;
                 display: flex;
-                justify-content: center;
-                flex-flow: column wrap;
-                align-content: center;
-                gap:8px;
+                justify-content: space-evently;
+                flex-flow: column ;
+              
+                gap:6px;
 
             }
             #bg{
                 border-radius: 10px;
-                width: 10%;  
+                width: 30%;  
             }
             input{
                 padding: 10px;
@@ -39,7 +39,12 @@
                 text-align: center;
                 font-size: 30px;
             }
-            span:nth-of-type(2), span:nth-of-type(3){
+            span:nth-of-type(2){
+                color: white;
+                text-align: center;
+                font-size: 30px;
+            }
+            span:nth-of-type(3), span:nth-of-type(4){
                 color: red;
                 text-align: center;
                 font-size: 15px;
@@ -49,7 +54,7 @@
             td input:nth-of-type(1){
                 border: none;
                 border-bottom:  2px solid yellow;
-               
+
                 padding: 2px;
                 width: 98%;
 
@@ -94,23 +99,20 @@
         <div class="w3-bar w3-black  ">
             <p style="padding: 10px;font-size: 18px;font-weight: bold;font-family: cursive;" class="w3-center ">Last Web Application MVC POO</p>
         </div>
-         <div class="w3-bar w3-deep-purple  ">
+        <div class="w3-bar w3-deep-purple  ">
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Mi Cuenta </p>
         </div>
         <form enctype="multipart/form-data" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
             <button style="margin: 10px;font-weight: bold;float: right;" name="btnupdatePass" class="btn btn-primary" type="submit">Cambiar Password</button>
-       <!-- <input type="file" id="profilImg" name="profilImg" accept=".jpg,.jpeg,.png" />-->
+           
         </form>
         <div class="container mt-3">
             <div class="d-flex mb-3">
                 <div class="p-2  flex-fill"></div>
                 <div id="bg" class="p-2 flex-fill bg-dark">
                     <form  enctype="multipart/form-data" id="form1" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-
-                       <!-- <label for="profilImg" class="s1">
-                            <span> <img for="" style="width: 100px;height: 100px;" src="data:image/jpg;base64, <?php echo $aMiCuenta['profilImg']; ?>" alt="Imagen" class=" w3-circle"> </span>
-                        </label>-->
-                       <span>Editar Perfil</span>
+                        <span>Editar Perfil</span>
+                        <span> <img src="data:image/jpg;base64, <?php echo $aMiCuenta['imagen'] ?>" class="w3-bar-item w3-circle" style="width:90px;height: 90px"></span>
                         <table class="w3-table w3-bordered ">
                             <tr>
                                 <td>DescUsuario</td>
@@ -133,12 +135,22 @@
                                 <td>Perfil</td>
                                 <td><?php echo $aMiCuenta['perfil']; ?></td>
                             </tr>
+                            <tr>
+                                <td>Imagen</td>
+                                <td>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Example file input</label>
+                                        <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
+                                </td>
+                            </tr>
                         </table>
                         <section>
                             <input type="submit" name="btnupdate" class="w3-hover-green w3-hover-text-black" value="Editar">
                             <input type="submit" name="btncancelar" class="w3-hover-red w3-hover-text-white" value="Cancel">
                             <button style="float: right;margin-top: 10px;" name="btndelete" class="btn btn-danger" type="submit">Delete Account</button>
                         </section>
+
                         <span><?php echo $error; ?></span>
                     </form> 
                 </div>

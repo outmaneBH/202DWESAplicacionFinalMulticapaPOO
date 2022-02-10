@@ -28,15 +28,14 @@ require_once $views[$_SESSION['paginaEnCurso']];
         <!-- Section: Social media -->
         <span style="color: white; font-size: 20px;font-family: cursive;opacity: 0.5 ;" id="demo3"></span>
         <section class="mb-1">
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: orange"  href="#!"  role="button"><i class="fa fa-rss" ></i></a>
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: green"  href="#!"  role="button"><i class="fas fa-atom"></i></a>
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;"  href="#!"  role="button"><img src="https://img.icons8.com/fluency/20/000000/set-as-resume.png"/></a>
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: red"  href="../index.html" target="_blank" role="button"><i class="fab fa-firefox-browser"></i></a>
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/outmaneBH/202DWESAplicacionFinalMulticapaPOO" target="_blank" role="button"><i class="fab fa-github"></i></a>
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"  role="button"><i class="far fa-comments"></i></a>
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="doc/index.html" target="_blank"  role="button"><i class="fas fa-file-pdf"></i></a>
-            
-            <button onclick="document.getElementById('idHer').style.display = 'block'" class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!" target="_blank" role="button"><i class="fas fa-code"></i></button>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: orange"  href="#!"  role="button"><i class="fa fa-rss" > Rss</i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: green"  href="#!"  role="button"><i class="fas fa-atom"> Atom</i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;"  href="#!"  role="button"><img src="https://img.icons8.com/fluency/20/000000/set-as-resume.png"/>C.V.</a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: red"  href="../index.html" target="_blank" role="button"><i class="fab fa-firefox-browser"> Mi Web</i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/outmaneBH/202DWESAplicacionFinalMulticapaPOO" target="_blank" role="button"><i class="fab fa-github"> GitHub</i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"  role="button"><i class="far fa-comments"> Opiniones</i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="doc/index.html" target="_blank"  role="button"><i class="fas fa-file-pdf"> Documentación</i></a>    
+            <button onclick="document.getElementById('idHer').style.display = 'block'" class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!" target="_blank" role="button"><i class="fas fa-code"> Tecnologias</i></button>
         </section>
           
     </div>

@@ -56,13 +56,14 @@
         </div>
         <div class="div1">
             <div class="botones">
-                <button type="button" class="btn btn-primary">Export</button>
-                <button type="button" class="btn btn-success">Import</button>
+                <button type="button" class="btn btn-primary" disabled>Export</button>
+                <button type="button" class="btn btn-success" disabled>Import</button>
             </div>
             <div class="buscar">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Buscar Usuario por descripcion" >
-                    <button class="btn btn-outline-secondary" type="button">Buscar</button>
+                    
+                    <input type="text" class="form-control"  placeholder="Buscar Usuario por descripcion" >
+                    <button class="btn btn-outline-secondary" disabled type="button">Buscar</button>
                 </div>
             </div>
             <table class="table table-striped">
@@ -87,8 +88,8 @@
                         <td><?php echo ""; ?></td>
                         <td></td>
                 
-                        <td><button type="submit" name="update"><img src="webroot/media/update.png"></button></td>
-                        <td><button type="submit" name="delete"><img src="webroot/media/delete.png"></button></td>
+                        <td><button type="button" name="update"><img src="webroot/media/update.png"></button></td>
+                        <td><button type="button" name="delete"><img src="webroot/media/delete.png"></button></td>
                   
                     </tr>
                 </form>

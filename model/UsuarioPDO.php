@@ -80,9 +80,10 @@ class UsuarioPDO implements interfaceUsuarioDB {
      * @param  String $CodUsuario
      * @return boolean true si ha modifacado el usuario con el codigo dado y el campo modificado $DescUsuario
      */
-    public static function modificarUsuario($oUsuario, $DescUsuario) {
+    public static function modificarUsuario($oUsuario, $DescUsuario,$img) {
         $oUsuario->set_descUsuario($DescUsuario);
-        $sql = "UPDATE T01_Usuario SET T01_DescUsuario='" . $DescUsuario . "' WHERE T01_CodUsuario='" . $oUsuario->get_codUsuario() . "'";
+        $oUsuario->set_imagenUsuario($img);
+        $sql = "UPDATE T01_Usuario SET T01_DescUsuario='" . $DescUsuario . "' ,T01_ImagenUsuario='".$img."' WHERE T01_CodUsuario='" . $oUsuario->get_codUsuario() . "'";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         
         return $oUsuario;

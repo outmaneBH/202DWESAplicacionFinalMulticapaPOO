@@ -74,17 +74,12 @@
                         </li>
                     </ul>
                     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" class="d-flex">
-                       <!-- <input type="submit" class="btn btn-primary" name="detalle" value="Detalle" type="button"/>-->
-
-                        <input name="logout" type="submit" class="btn btn-info"  value="LogOut <?php echo $aInicioPrivado['codUsuario']; ?> " type="button"/>
-
                         <div class="w3-dropdown-hover w3-right">
-                            <img src="webroot/media/icons8-usuario-masculino-en-círculo-48.png" alt="Avatar" style="width:38px;height: 38px;margin-top: 10px;" class="w3-circle">
-                            <div class="w3-dropdown-content w3-bar-block " style="right:0;margin-top: 20%;">
+                            <img src=" <?php echo  $aInicioPrivado['imagen']?'data:image/jpg;base64,'.$aInicioPrivado['imagen']:'webroot/media/user.png'; ?>" alt="alt" style="width:50px;height: 50px;" class="w3-circle ">
+                            <div class="w3-dropdown-content w3-bar-block " style="right:0;margin-top: 5%;">
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="editPerfil" type="submit">Editar Perfil </button>
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="deleteAccount" type="submit">Delete Account </button>
-<!--                                <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="logout" type="submit">LogOut <?php echo $aInicioPrivado['codUsuario']; ?> </button>-->
-
+                                <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="logout" type="submit">LogOut <?php echo $aInicioPrivado['codUsuario']; ?> </button>
                             </div>
                         </div>
                     </form>
@@ -113,8 +108,6 @@
         </div>
         <div style="height:100px;">
         </div>
-
-
     </body>
 </html>
 

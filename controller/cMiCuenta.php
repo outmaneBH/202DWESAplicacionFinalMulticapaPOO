@@ -39,7 +39,8 @@ $aMiCuenta = [
     'numConexiones' => $objectUsuario->get_numConexiones(),
     'fechaHoraUltimaConexion' => $objectUsuario->get_fechaHoraUltimaConexion(),
     'fechaHoraUltimaConexionAnterior' => $objectUsuario->get_fechaHoraUltimaConexionAnterior(),
-    'perfil' => $objectUsuario->get_perfil()
+    'perfil' => $objectUsuario->get_perfil(),
+    'imagen' => $objectUsuario->get_imagenUsuario(),
 ];
 /* Varible de entrada correcta inicializada a true */
 $entradaOK = true;
@@ -70,10 +71,19 @@ if (isset($_REQUEST['btnupdate'])) {
 if ($entradaOK) {
     //Tratamiento del formulario - Tratamiento de datos OK
     //Si los datos estan correctos
+    
+    /**
+     * Insertar la imagen en la base de datos 
+     */
+    $image = $_FILES['image']['tmp_name'];
+    if ($image != null) {
+        $img = base64_encode(file_get_contents($image));
+    }
+
     $oUsuario = $_SESSION['usuario202DWESAplicacionFinalMulticapaPOO']; //metemos el codigo de la session en un variable
 
-    UsuarioPDO::modificarUsuario($oUsuario, $_REQUEST['DescUsuario']); //hagamos la actualizacion y mostramos la pagina inicioPrivado
-    
+    UsuarioPDO::modificarUsuario($oUsuario, $_REQUEST['DescUsuario'], $img); //hagamos la actualizacion y mostramos la pagina inicioPrivado
+
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header('Location: index.php');

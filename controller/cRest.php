@@ -38,6 +38,7 @@ $aRespuestas = [
 $aRespuestas = [];
 $aResultadoDep = [];
 $errorDep = "";
+$errorDepIs="";
 /* comprobar si ha pulsado el button enviar */
 if (isset($_REQUEST['submitbtn'])) {
     //Para cada campo del formulario: Validamos la entrada y actuar en consecuencia
@@ -110,19 +111,20 @@ if ($entradaOK) {
     /**
      * Api rest del servidor de mi Compañero 
      */
-//    if ($_REQUEST['codDepartamento'] != "") {
-//        $oResultadoDep = REST::DepartamentoIsabel($_REQUEST['codDepartamento']); //almacenar el objeto de departamento    
-//        if ($oResultadoDep) {//comorobar que sea true no false ,y rellenar el array 
-//            $aResultadoDep = [
-//                'codigo' => $oResultadoDep->get_codDepartamento(),
-//                'descripcion' => $oResultadoDep->get_descDepartamento(),
-//                'fechaCrea' => $oResultadoDep->get_fechaCreacionDepartamento(),
-//                'volumen' => $oResultadoDep->get_volumenDeNegocio(),
-//                'fechaBaja' => $oResultadoDep->get_fechaBajaDepartamento()];
-//        } else {
-//            $errorDep = "<h5>No hay departamento Con este Codigo.</h5>";
-//        }
-//    }
+    if ($_REQUEST['codDepartamentoIsabel'] != "") {
+        $aResultadoDepIs=[];
+        $oResultadoDepIs = REST::DepartamentoIsabel($_REQUEST['codDepartamentoIsabel']); //almacenar el objeto de departamento    
+        if ($oResultadoDepIs) {//comorobar que sea true no false ,y rellenar el array 
+            $aResultadoDepIs = [
+                'codigo' => $oResultadoDepIs->get_codDepartamento(),
+                'descripcion' => $oResultadoDepIs->get_descDepartamento(),
+                'fechaCrea' => $oResultadoDepIs->get_fechaCreacionDepartamento(),
+                'volumen' => $oResultadoDepIs->get_volumenDeNegocio(),
+                'fechaBaja' => $oResultadoDepIs->get_fechaBajaDepartamento()];
+        } else {
+            $errorDepIs = "<h5>No hay departamento Con este Codigo en este Api.</h5>";
+        }
+    }
 }
 
 require_once $views['layout'];
