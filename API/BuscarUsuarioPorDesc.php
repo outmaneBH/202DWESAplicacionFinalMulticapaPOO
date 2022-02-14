@@ -22,7 +22,8 @@ $aUsuarios = [];
  */
 if (isset($_GET["descUsuario"])) {
 
-    $buscarUsuario = UsuarioPDO::buscarUsuarioPorDesc($_GET["descUsuario"]); //meter el objeto de departamento devuelto en un varibale 
+    $buscarUsuario = UsuarioPDO::buscarUsuarioPorDesc($_GET["descUsuario"]); //meter el objeto de usuario devuelto en un varibale 
+ 
 
     if ($buscarUsuario) {//comprobar si hay datos meterlos en un array
         $aUsuarios = [
@@ -44,15 +45,14 @@ if (isset($_GET["descUsuario"])) {
     //Cuando no se ha escrito el paramaetro de Codigo mostramos el error
     $aUsuarios = [
         'respuesta' => false,
-        'msg' => "No se Ha podido encontrar el usuario con el esta descripcion"];
+        'msg' => "No se Ha podido encontrar el usuario no hay parametros  "];
 }
-
+ 
 /**
  * alamcenamos el array devuelto en un fichero Json.Y mostramos  el fichero json
  */
 $myJSON = json_encode($aUsuarios);
 echo $myJSON;
 
-//http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=DIW
 ?>
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
     <head>
         <title>OB - Mto Usuarios</title>
@@ -60,8 +60,7 @@
                 <button type="button" class="btn btn-success" disabled>Import</button>
             </div>
             <div class="buscar">
-                <div class="input-group mb-3">
-                    
+                <div class="input-group mb-3">  
                     <input type="text" class="form-control"  placeholder="Buscar Usuario por descripcion" >
                     <button class="btn btn-outline-secondary" disabled type="button">Buscar</button>
                 </div>

@@ -22,12 +22,27 @@
             td,th{
                 text-align: center;
             }
+            .buscar{
+                border: 1px solid black;
+                height: 80px;
+                margin-bottom: 20px;
+                width: 50%;
+                position: relative;
+                left: 25%;
+                padding: 20px;
+            }
         </style>
     </head>
     <body>
         <div class="w3-bar w3-black  ">
             <p style="padding: 10px;font-size: 18px;font-weight: bold;font-family: cursive;" class="w3-center ">Last Web Application MVC POO</p>
         </div>
+        <?php
+        $selectValor = '';
+        if (isset($_REQUEST["select"])) {
+            $selectValor = $_REQUEST["select"];
+        }
+        ?>
         <div class="w3-bar w3-deep-purple  ">
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                 <button style="margin: 10px;font-weight: bold;float: left;" name="cancel" class="btn btn-primary" type="submit">Cancel</button>
@@ -35,18 +50,24 @@
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Mto Departamentos</p>
         </div>
         <div class="div1">
-            <form class="row g-3 w3-center">
-
-                <div class="col">
-                    <input type="text" class="form-control" name="searchTxt" value="<?php echo $CodigoDepartamento ? $CodigoDepartamento : null; ?>"" placeholder="Codigo de Departamento" >
-                </div>
-                <div class="col">
-                   
-
-                    <button type="submit" name="search" class="btn btn-success mb-3">Serach</button>
+            <form action="index.php" method="get" class="row g-3 w3-center">
+                <div class="botones">
                     <button type="button" name="add" class="btn btn-success mb-3" disabled>Add</button>
                     <button type="button" name="import" class="btn btn-info mb-3"disabled>Import</button>
                     <button type="button" name="export" class="btn btn-dark mb-3" disabled>Export</button>
+                </div>
+                <div class="buscar">
+                    <div class="input-group mb-2">  
+
+                        <input type="text" class="form-control"  value="<?php echo $CodigoDepartamento ? $CodigoDepartamento : null; ?>" name="searchTxt" placeholder="Buscar Deparatmento por Codigo" >
+
+                        <button class="btn btn-outline-secondary" type="submit" name="search" >Buscar</button>
+                        <select onchange="this.form.submit()" name="select" style="width: 20%;border: none;margin-left: 10px;padding: 5px;">
+                            <option <?php echo $selectValor == 'all' ? 'selected' : ''; ?> value="all">All</option>
+                            <option <?php echo $selectValor == 'alta' ? 'selected' : ''; ?> value="alta">Alta</option>
+                            <option <?php echo $selectValor == 'baja' ? 'selected' : ''; ?> value="baja">Baja</option>
+                        </select>
+                    </div>
                 </div>
             </form>
             <table class="table table-striped">
@@ -73,12 +94,12 @@
                                 <td><?php echo $aDepartamento['descripcion']; ?></td>
                                 <td><?php echo $aDepartamento['fechaCrea']; ?></td>
                                 <td><?php echo $aDepartamento['volumen']; ?></td>
-                                <td><?php echo $aDepartamento['fechaBaja'] ?? '-'; ?></td>
-                                <td><button type="button" name="more"><img src="webroot/media/more.png"></button></td>
-                                <td><button type="button" name="update"><img src="webroot/media/update.png"></button></td>
-                                <td><button type="button" name="delete"><img src="webroot/media/delete.png"></button></td>
-                                <td><button type="button" name="up"><img src="webroot/media/up.png"></button></td>
-                                <td><button type="button" name="down"><img src="webroot/media/down.png"></button></td>
+                                <td><?php echo $aDepartamento['fechaBaja'] != null ? date('d-m-Y  , H:i:s', $aDepartamento['fechaBaja']) : '-'; ?></td>
+<!--                                <td><button type="button" name="more" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/more.png"></button></td>-->
+                                <td><button type="button" name="update" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/update.png"></button></td>
+                                <td><button type="submit" name="delete" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/delete.png"></button></td>
+                                <td><button type="submit" name="up" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/up.png"></button></td>
+                                <td><button type="submit" name="down" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/down.png"></button></td>
                             </tr>
                         </form>
                         <?php
