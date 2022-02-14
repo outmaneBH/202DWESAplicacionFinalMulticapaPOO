@@ -161,6 +161,27 @@ class UsuarioPDO implements interfaceUsuarioDB {
         }
         return $updatePassword;
     }
+    
+    
+    public  static function buscarUsuarioPorDesc($descUsuario) {
+         $Usuario = null;
+
+        $sql = "SELECT * FROM T01_Usuario  where T01_DescUsuario  like  '%" . $descUsuario . "%'";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
+        $resultado = $resultadoConsulta->fetchObject();
+        if ($resultado != null) {
+
+            $Usuario = new Usuario($resultado->T01_CodUsuario,
+                    $resultado->T01_Password,
+                    $resultado->T01_DescUsuario,
+                    $resultado->T01_NumConexiones,
+                    $resultado->T01_FechaHoraUltimaConexion,
+                    time(),
+                    $resultado->T01_Perfil,
+                    $resultado->T01_ImagenUsuario);
+        }
+        return $Usuario;
+    }
 
 }
 
