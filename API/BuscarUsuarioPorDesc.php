@@ -24,7 +24,6 @@ if (isset($_GET["descUsuario"])) {
 
     $buscarUsuario = UsuarioPDO::buscarUsuarioPorDesc($_GET["descUsuario"]); //meter el objeto de usuario devuelto en un varibale 
  
-
     if ($buscarUsuario) {//comprobar si hay datos meterlos en un array
         $aUsuarios = [
             'respuesta' => true,
