@@ -61,8 +61,8 @@
             </div>
             <div class="buscar">
                 <div class="input-group mb-3">  
-                    <input type="text" class="form-control"  placeholder="Buscar Usuario por descripcion" >
-                    <button class="btn btn-outline-secondary" disabled type="button">Buscar</button>
+                    <input type="text" name="searchTxt" id="searchTxt" onkeypress="loadDoc();" class="form-control"  placeholder="Buscar Usuario por descripcion" >
+                    <button class="btn btn-outline-secondary" onclick="loadDoc();" name="search" type="button">Buscar</button>
                 </div>
             </div>
             <table class="table table-striped">
@@ -76,16 +76,11 @@
                     <th>Imagen Usuario</th>
                     <th style="text-align: center;" colspan="5">Crud</th>
                 </tr>
+<!--                
 
                 <form>
                     <tr>
-                        <td><?php echo " "; ?></td>
-                        <td><?php echo "" ?></td>
-                        <td><?php echo ""; ?></td>
-                        <td><?php echo ""; ?></td>
-                        <td><?php echo ""; ?></td>
-                        <td><?php echo ""; ?></td>
-                        <td></td>
+                    
                 
                         <td><button type="button" name="update"><img src="webroot/media/update.png"></button></td>
                         <td><button type="button" name="delete"><img src="webroot/media/delete.png"></button></td>
@@ -93,13 +88,13 @@
                     </tr>
                 </form>
 
-                <tr><td  colspan="9">
+               <tr><td  colspan="9">
                         <div class="alert alert-info">
                             <strong>info!</strong> No hay Resultados.
                         </div>
-                    </td></tr>
+                    </td></tr>-->
 
             </table>
 
-
         </div>
+        <script src="webroot/js/ajax.js"></script>

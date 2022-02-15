@@ -46,7 +46,7 @@ require_once $views[$_SESSION['paginaEnCurso']];
         Copyrights © 2021-2022 
         OUTMANE BOUHOU
         . All rights reserved.
-        <p>Ultima actualizacion : 10 / 02 / 2022 , version 2 </p>
+        <p>Ultima actualizacion : 15 / 02 / 2022 , version 2 </p>
     </div>
     <!-- Copyright -->
 </footer>

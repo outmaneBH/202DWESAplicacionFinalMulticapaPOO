@@ -1,5 +1,5 @@
 <?php
-
+//https://outmane.local/API/BuscarUsuarioPorDesc.php?descUsuario=outmane
 /**
  * Llamar a los modelos porque no tenemos el index que controla eso de modelos 
  */
@@ -23,18 +23,21 @@ $aUsuarios = [];
 if (isset($_GET["descUsuario"])) {
 
     $buscarUsuario = UsuarioPDO::buscarUsuarioPorDesc($_GET["descUsuario"]); //meter el objeto de usuario devuelto en un varibale 
- 
+   
     if ($buscarUsuario) {//comprobar si hay datos meterlos en un array
-        $aUsuarios = [
-            'respuesta' => true,
-            'codUsuario' => $buscarUsuario->get_codUsuario(),
-            'descUsuario' => $buscarUsuario->get_descUsuario(),
-            'numConexiones' => $buscarUsuario->get_numConexiones(),
-            'fechaHoraUltimaConexion' => $buscarUsuario->get_fechaHoraUltimaConexion(),
-            'fechaHoraUltimaConexionAnterior' => $buscarUsuario->get_fechaHoraUltimaConexionAnterior(),
-            'perfil' => $buscarUsuario->get_perfil(),
-            'imagen' => $buscarUsuario->get_imagenUsuario()
-        ];
+        $i = 0;
+        foreach ($buscarUsuario as $resultado) {
+
+            $aUsuarios[$i]['codUsuario'] = $resultado->get_codUsuario();
+            $aUsuarios[$i]['descUsuario'] = $resultado->get_descUsuario();
+            $aUsuarios[$i]['numConexiones'] = $resultado->get_numConexiones();
+            $aUsuarios[$i]['fechaHoraUltimaConexion'] = $resultado->get_fechaHoraUltimaConexion();
+            $aUsuarios[$i]['fechaHoraUltimaConexionAnterior'] = $resultado->get_fechaHoraUltimaConexionAnterior();
+            $aUsuarios[$i]['perfil'] = $resultado->get_perfil();
+            $aUsuarios[$i]['imagen'] =base64_encode($resultado->get_imagenUsuario());
+
+            $i++;
+        }
     } else {//meter el error devuelto desde el servidor
         $aUsuarios = [
             'respuesta' => false,
@@ -46,12 +49,11 @@ if (isset($_GET["descUsuario"])) {
         'respuesta' => false,
         'msg' => "No se Ha podido encontrar el usuario no hay parametros  "];
 }
- 
+
 /**
  * alamcenamos el array devuelto en un fichero Json.Y mostramos  el fichero json
  */
 $myJSON = json_encode($aUsuarios);
 echo $myJSON;
-
 ?>
 
