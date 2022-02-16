@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>OB - Mto Usuarios</title>
@@ -41,7 +41,7 @@
                 left: 25%;
                 padding: 20px;
             }
-           
+
         </style>
     </head>
     <body>
@@ -61,38 +61,43 @@
             </div>
             <div class="buscar">
                 <div class="input-group mb-3">  
-                    <input type="text" name="searchTxt" id="searchTxt" onkeypress="loadDoc();" class="form-control"  placeholder="Buscar Usuario por descripcion" >
+                    <input type="text" name="searchTxt" id="searchTxt" onkeydown="loadDoc();" class="form-control"  placeholder="Buscar Usuario por descripcion" >
                     <button class="btn btn-outline-secondary" onclick="loadDoc();" name="search" type="button">Buscar</button>
                 </div>
             </div>
             <table class="table table-striped">
-                <tr>
-                    <th>Codigo Usuario</th>
-                    <th>Password</th>
-                    <th>Descripcion Usuario</th>
-                    <th>Num. Conexiones</th>
-                    <th>Fecha Hora Ultima Conexion</th>
-                    <th>Perfil</th>
-                    <th>Imagen Usuario</th>
-                    <th style="text-align: center;" colspan="5">Crud</th>
-                </tr>
-<!--                
-
-                <form>
+                <thead>
                     <tr>
-                    
-                
-                        <td><button type="button" name="update"><img src="webroot/media/update.png"></button></td>
-                        <td><button type="button" name="delete"><img src="webroot/media/delete.png"></button></td>
-                  
+                        <th>Codigo Usuario</th>
+                        <th>Descripcion Usuario</th>
+                        <th>Num. Conexiones</th>
+                        <th>Fecha Hora Ultima Conexion</th>
+                        <th>fechaHoraUltimaConexionAnterior</th>
+                        <th>Perfil</th>
+                        <th>Imagen Usuario</th>
+                        <th style="text-align: center;" colspan="5">Crud</th>
                     </tr>
-                </form>
-
-               <tr><td  colspan="9">
-                        <div class="alert alert-info">
-                            <strong>info!</strong> No hay Resultados.
-                        </div>
-                    </td></tr>-->
+                </thead>
+                <tbody id="tbody">
+                    
+                </tbody>
+                <!--                
+                
+                                <form>
+                                    <tr>
+                                    
+                                
+                                        <td><button type="button" name="update"><img src="webroot/media/update.png"></button></td>
+                                        <td><button type="button" name="delete"><img src="webroot/media/delete.png"></button></td>
+                                  
+                                    </tr>
+                                </form>
+                
+                               <tr><td  colspan="9">
+                                        <div class="alert alert-info">
+                                            <strong>info!</strong> No hay Resultados.
+                                        </div>
+                                    </td></tr>-->
 
             </table>
 
