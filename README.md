@@ -14,8 +14,11 @@ by :OUTMANE BOUHOU
 - Usar Api Rest De compañero.
 - Usar Api Rest De Propio.
 - Control de Errores de api Rest.
-- Añadido Controlador de mtoDeparatamento y su vista.
+- Añadido Controlador de mtoDeparatamento ,mtoUsuarios y sus vistas.
 - Buscar departamento con Codigo.
+- Busqueda compleja de Departamentos ( All , que estan en Baja y Alta);
+- Borrar , Alta logica y Baja logica .
+- Buscar Usuario con descripcion Usando Ajax.
 
 ## Entorno  De desarollo
  http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO
@@ -24,4 +27,4 @@ by :OUTMANE BOUHOU
  http://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO
 
 ### Ultima actualizacion :
-* 10/02/2022
+* 17/02/2022

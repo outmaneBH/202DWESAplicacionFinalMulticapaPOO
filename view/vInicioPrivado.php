@@ -9,7 +9,7 @@
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
             body{
-                background-image: url(webroot/media/sky2.jpg);
+                background-image: url(webroot/media/night.jpg);
                 background-repeat: no-repeat;
                 background-size:  cover;
             }

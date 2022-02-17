@@ -1,6 +1,6 @@
 <?php
 
-/* Volvernos a inicioPrivado cuando se pulsaado home */
+/* Volvernos a inicioPrivado cuando se pulsaado cancel */
 if (isset($_REQUEST['cancel'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
 
@@ -9,14 +9,17 @@ if (isset($_REQUEST['cancel'])) {
     exit;
 }
 
+/* rehabilitar al depatamento seleccionado */
 if (isset($_REQUEST['down'])) {
     DepartamentoPDO::bajaLogicaDepartamento($_REQUEST['down']);
 }
 
+/* Dar alta depatamento seleccionado */
 if (isset($_REQUEST['up'])) {
     DepartamentoPDO::altaLogicaDepartamento($_REQUEST['up']);
 }
 
+/* Borrar depatamento si el usuario ha pulsado delete departamento */
 if (isset($_REQUEST['delete'])) {
     DepartamentoPDO::deleteDepartamento($_REQUEST['delete']);
 }
@@ -32,6 +35,7 @@ $aRespuestas = [
 ];
 $aDepartamentos = [];
 
+/* meter el valor de select en variable respuesta*/
 if (isset($_REQUEST["select"])) {
     $aRespuestas["select"] = $_REQUEST["select"];
 }

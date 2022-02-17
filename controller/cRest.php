@@ -39,6 +39,7 @@ $aRespuestas = [];
 $aResultadoDep = [];
 $errorDep = "";
 $errorDepIs="";
+$errorProv="";
 /* comprobar si ha pulsado el button enviar */
 if (isset($_REQUEST['submitbtn'])) {
     //Para cada campo del formulario: Validamos la entrada y actuar en consecuencia
@@ -89,7 +90,7 @@ if ($entradaOK) {
                 "max" => $oResultadoProv->getTemperaturaMax()
             ];
         } else {
-            $error = "<h5>No hay Provincias Con este Codigo.</h5>";
+            $errorProv = "<h5>No hay Provincias Con este Codigo.</h5>";
         }
     }
     /**

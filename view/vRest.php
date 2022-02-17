@@ -8,6 +8,7 @@
         <script src="webroot/js/bootstrap.bundle.min.js"></script>
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
+            
             table{
                 width: 100%;
                 height: 40px;
@@ -117,9 +118,7 @@
                 </div>
 
             </div>
-
             <hr>
-
             <h1 id="srt"><?php echo $error; ?></h1>
 
         </form> 
@@ -129,9 +128,8 @@
 
             <!-- Tabla de rest de Aroa -->
             <?php
-            echo $error;
+            echo $errorProv;
             if (isset($oResultadoProv) && $oResultadoProv != null) {
-
                 if ($aResultado) {
                     ?>
                     <h4>Provincia <?php echo $aResultado['name']; ?> :</h4>
@@ -153,9 +151,7 @@
                             <td><?php echo $aResultado['max']; ?></td>
                         </tr>
                         <?php
-                    } else {
-                        echo '<h2>No hay resultados sobre provincia   !!</h2>';
-                    }
+                    } 
                 }
                 ?>
             </table>

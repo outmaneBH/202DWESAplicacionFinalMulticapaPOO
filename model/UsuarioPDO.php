@@ -159,7 +159,13 @@ class UsuarioPDO implements interfaceUsuarioDB {
         }
         return $updatePassword;
     }
-
+ /**
+  * seleccionamos desde la base de datos todos los usuarios que tienen la desc 
+  * como el parametro dado a la funcion y rellenar el array de usuarios
+  * 
+  * @param String $descUsuario
+  * @return Array de objetos de Usuario
+  */
     public static function buscarUsuarioPorDesc($descUsuario=null) {
 
         $aUsuarios = [];

@@ -86,13 +86,20 @@ class REST {
      * Isabel https://daw204.ieslossauces.es/AplicacionFinal/api/buscarDepartamentoPorCodigo.php?codDepartamento=diw
      */
     
+    /**
+     * Esta funcion de compañero que recibe un codigo de deparatamento 
+     * y devuelve un objeto del modelo Departamento sacado desde el url
+     * APi
+     * 
+     * @param String $codDepartamentoIsabel
+     * @return object Departamento
+     */
     public static function DepartamentoIsabel($codDepartamentoIsabel) {
         
         $oDepartamentoIsabel = null;
         $jsonFile = @file_get_contents("https://daw204.ieslossauces.es/AplicacionFinal/api/buscarDepartamentoPorCodigo.php?codDepartamento=$codDepartamentoIsabel");
         $departamento = json_decode($jsonFile, true);
-
-        if (!$departamento["error"]) {
+        if (!$departamento) {
             $oDepartamentoIsabel = new Departamento(
                     $departamento['codDepartamento'],
                     $departamento['descDepartamento'],

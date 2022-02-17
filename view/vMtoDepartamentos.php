@@ -8,8 +8,15 @@
         <script src="webroot/js/bootstrap.bundle.min.js"></script>
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
+            body{
+                background-image: url(webroot/media/night.jpg);
+                background-repeat: no-repeat;
+                background-size:  cover;
+            }
             .div1{
                 padding: 30px;
+                 background: rgb(1,1,1,0.8);
+                 height: 100vh;
             }
             img{
                 width: 30px;
@@ -21,15 +28,19 @@
             }
             td,th{
                 text-align: center;
+                color: white;
             }
             .buscar{
-                border: 1px solid black;
+                border: 1px solid white;
                 height: 80px;
                 margin-bottom: 20px;
                 width: 50%;
                 position: relative;
                 left: 25%;
                 padding: 20px;
+            }
+            td{
+                font-weight: bold;
             }
         </style>
     </head>
@@ -61,7 +72,7 @@
 
                         <input type="text" class="form-control"  value="<?php echo $CodigoDepartamento ? $CodigoDepartamento : null; ?>" name="searchTxt" placeholder="Buscar Deparatmento por Codigo" >
 
-                        <button class="btn btn-outline-secondary" type="submit" name="search" >Buscar</button>
+                        <button class="btn btn-outline-primary" type="submit" name="search" >Buscar</button>
                         <select onchange="this.form.submit()" name="select" style="width: 20%;border: none;margin-left: 10px;padding: 5px;">
                             <option <?php echo $selectValor == 'all' ? 'selected' : ''; ?> value="all">All</option>
                             <option <?php echo $selectValor == 'alta' ? 'selected' : ''; ?> value="alta">Alta</option>

@@ -44,7 +44,7 @@ class DepartamentoPDO {
      * @return array Departamento
      */
     public static function buscaDepartamentosPorDesc($validDepartamento = null, $select) {
-        $query='';
+        $query = '';
         switch ($select) {
             case "all":$query = '';
                 break;
@@ -73,25 +73,41 @@ class DepartamentoPDO {
 
         return $aDepartamento;
     }
-    
-    public static function bajaLogicaDepartamento($codDepartamento){
+
+    /**
+     * Dar a la funcion el codigo de departamento dar al departamento una
+     * baja logica , lo cambiamos en la base de datos
+     * 
+     * @param Int $codDepartamento
+     */
+    public static function bajaLogicaDepartamento($codDepartamento) {
         $ofecha = new DateTime();
         $time = $ofecha->getTimestamp();
-        $sql2 = "UPDATE T02_Departamento SET T02_FechaBajaDepartamento=" . $time . " WHERE T02_CodDepartamento='" .$codDepartamento. "'";
+        $sql2 = "UPDATE T02_Departamento SET T02_FechaBajaDepartamento=" . $time . " WHERE T02_CodDepartamento='" . $codDepartamento . "'";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
-        
     }
-    public static function altaLogicaDepartamento($codDepartamento){  
-        $sql2 = "UPDATE T02_Departamento SET T02_FechaBajaDepartamento=null WHERE T02_CodDepartamento='" .$codDepartamento. "'";
-        $resultadoConsulta = DBPDO::ejecutaConsulta($sql2); 
+
+    /**
+     * Dar a la funcion el codigo de departamento , dar al departamento una
+     * Alta logica , lo cambiamos en la base de datos
+     * 
+     * @param Int $codDepartamento
+     */
+    public static function altaLogicaDepartamento($codDepartamento) {
+        $sql2 = "UPDATE T02_Departamento SET T02_FechaBajaDepartamento=null WHERE T02_CodDepartamento='" . $codDepartamento . "'";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
     }
-    
-    public static function deleteDepartamento($codDepartamento){  
-        $sql2 = "DELETE FROM T02_Departamento  WHERE T02_CodDepartamento='" .$codDepartamento. "'";
-        $resultadoConsulta = DBPDO::ejecutaConsulta($sql2); 
+
+    /**
+     * Dar a la funcion el codigo de departamento 
+     * para borrar este dipartamento en la base de datos
+     * 
+     * @param Int $codDepartamento
+     */
+    public static function deleteDepartamento($codDepartamento) {
+        $sql2 = "DELETE FROM T02_Departamento  WHERE T02_CodDepartamento='" . $codDepartamento . "'";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
     }
-    
-    
 
 }
 ?>

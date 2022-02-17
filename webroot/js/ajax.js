@@ -1,7 +1,6 @@
 var input = document.getElementById("searchTxt");
 var table = document.getElementsByTagName("tbody");
-
-
+loadDoc();
 function loadDoc() {
 
     const xhttp = new XMLHttpRequest();
@@ -9,35 +8,52 @@ function loadDoc() {
 
         let json = JSON.parse(this.responseText);
         table[0].innerHTML = "";
-
+        console.log(json);
         for (let usuario of json) {
             var newTr = document.createElement("tr");
             for (let campo in usuario) {
-                var newTd = document.createElement("td");
-                if (campo == "T01_ImagenUsuario")
-                {
-                    let imagen = document.createElement("img");
-                    imagen.setAttribute("class", "imagenUsuario");
-                  
-                    if (usuario[campo] !== null) {
-                       imagen.setAttribute("src", "data:image/jpg;base64," + usuario[campo]);
-                    } else {
-                        imagen.setAttribute("src", "../webroot/media/user.png");
-                    }
-                    newTd.appendChild(imagen);   
-                }
-
-                var textoTd = document.createTextNode(usuario[campo]);
-                newTd.appendChild(textoTd);
-                newTr.appendChild(newTd);
+                CreateTr(campo, usuario[campo], newTr); //Añadir
             }
+            createbtn(newTr);
             table[0].appendChild(newTr);
         }
 
-
     }
-    xhttp.open("GET", "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=" + input.value, true);
+ 
+    xhttp.open("GET", "https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=" + input.value, true);
     xhttp.send();
 }
 
+function CreateTr(campo, valor, newTr)
+{
+    var newTD = document.createElement("td");
+    switch (campo) {
+        case "imagen":
+            newTD.innerHTML = valor ? "<img src='data:image/png;base64," + valor + " alt='imagen de usuario'/>" : "-";
+            break;
+        case "fechaHoraUltimaConexion":
+            let Time = new Date(parseInt(valor) * 1000);
+            newTD.innerHTML = valor ? Time.toUTCString() : '-';
+            break;
+        case "numConexiones":
+            newTD.innerHTML = valor==0 ? '-' : valor;
+            break;
+
+        default:
+            newTD.innerHTML = valor;
+
+            break;
+    }
+
+    newTr.appendChild(newTD);
+}
+
+function createbtn(newTr) {
+    var newTD = document.createElement("td");
+    newTD.innerHTML = "<button type='button' name='update'><img  src='webroot/media/update.png'></button>";
+    newTr.appendChild(newTD);
+    var newTD = document.createElement("td");
+    newTD.innerHTML = "<button type='button' name='delete'><img  src='webroot/media/delete.png'></button>";
+    newTr.appendChild(newTD);
+}
 
