@@ -48,6 +48,6 @@ if (isset($_GET["codDepartamento"])) {
 $myJSON = json_encode($aDepartamento);
 echo $myJSON ;
 
-//http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=DIW
+//cBuscarDepPorCodigo.php?codDepartamento=DIW
 ?>
 

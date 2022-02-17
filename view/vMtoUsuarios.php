@@ -8,8 +8,15 @@
         <script src="webroot/js/bootstrap.bundle.min.js"></script>
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
+            body{
+                background-image: url(webroot/media/night.jpg);
+                background-repeat: no-repeat;
+                background-size:  cover;
+            }
             .div1{
                 padding: 30px;
+                background: rgb(1,1,1,0.8);
+                 height: auto;
             }
             img{
                 width: 30px;
@@ -21,6 +28,7 @@
             }
             td,th{
                 text-align: center;
+                color: white;
             }
             .botones{
                 display: flex;
@@ -33,7 +41,7 @@
 
             }
             .buscar{
-                border: 1px solid black;
+                border: 1px solid white;
                 height: 80px;
                 margin-bottom: 20px;
                 width: 50%;
@@ -41,7 +49,17 @@
                 left: 25%;
                 padding: 20px;
             }
+            td img:nth-of-type(1){
+                width: 30px;
+            }
+            button img{
+                width: 30px;
+            }
+            td{
+                font-weight: bold;
+            }
            
+
         </style>
     </head>
     <body>
@@ -60,47 +78,30 @@
                 <button type="button" class="btn btn-success" disabled>Import</button>
             </div>
             <div class="buscar">
-                <div class="input-group mb-3">
-                    
-                    <input type="text" class="form-control"  placeholder="Buscar Usuario por descripcion" >
-                    <button class="btn btn-outline-secondary" disabled type="button">Buscar</button>
+                <div class="input-group mb-3">  
+                    <input type="text" name="searchTxt" id="searchTxt" onKeyUp="loadDoc();" class="form-control"  placeholder="Buscar Usuario por descripcion" >
+                    <button class="btn btn-outline-primary" onclick="loadDoc();" name="search" type="button">Buscar</button>
                 </div>
             </div>
-            <table class="table table-striped">
-                <tr>
-                    <th>Codigo Usuario</th>
-                    <th>Password</th>
-                    <th>Descripcion Usuario</th>
-                    <th>Num. Conexiones</th>
-                    <th>Fecha Hora Ultima Conexion</th>
-                    <th>Perfil</th>
-                    <th>Imagen Usuario</th>
-                    <th style="text-align: center;" colspan="5">Crud</th>
-                </tr>
-
-                <form>
+            <table style="margin-bottom: 200px;" class="table table-striped">
+                <thead>
                     <tr>
-                        <td><?php echo " "; ?></td>
-                        <td><?php echo "" ?></td>
-                        <td><?php echo ""; ?></td>
-                        <td><?php echo ""; ?></td>
-                        <td><?php echo ""; ?></td>
-                        <td><?php echo ""; ?></td>
-                        <td></td>
-                
-                        <td><button type="button" name="update"><img src="webroot/media/update.png"></button></td>
-                        <td><button type="button" name="delete"><img src="webroot/media/delete.png"></button></td>
-                  
+                        <th>Codigo Usuario</th>
+                        <th>Descripcion Usuario</th>
+                        <th>Num. Conexiones</th>
+                        <th>Fecha Hora Ultima Conexion</th>
+<!--                        <th>fechaHoraUltimaConexionAnterior</th>-->
+                        <th>Perfil</th>
+                        <th>Imagen Usuario</th>
+                        <th style="text-align: center;" colspan="4">Crud</th>
                     </tr>
-                </form>
-
-                <tr><td  colspan="9">
-                        <div class="alert alert-info">
-                            <strong>info!</strong> No hay Resultados.
-                        </div>
-                    </td></tr>
+                </thead>
+                <tbody id="tbody" >
+                    
+                </tbody>
+                
 
             </table>
 
-
         </div>
+        <script src="webroot/js/ajax.js"></script>

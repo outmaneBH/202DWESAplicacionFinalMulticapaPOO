@@ -8,8 +8,8 @@
         <script src="webroot/js/bootstrap.bundle.min.js"></script>
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
-            body{
-                background-image: url(webroot/media/sky2.jpg);
+           body{
+                background-image: url(webroot/media/night.jpg);
                 background-repeat: no-repeat;
                 background-size:  cover;
             }
@@ -112,7 +112,7 @@
                 <div id="bg" class="p-2 flex-fill bg-dark">
                     <form  enctype="multipart/form-data" id="form1" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                         <span>Editar Perfil</span>
-                        <span> <img src="data:image/jpg;base64, <?php echo $aMiCuenta['imagen'] ?>" class="w3-bar-item w3-circle" style="width:90px;height: 90px"></span>
+                        <span> <img src=" <?php echo  $aMiCuenta['imagen']?'data:image/jpg;base64,'.$aMiCuenta['imagen']:'webroot/media/user.png'; ?>" class="w3-bar-item w3-circle" style="width:90px;height: 90px"></span>
                         <table class="w3-table w3-bordered ">
                             <tr>
                                 <td>DescUsuario</td>

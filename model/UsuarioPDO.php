@@ -80,12 +80,12 @@ class UsuarioPDO implements interfaceUsuarioDB {
      * @param  String $CodUsuario
      * @return boolean true si ha modifacado el usuario con el codigo dado y el campo modificado $DescUsuario
      */
-    public static function modificarUsuario($oUsuario, $DescUsuario,$img) {
+    public static function modificarUsuario($oUsuario, $DescUsuario, $img) {
         $oUsuario->set_descUsuario($DescUsuario);
         $oUsuario->set_imagenUsuario($img);
-        $sql = "UPDATE T01_Usuario SET T01_DescUsuario='" . $DescUsuario . "' ,T01_ImagenUsuario='".$img."' WHERE T01_CodUsuario='" . $oUsuario->get_codUsuario() . "'";
+        $sql = "UPDATE T01_Usuario SET T01_DescUsuario='" . $DescUsuario . "' ,T01_ImagenUsuario='" . $img . "' WHERE T01_CodUsuario='" . $oUsuario->get_codUsuario() . "'";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
-        
+
         return $oUsuario;
     }
 
@@ -123,7 +123,6 @@ class UsuarioPDO implements interfaceUsuarioDB {
         return $CodNoExiste;
     }
 
-    
     /**
      * La funcion registra la ultima Conexcion del usario pasdo como parametro
      * Y cambia los valores del Objeto
@@ -142,15 +141,14 @@ class UsuarioPDO implements interfaceUsuarioDB {
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
         return $oUsuario;
     }
-    
-    
-/**
- * La funcion cambia el password del usuario volviendo true o false depende si ha modificado
- * 
- * @param String $codUsuario
- * @param String $password
- * @return boolean
- */
+
+    /**
+     * La funcion cambia el password del usuario volviendo true o false depende si ha modificado
+     * 
+     * @param String $codUsuario
+     * @param String $password
+     * @return boolean
+     */
     public static function cambiarPassword($codUsuario, $password) {
         $updatePassword = false;
         $sql = "UPDATE T01_Usuario SET T01_Password=sha2('" . $codUsuario . $password . "',256) WHERE T01_CodUsuario='" . $codUsuario . "'";
@@ -161,7 +159,36 @@ class UsuarioPDO implements interfaceUsuarioDB {
         }
         return $updatePassword;
     }
+ /**
+  * seleccionamos desde la base de datos todos los usuarios que tienen la desc 
+  * como el parametro dado a la funcion y rellenar el array de usuarios
+  * 
+  * @param String $descUsuario
+  * @return Array de objetos de Usuario
+  */
+    public static function buscarUsuarioPorDesc($descUsuario=null) {
 
+        $aUsuarios = [];
+        $sql = "SELECT * FROM T01_Usuario  WHERE T01_DescUsuario  like  '%" . $descUsuario . "%'";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
+        $resultados = $resultadoConsulta->fetchAll();
+     
+        if ($resultados) {
+            $i = 0;
+            foreach ($resultados as $resultado) {
+                $aUsuarios[$i]= new Usuario($resultado["T01_CodUsuario"],
+                        $resultado["T01_Password"],
+                        $resultado["T01_DescUsuario"],
+                        $resultado["T01_NumConexiones"],
+                        $resultado["T01_FechaHoraUltimaConexion"],
+                        time(),
+                        $resultado["T01_Perfil"],
+                        $resultado["T01_ImagenUsuario"]);
+                $i++;
+            }
+        }
+        return $aUsuarios;
+    }
 }
 
 ?>

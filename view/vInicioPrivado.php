@@ -9,7 +9,7 @@
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
             body{
-                background-image: url(webroot/media/sky2.jpg);
+                background-image: url(webroot/media/night.jpg);
                 background-repeat: no-repeat;
                 background-size:  cover;
             }
@@ -74,9 +74,9 @@
                         </li>
                     </ul>
                     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" class="d-flex">
-                        <div class="w3-dropdown-hover w3-right">
+                        <div class="w3-dropdown-hover w3-right w3-transparent">
                             <img src=" <?php echo  $aInicioPrivado['imagen']?'data:image/jpg;base64,'.$aInicioPrivado['imagen']:'webroot/media/user.png'; ?>" alt="alt" style="width:50px;height: 50px;" class="w3-circle ">
-                            <div class="w3-dropdown-content w3-bar-block " style="right:0;margin-top: 5%;">
+                            <div class="w3-dropdown-content w3-bar-block " style="right:0;margin-top: 2%;">
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="editPerfil" type="submit">Editar Perfil </button>
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="deleteAccount" type="submit">Delete Account </button>
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="logout" type="submit">LogOut <?php echo $aInicioPrivado['codUsuario']; ?> </button>

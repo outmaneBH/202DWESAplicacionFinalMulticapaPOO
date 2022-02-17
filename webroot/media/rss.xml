@@ -1,0 +1,30 @@
+<rss version="2.0">
+    <channel>
+        <language>es-ES</language>
+        <title>Aplicación Final - OB</title>
+        <link>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/</link>
+        <description>
+            FP Superior Desarrollo de Aplicaciones Web - Aplicación Final 2021/2022
+        </description>
+        <category>Web development</category>
+        <copyright>Outmane Bouhou</copyright>
+        <item>
+            <title>v1.0</title>
+            <link>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/</link>
+            <description>
+                Primera versión de la aplicación. Con control de acceso, registro y borrado de usuarios, y uso de API REST.
+            </description>
+            <category>Version</category>
+            <pubDate>Fri, 4 Jan 2022 </pubDate>
+        </item>
+        <item>
+            <title>v2.0</title>
+            <link>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/</link>
+            <description>
+                Segunda versión de la aplicación. Se ha añadido la funcionalidad de mantenimiento de departamentos (alta, modificación y elimincación), y otro API REST.
+            </description>
+            <category>Version</category>
+            <pubDate>Fri 11 Feb 2022 </pubDate>
+        </item>
+    </channel>
+</rss>
