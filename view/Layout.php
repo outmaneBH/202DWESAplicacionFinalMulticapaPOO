@@ -30,7 +30,7 @@ require_once $views[$_SESSION['paginaEnCurso']];
         <section class="mb-1">
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: orange"  href="#!"  role="button"><i class="fa fa-rss" > Rss</i></a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: green"  href="#!"  role="button"><i class="fas fa-atom"> Atom</i></a>
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;"  href="#!"  role="button"><img src="https://img.icons8.com/fluency/20/000000/set-as-resume.png"/>C.V.</a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;"  href="webroot/media/pdf/C.V_Outmane_Bouhou.pdf" target="_blank" role="button"><img src="https://img.icons8.com/fluency/20/000000/set-as-resume.png"/>C.V.</a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: red"  href="../index.html" target="_blank" role="button"><i class="fab fa-firefox-browser"> Mi Web</i></a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/outmaneBH/202DWESAplicacionFinalMulticapaPOO" target="_blank" role="button"><i class="fab fa-github"> GitHub</i></a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"  role="button"><i class="far fa-comments"> Opiniones</i></a>

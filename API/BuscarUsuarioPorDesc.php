@@ -34,7 +34,7 @@ if (isset($_GET["descUsuario"])) {
             $aUsuarios[$i]['fechaHoraUltimaConexion'] = $resultado->get_fechaHoraUltimaConexion();
             $aUsuarios[$i]['fechaHoraUltimaConexionAnterior'] = $resultado->get_fechaHoraUltimaConexionAnterior();
             $aUsuarios[$i]['perfil'] = $resultado->get_perfil();
-            $aUsuarios[$i]['imagen'] =$resultado->get_imagenUsuario();
+            $aUsuarios[$i]['imagen'] = $resultado->get_imagenUsuario();
 
             $i++;
         }

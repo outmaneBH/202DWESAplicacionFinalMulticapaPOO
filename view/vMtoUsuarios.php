@@ -65,7 +65,7 @@
                     <button class="btn btn-outline-secondary" onclick="loadDoc();" name="search" type="button">Buscar</button>
                 </div>
             </div>
-            <table class="table table-striped">
+            <table style="margin-bottom: 200px;" class="table table-striped">
                 <thead>
                     <tr>
                         <th>Codigo Usuario</th>
@@ -78,7 +78,7 @@
                         <th style="text-align: center;" colspan="5">Crud</th>
                     </tr>
                 </thead>
-                <tbody id="tbody">
+                <tbody id="tbody" >
                     
                 </tbody>
                 <!--                

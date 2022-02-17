@@ -18,10 +18,13 @@ function loadDoc() {
                 {
                     let imagen = document.createElement("img");
                     imagen.setAttribute("class", "imagenUsuario");
+                  
                     if (usuario[campo] !== null) {
-                        imagen.setAttribute("src", "data:image/jpg;base64,"+ Base64.decode(busuario[campo]));
+                       imagen.setAttribute("src", "data:image/jpg;base64," + usuario[campo]);
+                    } else {
+                        imagen.setAttribute("src", "../webroot/media/user.png");
                     }
-                    newTd.appendChild(imagen);
+                    newTd.appendChild(imagen);   
                 }
 
                 var textoTd = document.createTextNode(usuario[campo]);
