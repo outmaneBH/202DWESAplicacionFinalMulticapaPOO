@@ -29,7 +29,7 @@ function CreateTr(campo, valor, newTr)
     var newTD = document.createElement("td");
     switch (campo) {
         case "imagen":
-            newTD.innerHTML = valor ? "<img src='data:image/png;base64," + valor + " alt='imagen de usuario'/>" : "-";
+            newTD.innerHTML = valor ? "<img src='data:image/png;base64," + valor + "' alt='imagen de usuario'/>" : "-";
             break;
         case "fechaHoraUltimaConexion":
             let Time = new Date(parseInt(valor) * 1000);
