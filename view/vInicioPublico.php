@@ -159,10 +159,11 @@
                 width: 80%;
                 height: 300px;
             }
-            .w3-ul{
-                background: #F5F2E7;  
+           
+            .w3-ul img{
+                margin-top: 30px;
+                 
             }
-
 
         </style>
     </head>
@@ -209,73 +210,73 @@
 
             <div class="w3-row-padding w3-padding-16">
                 <div class="w3-quarter w3-margin-bottom">
-                    <ul class="w3-ul  w3-center w3-hover-shadow">
+                    <ul class="w3-ul  w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">Estandar deDesarollo</li>
                         <img  src="webroot/media/pdf/estander.PNG" alt="Estandar"  >
-                        <li class="w3-light-grey w3-padding-12">
+                        <li class=" w3-padding-12">
                             <button onclick="document.getElementById('id00').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button> 
                         </li>
                     </ul>
                 </div>
                 <div class="w3-quarter w3-margin-bottom">
-                    <ul class="w3-ul  w3-center w3-hover-shadow">
+                    <ul class="w3-ul  w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">Arbol deNavegacion</li>
                         <img src="webroot/media/pdf/arbol.PNG" alt="Arbol de Navegacion"  >
-                        <li class="w3-light-grey w3-padding-12">
+                        <li class= w3-padding-12">
                             <button onclick="document.getElementById('id01').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
                         </li>
                     </ul>
                 </div>
                 <div class="w3-quarter w3-margin-bottom">
-                    <ul class="w3-ul w3-center w3-hover-shadow">
+                    <ul class="w3-ul w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">Catalogo deRequisitos</li>
                         <img src="webroot/media/pdf/catalogo.PNG" alt="Catalogo de Requisitos"  >
-                        <li class="w3-light-grey w3-padding-12">
+                        <li class=" w3-padding-12">
                             <button onclick="document.getElementById('id02').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
                         </li>
                     </ul>
                 </div>
                 <div class="w3-quarter w3-margin-bottom">
-                    <ul class="w3-ul  w3-center w3-hover-shadow">
+                    <ul class="w3-ul  w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">Diagrama de Casos deUso</li>
                         <img src="webroot/media/pdf/casos.PNG" alt="Diagrama de Casos de Uso"  >
-                        <li class="w3-light-grey w3-padding-12">
+                        <li class="w3-padding-12">
                             <button onclick="document.getElementById('id03').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
                         </li>
                     </ul>
                 </div>
                 <div class="w3-quarter w3-margin-bottom">
-                    <ul class="w3-ul  w3-center w3-hover-shadow">
+                    <ul class="w3-ul  w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">Diagrama deClases</li>
                         <img src="webroot/media/pdf/clases.PNG" alt="Diagrama de Clases"  >
-                        <li class="w3-light-grey w3-padding-12">
+                        <li class=" w3-padding-12">
                             <button onclick="document.getElementById('id04').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
                         </li>
                     </ul>
                 </div>
                 <div class="w3-quarter w3-margin-bottom">
-                    <ul class="w3-ul  w3-center w3-hover-shadow">
+                    <ul class="w3-ul  w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">Relacion deFicheros</li>
                         <img src="webroot/media/pdf/relacion.PNG" alt="Relacion de Ficheros"  >
-                        <li class="w3-light-grey w3-padding-12">
+                        <li class=" w3-padding-12">
                             <button onclick="document.getElementById('id05').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
                         </li>
                     </ul>
                 </div>
                 <div class="w3-quarter w3-margin-bottom">
-                    <ul class="w3-ul  w3-center w3-hover-shadow">
+                    <ul class="w3-ul  w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">Uso deSession</li>
                         <img src="webroot/media/pdf/session.PNG" alt="Uso de Session"  >
-                        <li class="w3-light-grey w3-padding-12">
+                        <li class=" w3-padding-12">
                             <button onclick="document.getElementById('id06').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
                         </li>
                     </ul>
                 </div>
                 <div class="w3-quarter w3-margin-bottom">
-                    <ul class="w3-ul  w3-center w3-hover-shadow">
+                    <ul class="w3-ul  w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">ModeloFisico deDatos</li>
                         <img src="webroot/media/pdf/modelofisico.PNG" alt="Uso de Session"  >
-                        <li class="w3-light-grey w3-padding-12">
+                        <li class=" w3-padding-12">
                             <button onclick="document.getElementById('id07').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button>
                         </li>
                     </ul>
