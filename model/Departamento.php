@@ -39,14 +39,65 @@ class Departamento {
     function get_descDepartamento() {
         return $this->descDepartamento;
     }
-     function get_fechaCreacionDepartamento() {
+
+    function get_fechaCreacionDepartamento() {
         return $this->fechaCreacionDepartamento;
     }
-     function get_volumenDeNegocio() {
+
+    function get_volumenDeNegocio() {
         return $this->volumenDeNegocio;
     }
-     function get_fechaBajaDepartamento() {
+
+    function get_fechaBajaDepartamento() {
         return $this->fechaBajaDepartamento;
+    }
+
+}
+
+class Pagination {
+
+    private $first;
+    private $last;
+    private $next;
+    private $prev;
+
+    function __construct($first, $last, $next, $prev) {
+        $this->first = $first;
+        $this->last = $last;
+        $this->next = $next;
+        $this->prev = $prev;
+    }
+
+    function get_fisrt() {
+        return $this->first;
+    }
+
+    function get_last() {
+        return $this->last;
+    }
+
+    function get_next() {
+        return $this->next;
+    }
+
+    function get_prev() {
+        return $this->prev;
+    }
+
+    function set_fisrt($first) {
+        $this->first = $first;
+    }
+
+    function set_last($last) {
+        $this->last = $last;
+    }
+
+    function set_next($next) {
+        $this->next = $next;
+    }
+
+    function set_prev($prev) {
+        $this->prev = $prev;
     }
 
 }

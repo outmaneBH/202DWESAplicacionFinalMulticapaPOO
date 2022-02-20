@@ -109,6 +109,34 @@ class DepartamentoPDO {
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
     }
 
+    public static function pagination($limitStrat,$LimitEnd) {
+        $aDepartamento = [];
+        $sql = "SELECT * FROM T02_Departamento limit $limitStrat,$LimitEnd";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
+        $resultado = $resultadoConsulta->fetchAll();
+        if ($resultado) {
+            $i = 0;
+            foreach ($resultado as $value) {
+                $aDepartamento[$i] = new Departamento(
+                        $value['T02_CodDepartamento'],
+                        $value['T02_DescDepartamento'],
+                        $value['T02_FechaCreacionDepartamento'],
+                        $value['T02_VolumenNegocio'],
+                        $value['T02_FechaBajaDepartamento']);
+                $i++;
+            }
+        }
+
+        return $aDepartamento;
+        
+    }
+    public static function Total() {
+      
+        $sql = "SELECT * FROM T02_Departamento";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
+        $resultado = $resultadoConsulta->rowCount();
+        return $resultado;
+    }
 }
 ?>
 
