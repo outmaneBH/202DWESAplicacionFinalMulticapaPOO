@@ -96,7 +96,8 @@
                         <th style="text-align: center;" colspan="4">Crud</th>
                     </tr>
                 </thead>
-                <tbody  id="tbody" >
+                <!--contenteditable="true"-->
+                <tbody   id="tbody" >
                     
                 </tbody>
                 

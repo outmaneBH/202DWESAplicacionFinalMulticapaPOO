@@ -2,7 +2,7 @@ var input = document.getElementById("searchTxt");
 var table = document.getElementsByTagName("tbody");
 var tr = document.getElementsByTagName("tr");
 loadDoc();
-var campoUser="";
+var campoUser = "";
 function loadDoc() {
 
     const xhttp = new XMLHttpRequest();
@@ -15,20 +15,22 @@ function loadDoc() {
             var newTr = document.createElement("tr");
             for (let campo in usuario) {
                 CreateTr(campo, usuario[campo], newTr); //Añadir
-                if(campo=="codUsuario")
+                if (campo == "codUsuario")
                 {
-                    campoUser=usuario[campo];
+                    campoUser = usuario[campo];
                 }
             }
-            createbtn(newTr);
-            newTr.setAttribute("class",campoUser);
+            createbtn(newTr, campoUser);
+//            newTr.setAttribute("class", campoUser);
+
             table[0].appendChild(newTr);
         }
 
     }
+    var clase = "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=";
     var casa = "https://outmane.local/API/BuscarUsuarioPorDesc.php?descUsuario=";
     var oneandone = "https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=";
-    xhttp.open("GET", casa + input.value, true);
+    xhttp.open("GET", clase + input.value, true);
     xhttp.send();
 }
 
@@ -55,19 +57,36 @@ function CreateTr(campo, valor, newTr)
     newTr.appendChild(newTD);
 }
 
-function createbtn(newTr) {
+function createbtn(newTr, codigo) {
     var newTD = document.createElement("td");
-    newTD.innerHTML = "<button type='button' name='update'><img  src='webroot/media/update.png'></button>";
+    newTD.innerHTML = "<button type='button' onclick='editar(ev);' name='update'><img  src='webroot/media/update.png'></button>";
     newTr.appendChild(newTD);
     var newTD = document.createElement("td");
-    newTD.innerHTML = "<button type='button' name='delete'><img  src='webroot/media/delete.png'></button>";
+    newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='borrar();' class='btndelete' name='delete'><img  src='webroot/media/delete.png'></button>";
     newTr.appendChild(newTD);
 }
 
-table[0].addEventListener("click", edit);
-function edit(ev) {
-    alert(ev.target.className);
+function borrar(codigo)
+{
+    if (confirm("¿Está seguro de que desea eliminar el usuario "+this.value)) { 
+        alert("alll");
+    }
+
+
 }
+
+
+//table[0].addEventListener("click", edit);
+//function edit(ev) {
+//
+//    alert(ev.target.className);
+//}
+
+//function  editar(ev)
+//{
+//   
+////   alert(ev.target.className);
+//}
 
 
 
