@@ -88,37 +88,11 @@ function myFunction(event) {
     }
 }
 
-
 function msg() {
     alertId.style.display = "none";
 }
 
 
-
-
-
-//function borrar(e)
-//{
-//    console.log(e.target.className);
-//    if (confirm("¿Está seguro de que desea eliminar el usuario ")) {
-//        alert("alll");
-//    }
-//
-//
-//}
-
-
-// table[0].addEventListener("click", edit);
-// function edit(ev) {
-
-//     alert(ev.target.className);
-// }
-
-//function  editar(ev)
-//{
-//   
-//  alert(ev.target.className);
-//}
 
 
 
