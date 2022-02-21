@@ -16,7 +16,7 @@
             .div1{
                 padding: 30px;
                 background: rgb(1,1,1,0.8);
-                 height: auto;
+                height: auto;
             }
             img{
                 width: 30px;
@@ -58,7 +58,10 @@
             td{
                 font-weight: bold;
             }
-           
+            #alert{
+                display: none;
+            }
+
 
         </style>
     </head>
@@ -83,6 +86,9 @@
                     <button class="btn btn-outline-primary" onclick="loadDoc();" name="search" type="button">Buscar</button>
                 </div>
             </div>
+            <div id="alert" class="alert alert-success" role="alert">
+               Success !
+            </div>
             <table style="margin-bottom: 200px;" class="table table-striped">
                 <thead>
                     <tr>
@@ -98,9 +104,9 @@
                 </thead>
                 <!--contenteditable="true"-->
                 <tbody   id="tbody" >
-                    
+
                 </tbody>
-                
+
 
             </table>
 

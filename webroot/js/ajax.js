@@ -1,11 +1,16 @@
 var input = document.getElementById("searchTxt");
 var table = document.getElementsByTagName("tbody");
 var tr = document.getElementsByTagName("tr");
+var btndelete = document.getElementsByName("btndelete");
+var clase = "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=";
+var casa = "https://outmane.local/API/BuscarUsuarioPorDesc.php?descUsuario=";
+var oneandone = "https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=";
+var alertId=document.getElementById("alert");
 loadDoc();
 var campoUser = "";
 function loadDoc() {
 
-    const xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
 
         let json = JSON.parse(this.responseText);
@@ -15,27 +20,23 @@ function loadDoc() {
             var newTr = document.createElement("tr");
             for (let campo in usuario) {
                 CreateTr(campo, usuario[campo], newTr); //Añadir
-                if (campo == "codUsuario")
-                {
+                if (campo == "codUsuario") {
                     campoUser = usuario[campo];
                 }
             }
             createbtn(newTr, campoUser);
-//            newTr.setAttribute("class", campoUser);
+            //            newTr.setAttribute("class", campoUser);
 
             table[0].appendChild(newTr);
         }
 
     }
-    var clase = "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=";
-    var casa = "https://outmane.local/API/BuscarUsuarioPorDesc.php?descUsuario=";
-    var oneandone = "https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=";
-    xhttp.open("GET", clase + input.value, true);
+
+    xhttp.open("GET", casa + input.value, true);
     xhttp.send();
 }
 
-function CreateTr(campo, valor, newTr)
-{
+function CreateTr(campo, valor, newTr) {
     var newTD = document.createElement("td");
     switch (campo) {
         case "imagen":
@@ -59,33 +60,64 @@ function CreateTr(campo, valor, newTr)
 
 function createbtn(newTr, codigo) {
     var newTD = document.createElement("td");
-    newTD.innerHTML = "<button type='button' onclick='editar(ev);' name='update'><img  src='webroot/media/update.png'></button>";
+    newTD.innerHTML = "<button type='button' name='update'><img  class='" + codigo + "' src='webroot/media/update.png'/></button>";
     newTr.appendChild(newTD);
     var newTD = document.createElement("td");
-    newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='borrar();' class='btndelete' name='delete'><img  src='webroot/media/delete.png'></button>";
+    newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='myFunction(event)' name='delete' ><img  class='" + codigo + "' src='webroot/media/delete.png'/></button>";
     newTr.appendChild(newTD);
+
 }
 
-function borrar(codigo)
-{
-    if (confirm("¿Está seguro de que desea eliminar el usuario "+this.value)) { 
-        alert("alll");
+function myFunction(event) {
+    var x = event.target.classList.item(0);
+    if (confirm("¿Está seguro de que desea eliminar " + x)) {
+        var xtp = new XMLHttpRequest();
+        xtp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                loadDoc();
+                
+                alertId.style.display="block";
+                alertId.innerHTML+="Se ha borrado el usuario bien";
+                let msgAlert = setTimeout(msg, 5000);
+            }
+        };
+        //Clase
+       
+        xtp.open("GET", "https://outmane.local/API/BorrarUsuarioPorCodigo.php?codUsuario=" + x+"&key=paso", true);
+        xtp.send();
     }
-
-
 }
 
 
-//table[0].addEventListener("click", edit);
-//function edit(ev) {
+function msg() {
+    alertId.style.display = "none";
+}
+
+
+
+
+
+//function borrar(e)
+//{
+//    console.log(e.target.className);
+//    if (confirm("¿Está seguro de que desea eliminar el usuario ")) {
+//        alert("alll");
+//    }
 //
-//    alert(ev.target.className);
+//
 //}
+
+
+// table[0].addEventListener("click", edit);
+// function edit(ev) {
+
+//     alert(ev.target.className);
+// }
 
 //function  editar(ev)
 //{
 //   
-////   alert(ev.target.className);
+//  alert(ev.target.className);
 //}
 
 
