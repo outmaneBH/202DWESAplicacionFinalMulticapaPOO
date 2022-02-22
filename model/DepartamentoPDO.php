@@ -43,8 +43,9 @@ class DepartamentoPDO {
      * @param String $validDepartamento
      * @return array Departamento
      */
-    public static function buscaDepartamentosPorDesc($validDepartamento = null, $select) {
+    public static function buscaDepartamentosPorDesc($validDepartamento = null, $select, $limit=1) {
         $query = '';
+        $limit=($limit-1)*3;
         switch ($select) {
             case "all":$query = '';
                 break;
@@ -54,7 +55,7 @@ class DepartamentoPDO {
                 break;
         }
         $aDepartamento = [];
-        $sql = "SELECT * FROM T02_Departamento where T02_DescDepartamento  like  '%" . $validDepartamento . "%' $query";
+        $sql = "SELECT * FROM T02_Departamento where T02_DescDepartamento  like  '%" . $validDepartamento . "%' $query limit 3 OFFSET  $limit";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultado = $resultadoConsulta->fetchAll();
 
@@ -109,34 +110,14 @@ class DepartamentoPDO {
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
     }
 
-    public static function pagination($limitStrat,$LimitEnd) {
-        $aDepartamento = [];
-        $sql = "SELECT * FROM T02_Departamento limit $limitStrat,$LimitEnd";
-        $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
-        $resultado = $resultadoConsulta->fetchAll();
-        if ($resultado) {
-            $i = 0;
-            foreach ($resultado as $value) {
-                $aDepartamento[$i] = new Departamento(
-                        $value['T02_CodDepartamento'],
-                        $value['T02_DescDepartamento'],
-                        $value['T02_FechaCreacionDepartamento'],
-                        $value['T02_VolumenNegocio'],
-                        $value['T02_FechaBajaDepartamento']);
-                $i++;
-            }
-        }
-
-        return $aDepartamento;
-        
-    }
     public static function Total() {
-      
+
         $sql = "SELECT * FROM T02_Departamento";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultado = $resultadoConsulta->rowCount();
         return $resultado;
     }
+
 }
 ?>
 

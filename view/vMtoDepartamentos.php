@@ -132,7 +132,7 @@
                     <form method="post" action="index.php">
                     <input type="submit" class="btn btn-outline-primary" value="<<" name="first" />
                     <input type="submit" class="btn btn-outline-primary" value="<" name="prev" />
-                    <input type="button" class="btn btn-outline-primary" value="<?php echo "1"; ?> / <?php echo "max"; ?>" name="page" />
+                    <input type="button" class="btn btn-outline-primary" value="<?php echo $_SESSION['paginacion']; ?> / <?php echo $totalPage; ?>" name="page" />
                     <input type="submit" class="btn btn-outline-primary" value=">" name="next" />
                     <input type="submit" class="btn btn-outline-primary" value=">>" name="last" />
                     </form>

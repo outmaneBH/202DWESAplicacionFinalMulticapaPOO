@@ -29,7 +29,7 @@ class UsuarioPDO implements interfaceUsuarioDB {
      * 
      * @param String $codUsuario
      * @param String $password
-     * @return $valideUsuario boolean
+     * @return boolean $valideUsuario 
      * @see es una fuccion que pide el codigo del usuario y su password
      * y verifica en la base de datos si existe ,cuando existe se mete sus 
      * datos en un objeto de clase Usuario . y hace un update para numero de conexiones,

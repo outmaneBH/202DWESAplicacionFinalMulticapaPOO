@@ -75,7 +75,7 @@
                     </ul>
                     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" class="d-flex">
                         <div class="w3-dropdown-hover w3-right w3-transparent">
-                            <img src=" <?php echo  $aInicioPrivado['imagen']?'data:image/jpg;base64,'.$aInicioPrivado['imagen']:'webroot/media/user.png'; ?>" alt="alt" style="width:50px;height: 50px;" class="w3-circle ">
+                            <img src=" <?php echo $aInicioPrivado['imagen'] ? 'data:image/jpg;base64,' . $aInicioPrivado['imagen'] : 'webroot/media/user.png'; ?>" alt="alt" style="width:50px;height: 50px;" class="w3-circle ">
                             <div class="w3-dropdown-content w3-bar-block " style="right:0;margin-top: 2%;">
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="editPerfil" type="submit">Editar Perfil </button>
                                 <button class="w3-bar-item w3-button w3-black w3-hover-blue" name="deleteAccount" type="submit">Delete Account </button>
@@ -95,14 +95,19 @@
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST"  id="form2"> 
                     <h6>Funciones de mi aplicacion</h6>
                     <input type="submit" name="detalle" class="w3-bar-item w3-button w3-black w3-hover-blue" value="Detalle">
-                    <input type="submit" name="mtoDepartamentos" class="w3-bar-item w3-button w3-black w3-hover-blue" value="MtoDepartamentos"> 
+                   
                     <input name="apirest" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="Api REST"  type="button"/>
                     <input name="consultarModificarOpiniones" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="ConsultarModificarOpinion"  type="button"/>
-                    <?php if($aInicioPrivado['perfil']=="administrador"){ ?>
-                    <input name="mtousuarios" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoUsuarios"  type="button"/>
-                     <input name="mtocuestiones" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoCuestiones"  type="button"/>
-                    <?php }?>
-                   
+                    <?php if ($aInicioPrivado['perfil'] == "administrador") { ?>
+                        <input name="mtousuarios" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoUsuarios"  type="button"/>
+                        <input name="mtocuestiones" type="submit" class="w3-bar-item w3-button w3-black w3-hover-blue"  value="MtoCuestiones"  type="button"/>
+                    <?php } else {
+                        ?>
+                          <input type="submit" name="mtoDepartamentos" class="w3-bar-item w3-button w3-black w3-hover-blue" value="MtoDepartamentos">
+                        <?php
+                    }
+                    ?>
+
                 </form>
             </div>
         </div>

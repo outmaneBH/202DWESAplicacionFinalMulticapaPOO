@@ -20,6 +20,18 @@ by :OUTMANE BOUHOU
 - Borrar , Alta logica y Baja logica .
 - Buscar Usuario con descripcion Usando Ajax.
 
+## Instalation de mi aplicacion  :
+
+Hola como estas, gracias por la compra o descarga de esta aplicacion, a continuacion te escribo las instrucciones de instalacion:
+
+* 1.Copiar y descomprimir el archivo en la carpeta /public_html, al final tendras una carpeta llamada "202DWESAplicacionFinalMulticapaPOO", a la cual accederas desde el navegador como -> http://127.0.0.1/202DWESAplicacionFinalMulticapaPOO
+* 2.Buscar los archivos CreaDB202DWESProyectoTema5-Desarollo.sql, CargaInicialDB202DWESProyectoTema5-Desarollo.sql, BorraDB202DWESProyectoTema5-Desarollo.sql en 202DWESAplicacionFinalMulticapaPOO/scriptDB/(SqlFile).sql, una vez localizado copiar y pegar el contenido en una ventana de MySQL, PHPMyAdmin o MySQL WorkBench
+* 3.En caso de ser necesario modificar el archivo configDB en config/confDBPDO.php, para los datos asociados al acceso a la base de datos.
+
+Login : host = db5005797200.hosting-data.io  USER = dbu2267480 Password = daw2_Sauces
+
+Dudas y sugerencias aqui esta mi web https://daw202.ieslossauces.es/
+
 ## Entorno  De desarollo
  http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO
 

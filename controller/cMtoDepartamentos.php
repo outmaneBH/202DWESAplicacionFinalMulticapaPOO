@@ -1,12 +1,9 @@
 <?php
 
-
-
-
 /* Volvernos a inicioPrivado cuando se pulsaado cancel */
 if (isset($_REQUEST['cancel'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    unset($_SESSION["start"], $_SESSION["end"]);
+    unset($_SESSION['paginacion']);
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header("Location:index.php");
     exit;
@@ -27,8 +24,28 @@ if (isset($_REQUEST['delete'])) {
     DepartamentoPDO::deleteDepartamento($_REQUEST['delete']);
 }
 /**/
+if (!$_SESSION['paginacion']) {
+    $_SESSION['paginacion'] = 1;
+}
 
+$totalPage = ceil(DepartamentoPDO::Total() / 3);
 
+if (isset($_REQUEST['last'])) {
+    $_SESSION['paginacion'] = $totalPage;
+}
+/**/
+
+if (isset($_REQUEST['first'])) {
+    $_SESSION['paginacion'] = 1;
+}
+/**/
+if (isset($_REQUEST['prev']) && $_SESSION['paginacion'] >= 2) {
+    $_SESSION['paginacion']--;
+}
+/**/
+if (isset($_REQUEST['next']) && $_SESSION['paginacion'] < $totalPage) {
+    $_SESSION['paginacion']++;
+}
 
 
 /* definir un array para alamcenar errores del description */
@@ -80,14 +97,8 @@ if ($entradaOK) {
 $_SESSION ["codDepartamentoEnCurso"] = $aRespuestas["searchTxt"];
 $CodigoDepartamento = $_SESSION ["codDepartamentoEnCurso"];
 
-
-
-//$totalPage = (DepartamentoPDO::Total() / 3);;
-
-
-
 //$objetoDepartamento = DepartamentoPDO::pagination($start,$end);
-$objetoDepartamento = DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas["searchTxt"], $aRespuestas["select"]);
+$objetoDepartamento = DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas["searchTxt"], $aRespuestas["select"], $_SESSION['paginacion']);
 
 
 if ($objetoDepartamento) {
@@ -101,22 +112,7 @@ if ($objetoDepartamento) {
         ]);
     }
 }
-if (isset($_REQUEST['last'])) {
-  
-}
-/**/
 
-if (isset($_REQUEST['first'])) {
-   
-}
-/**/
-if (isset($_REQUEST['prev'])) {
-
-}
-/**/
-if (isset($_REQUEST['next'])) {
-   
-}
 
 
 require_once $views['layout'];
