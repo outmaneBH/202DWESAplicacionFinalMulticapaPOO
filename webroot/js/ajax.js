@@ -5,7 +5,7 @@ var btndelete = document.getElementsByName("btndelete");
 var clase = "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=";
 var casa = "https://outmane.local/API/BuscarUsuarioPorDesc.php?descUsuario=";
 var oneandone = "https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=";
-var alertId=document.getElementById("alert");
+var alertId = document.getElementById("alert");
 loadDoc();
 var campoUser = "";
 function loadDoc() {
@@ -32,7 +32,7 @@ function loadDoc() {
 
     }
 
-    xhttp.open("GET", casa + input.value, true);
+    xhttp.open("GET", clase + input.value, true);
     xhttp.send();
 }
 
@@ -60,30 +60,49 @@ function CreateTr(campo, valor, newTr) {
 
 function createbtn(newTr, codigo) {
     var newTD = document.createElement("td");
-    newTD.innerHTML = "<button type='button' name='update'><img  class='" + codigo + "' src='webroot/media/update.png'/></button>";
+    newTD.innerHTML = "<button type='button' value='" + codigo + "'onclick='myUpdate(event)' name='update' ><img  class='" + codigo + "' src='webroot/media/update.png'/></button>";
     newTr.appendChild(newTD);
     var newTD = document.createElement("td");
-    newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='myFunction(event)' name='delete' ><img  class='" + codigo + "' src='webroot/media/delete.png'/></button>";
+    newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='myDelete(event)' name='delete' ><img  class='" + codigo + "' src='webroot/media/delete.png'/></button>";
     newTr.appendChild(newTD);
 
 }
+var casa2 = "https://outmane.local/API/BorrarUsuarioPorCodigo.php?codUsuario=";
+var clase2 = "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BorrarUsuarioPorCodigo.php?codUsuario=";
 
-function myFunction(event) {
+//Para Borrar
+function myDelete(event) {
     var x = event.target.classList.item(0);
     if (confirm("¿Está seguro de que desea eliminar " + x)) {
         var xtp = new XMLHttpRequest();
         xtp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 loadDoc();
-                
-                alertId.style.display="block";
-                alertId.innerHTML+="Se ha borrado el usuario bien";
+                alertId.style.display = "block";
+                alertId.innerHTML += "Se ha borrado el usuario bien";
                 let msgAlert = setTimeout(msg, 5000);
             }
         };
-        //Clase
-       
-        xtp.open("GET", "https://outmane.local/API/BorrarUsuarioPorCodigo.php?codUsuario=" + x+"&key=paso", true);
+
+        xtp.open("GET", clase2 + x + "&key=paso", true);
+        xtp.send();
+    }
+}
+//Para modificar
+function myUpdate(event) {
+    var x = event.target.classList.item(0);
+    if (confirm("¿Está seguro de que Quieres Modificar " + x)) {
+        var xtp = new XMLHttpRequest();
+        xtp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                loadDoc();
+                alertId.style.display = "block";
+                alertId.innerHTML += "Se ha Cambiado el usuario bien";
+                let msgAlert = setTimeout(msg, 5000);
+            }
+        };
+
+        xtp.open("GET", clase2 + x + "", true);
         xtp.send();
     }
 }

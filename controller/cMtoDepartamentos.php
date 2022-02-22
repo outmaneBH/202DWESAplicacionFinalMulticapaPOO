@@ -80,7 +80,9 @@ if ($entradaOK) {
 $_SESSION ["codDepartamentoEnCurso"] = $aRespuestas["searchTxt"];
 $CodigoDepartamento = $_SESSION ["codDepartamentoEnCurso"];
 
-$totalPage = (DepartamentoPDO::Total() / 3);
+
+
+//$totalPage = (DepartamentoPDO::Total() / 3);;
 
 
 

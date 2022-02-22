@@ -15,7 +15,7 @@ require_once 'config/confDBPDO.php';
 
 
 /* Si no hay ningun vista en curso mostramos el inicioPublico sino mostramos la vista en curso */
-if (!isset($_SESSION['paginaEnCurso'])) {
+if (!isset($_SESSION['paginaEnCurso']) && !isset($_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'])) {
     $_SESSION['paginaEnCurso'] = 'inicioPublico';
 }
 
