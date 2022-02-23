@@ -24,9 +24,7 @@ if (isset($_REQUEST['delete'])) {
     DepartamentoPDO::deleteDepartamento($_REQUEST['delete']);
 }
 /**/
-if (!$_SESSION['paginacion']) {
-    $_SESSION['paginacion'] = 1;
-}
+
 
 $totalPage = ceil(DepartamentoPDO::Total() / 3);
 
@@ -90,12 +88,16 @@ if ($entradaOK) {
      */
     $aRespuestas["searchTxt"] = $_REQUEST["searchTxt"]; //meter el varibale de la drescripcion en aRespuestas y select value
 }
+
 /**
  * buscamos el departamento con su descripcion metiendole en variable como objeto y reccorerlo para usar
  * el array en la vista de mtodepartamentos.
  */
 $_SESSION ["codDepartamentoEnCurso"] = $aRespuestas["searchTxt"];
 $CodigoDepartamento = $_SESSION ["codDepartamentoEnCurso"];
+if (!isset($_SESSION['paginacion'])) {
+    $_SESSION['paginacion'] = 1;
+}
 
 //$objetoDepartamento = DepartamentoPDO::pagination($start,$end);
 $objetoDepartamento = DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas["searchTxt"], $aRespuestas["select"], $_SESSION['paginacion']);
