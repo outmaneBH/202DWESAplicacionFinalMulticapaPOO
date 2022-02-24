@@ -13,12 +13,11 @@ ob_start();
 require_once 'config/confApp.php';
 require_once 'config/confDBPDO.php';
 
-
 /* Si no hay ningun vista en curso mostramos el inicioPublico sino mostramos la vista en curso */
-if (!isset($_SESSION['paginaEnCurso'])&&!isset($_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'])) {
-   $_SESSION['paginaEnCurso']="inicioPublico";
+if (!isset($_SESSION['paginaEnCurso'])) {
+        $_SESSION['paginaEnCurso']="inicioPublico";
+  
 }
-
 require_once $controllers[$_SESSION['paginaEnCurso']];
 ?>
 
