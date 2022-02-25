@@ -261,6 +261,76 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Departamento.html#property_fechaBajaDepartamento"
         },                {
+            "fqsen": "\\Pagination",
+            "name": "Pagination",
+            "summary": "",
+            "url": "classes/Pagination.html"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Pagination.html#method___construct"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003Aget_fisrt\u0028\u0029",
+            "name": "get_fisrt",
+            "summary": "",
+            "url": "classes/Pagination.html#method_get_fisrt"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003Aget_last\u0028\u0029",
+            "name": "get_last",
+            "summary": "",
+            "url": "classes/Pagination.html#method_get_last"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003Aget_next\u0028\u0029",
+            "name": "get_next",
+            "summary": "",
+            "url": "classes/Pagination.html#method_get_next"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003Aget_prev\u0028\u0029",
+            "name": "get_prev",
+            "summary": "",
+            "url": "classes/Pagination.html#method_get_prev"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003Aset_fisrt\u0028\u0029",
+            "name": "set_fisrt",
+            "summary": "",
+            "url": "classes/Pagination.html#method_set_fisrt"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003Aset_last\u0028\u0029",
+            "name": "set_last",
+            "summary": "",
+            "url": "classes/Pagination.html#method_set_last"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003Aset_next\u0028\u0029",
+            "name": "set_next",
+            "summary": "",
+            "url": "classes/Pagination.html#method_set_next"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003Aset_prev\u0028\u0029",
+            "name": "set_prev",
+            "summary": "",
+            "url": "classes/Pagination.html#method_set_prev"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003A\u0024first",
+            "name": "first",
+            "summary": "",
+            "url": "classes/Pagination.html#property_first"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003A\u0024last",
+            "name": "last",
+            "summary": "",
+            "url": "classes/Pagination.html#property_last"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003A\u0024next",
+            "name": "next",
+            "summary": "",
+            "url": "classes/Pagination.html#property_next"
+        },                {
+            "fqsen": "\\Pagination\u003A\u003A\u0024prev",
+            "name": "prev",
+            "summary": "",
+            "url": "classes/Pagination.html#property_prev"
+        },                {
             "fqsen": "\\DepartamentoPDO",
             "name": "DepartamentoPDO",
             "summary": "",
@@ -275,6 +345,26 @@ Search.appendIndex(
             "name": "buscaDepartamentosPorDesc",
             "summary": "La\u0020funcion\u0020busca\u0020departamento\u0020con\u0020descripcion\u0020y\u0020por\u0020defecto\u0020es\u0020null\ndevuelve\u0020un\u0020array\u0020porque\u0020puede\u0020contener\u0020mas\u0020de\u0020un\u0020registro.",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaLogicaDepartamento\u0028\u0029",
+            "name": "bajaLogicaDepartamento",
+            "summary": "Dar\u0020a\u0020la\u0020funcion\u0020el\u0020codigo\u0020de\u0020departamento\u0020dar\u0020al\u0020departamento\u0020una\nbaja\u0020logica\u0020,\u0020lo\u0020cambiamos\u0020en\u0020la\u0020base\u0020de\u0020datos",
+            "url": "classes/DepartamentoPDO.html#method_bajaLogicaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AaltaLogicaDepartamento\u0028\u0029",
+            "name": "altaLogicaDepartamento",
+            "summary": "Dar\u0020a\u0020la\u0020funcion\u0020el\u0020codigo\u0020de\u0020departamento\u0020,\u0020dar\u0020al\u0020departamento\u0020una\nAlta\u0020logica\u0020,\u0020lo\u0020cambiamos\u0020en\u0020la\u0020base\u0020de\u0020datos",
+            "url": "classes/DepartamentoPDO.html#method_altaLogicaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AdeleteDepartamento\u0028\u0029",
+            "name": "deleteDepartamento",
+            "summary": "Dar\u0020a\u0020la\u0020funcion\u0020el\u0020codigo\u0020de\u0020departamento\npara\u0020borrar\u0020este\u0020dipartamento\u0020en\u0020la\u0020base\u0020de\u0020datos",
+            "url": "classes/DepartamentoPDO.html#method_deleteDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003ATotal\u0028\u0029",
+            "name": "Total",
+            "summary": "",
+            "url": "classes/DepartamentoPDO.html#method_Total"
         },                {
             "fqsen": "\\interfaceDB",
             "name": "interfaceDB",
@@ -315,6 +405,11 @@ Search.appendIndex(
             "name": "Departamento",
             "summary": "La\u0020funcion\u0020devuelve\u0020datos\u0020de\u0020un\u0020departamento\u0020buscado\u0020con\u0020codigo\nsacado\u0020como\u0020json\u0020file\u0020y\u0020devolverlo\u0020como\u0020objeto",
             "url": "classes/REST.html#method_Departamento"
+        },                {
+            "fqsen": "\\REST\u003A\u003ADepartamentoIsabel\u0028\u0029",
+            "name": "DepartamentoIsabel",
+            "summary": "Esta\u0020funcion\u0020de\u0020compa\u00F1ero\u0020que\u0020recibe\u0020un\u0020codigo\u0020de\u0020deparatamento\ny\u0020devuelve\u0020un\u0020objeto\u0020del\u0020modelo\u0020Departamento\u0020sacado\u0020desde\u0020el\u0020url\nAPi",
+            "url": "classes/REST.html#method_DepartamentoIsabel"
         },                {
             "fqsen": "\\universidad",
             "name": "universidad",
@@ -650,6 +745,21 @@ Search.appendIndex(
             "name": "cambiarPassword",
             "summary": "La\u0020funcion\u0020cambia\u0020el\u0020password\u0020del\u0020usuario\u0020volviendo\u0020true\u0020o\u0020false\u0020depende\u0020si\u0020ha\u0020modificado",
             "url": "classes/UsuarioPDO.html#method_cambiarPassword"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AbuscarUsuarioPorDesc\u0028\u0029",
+            "name": "buscarUsuarioPorDesc",
+            "summary": "seleccionamos\u0020desde\u0020la\u0020base\u0020de\u0020datos\u0020todos\u0020los\u0020usuarios\u0020que\u0020tienen\u0020la\u0020desc\ncomo\u0020el\u0020parametro\u0020dado\u0020a\u0020la\u0020funcion\u0020y\u0020rellenar\u0020el\u0020array\u0020de\u0020usuarios",
+            "url": "classes/UsuarioPDO.html#method_buscarUsuarioPorDesc"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AborrarUsuarioPorCodigo\u0028\u0029",
+            "name": "borrarUsuarioPorCodigo",
+            "summary": "",
+            "url": "classes/UsuarioPDO.html#method_borrarUsuarioPorCodigo"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AcambiarDatosUsuario\u0028\u0029",
+            "name": "cambiarDatosUsuario",
+            "summary": "",
+            "url": "classes/UsuarioPDO.html#method_cambiarDatosUsuario"
         },                {
             "fqsen": "\\",
             "name": "\\",

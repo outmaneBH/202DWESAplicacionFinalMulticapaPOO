@@ -32,7 +32,7 @@ function loadDoc() {
 
     }
 
-    xhttp.open("GET", clase + input.value, true);
+    xhttp.open("GET", oneandone + input.value, true);
     xhttp.send();
 }
 
@@ -57,10 +57,11 @@ function CreateTr(campo, valor, newTr) {
 
     newTr.appendChild(newTD);
 }
+//onclick='myUpdate(event)'
 
 function createbtn(newTr, codigo) {
     var newTD = document.createElement("td");
-    newTD.innerHTML = "<button type='button' value='" + codigo + "'onclick='myUpdate(event)' name='update' ><img  class='" + codigo + "' src='webroot/media/update.png'/></button>";
+    newTD.innerHTML = "<button type='button' value='" + codigo + "' name='update' ><img  class='" + codigo + "' src='webroot/media/update.png'/></button>";
     newTr.appendChild(newTD);
     var newTD = document.createElement("td");
     newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='myDelete(event)' name='delete' ><img  class='" + codigo + "' src='webroot/media/delete.png'/></button>";
@@ -69,6 +70,7 @@ function createbtn(newTr, codigo) {
 }
 var casa2 = "https://outmane.local/API/BorrarUsuarioPorCodigo.php?codUsuario=";
 var clase2 = "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BorrarUsuarioPorCodigo.php?codUsuario=";
+var oneandone2 = "https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BorrarUsuarioPorCodigo.php?codUsuario=";
 
 //Para Borrar
 function myDelete(event) {
@@ -84,7 +86,7 @@ function myDelete(event) {
             }
         };
 
-        xtp.open("GET", clase2 + x + "&key=paso", true);
+        xtp.open("GET", oneandone2 + x + "&key=paso", true);
         xtp.send();
     }
 }
@@ -102,7 +104,7 @@ function myUpdate(event) {
             }
         };
 
-        xtp.open("GET", clase2 + x + "", true);
+        xtp.open("GET", oneandone2 + x + "", true);
         xtp.send();
     }
 }
