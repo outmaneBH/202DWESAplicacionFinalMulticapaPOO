@@ -18,7 +18,9 @@ by :OUTMANE BOUHOU
 - Buscar departamento con Codigo.
 - Busqueda compleja de Departamentos ( All , que estan en Baja y Alta);
 - Borrar , Alta logica y Baja logica .
+- Paginacion entre los departamentos
 - Buscar Usuario con descripcion Usando Ajax.
+- Borrar Usuario con codigo Usando Ajax.
 
 ## Instalation de mi aplicacion  :
 
@@ -39,4 +41,4 @@ Dudas y sugerencias aqui esta mi web https://daw202.ieslossauces.es/
  http://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO
 
 ### Ultima actualizacion :
-* 17/02/2022
+* 25/02/2022
