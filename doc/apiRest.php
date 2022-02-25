@@ -30,6 +30,29 @@
 
                 </p>
             </div>
+            
+            <h3>Use de Api Rest de Borrar Usuarios con clave </h3>
+            <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+                <p>Este api esta programado para Borrar usuarios con su codigo  dada como parametro en el URL de mi servidor Usando el <b>AJAX</b>
+                    <br>
+                    Para usar el Api Rest , hay que copier el url que esta abajo y en el final añadele la el codigo del usuario con el clave de acceeso  <br>
+                     que quieres borrar despues del igual ( = )añade el valor  <br>
+
+                    <strong>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BorrarUsuarioPorCodigo.php?codUsuario=valor&key= el calve</strong>
+
+                </p>
+            </div>
+            <h3>Use de Api Rest de Validar el DNI </h3>
+            <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+                <p>Este api esta programado para Validar el Dni Dado como parametro en el URL de mi servidor Usando el <b>AJAX</b>
+                    <br>
+                    Para usar el Api Rest , hay que copier el url que esta abajo y en el final añadele el DNI que quieres validar  <br>
+                     despues del igual ( = ) <br> devuelve un mensaje de validacion
+
+                    <strong>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BorrarUsuarioPorCodigo.php?dni=valor</strong>
+
+                </p>
+            </div>
         </div>
 
     </body>

@@ -7,6 +7,12 @@ use DB202DWESProyectoTema5;
 INSERT INTO T02_Departamento(T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio) VALUES 
 ('FOL', 'departamento FOL', 1406149672, 102.4),
 ('DAW', 'departamento DAW', 1406149672, 1000.3),
+('ING', 'departamento ING', 1406149672, 102.4),
+('MAT', 'departamento MATH', 1406149672, 1000.3),
+('PHC', 'departamento PHC', 1406149672, 1000.5),
+('DAM', 'departamento DAM', 1406149672, 1000.2),
+('PPT', 'departamento PPT', 1406149672, 999.5),
+('CVS', 'departamento CVS', 1406149672, 500.3),
 ('DIW', 'departamento DIW', 1406149672, 289.3);
 
 /*insert datos en la tabla usuarios*/

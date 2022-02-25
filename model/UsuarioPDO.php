@@ -29,7 +29,7 @@ class UsuarioPDO implements interfaceUsuarioDB {
      * 
      * @param String $codUsuario
      * @param String $password
-     * @return $valideUsuario boolean
+     * @return boolean $valideUsuario 
      * @see es una fuccion que pide el codigo del usuario y su password
      * y verifica en la base de datos si existe ,cuando existe se mete sus 
      * datos en un objeto de clase Usuario . y hace un update para numero de conexiones,
@@ -159,24 +159,24 @@ class UsuarioPDO implements interfaceUsuarioDB {
         }
         return $updatePassword;
     }
- /**
-  * seleccionamos desde la base de datos todos los usuarios que tienen la desc 
-  * como el parametro dado a la funcion y rellenar el array de usuarios
-  * 
-  * @param String $descUsuario
-  * @return Array de objetos de Usuario
-  */
-    public static function buscarUsuarioPorDesc($descUsuario=null) {
 
+    /**
+     * seleccionamos desde la base de datos todos los usuarios que tienen la desc 
+     * como el parametro dado a la funcion y rellenar el array de usuarios
+     * 
+     * @param String $descUsuario
+     * @return Array de objetos de Usuario
+     */
+    public static function buscarUsuarioPorDesc($descUsuario = null) {
         $aUsuarios = [];
         $sql = "SELECT * FROM T01_Usuario  WHERE T01_DescUsuario  like  '%" . $descUsuario . "%'";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultados = $resultadoConsulta->fetchAll();
-     
+
         if ($resultados) {
             $i = 0;
             foreach ($resultados as $resultado) {
-                $aUsuarios[$i]= new Usuario($resultado["T01_CodUsuario"],
+                $aUsuarios[$i] = new Usuario($resultado["T01_CodUsuario"],
                         $resultado["T01_Password"],
                         $resultado["T01_DescUsuario"],
                         $resultado["T01_NumConexiones"],
@@ -189,6 +189,32 @@ class UsuarioPDO implements interfaceUsuarioDB {
         }
         return $aUsuarios;
     }
+
+    public static function borrarUsuarioPorCodigo($Codigo) {
+        $deleted=false;
+        $sql2 = "DELETE FROM T01_Usuario  WHERE T01_CodUsuario='" . $Codigo . "'";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
+        $resultado = $resultadoConsulta->rowCount();
+        if($resultado!=0)
+        {
+            $deleted=true;
+        }
+        return $deleted;
+    }
+    
+     public static function cambiarDatosUsuario($Codigo,$desc,$perfil) {
+        $update=false;
+        $sql2 = "UPDATE T01_Usuario SET T01_DescUsuario='".$desc."',T01_Perfil='".$perfil."', WHERE T01_CodUsuario='".$Codigo."'";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
+     
+        $resultado = $resultadoConsulta->rowCount();
+        if($resultado!=0)
+        {
+            $update=true;
+        }
+        return $update;
+    }
+
 }
 
 ?>

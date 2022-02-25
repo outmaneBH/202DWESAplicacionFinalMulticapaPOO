@@ -16,7 +16,7 @@
             .div1{
                 padding: 30px;
                  background: rgb(1,1,1,0.8);
-                 height: 100vh;
+                 height: 150vh;
             }
             img{
                 width: 30px;
@@ -42,6 +42,7 @@
             td{
                 font-weight: bold;
             }
+           
         </style>
     </head>
     <body>
@@ -126,14 +127,15 @@
                 <?php }
                 ?>
             </table>
-            <div class="w3-center">
-                <div class="w3-bar">
-                    <a href="#" class="w3-button">&laquo;</a>
-                    <a href="#" class="w3-button">1</a>
-                    <a href="#" class="w3-button">2</a>
-                    <a href="#" class="w3-button">3</a>
-                    <a href="#" class="w3-button">4</a>
-                    <a href="#" class="w3-button">&raquo;</a>
+            <div style="margin-bottom: 200px" class="w3-center w3-text-cyan w3-hover-text-cyan ">
+                <div class="w3-bar ">
+                    <form method="post" action="index.php">
+                    <input type="submit" class="btn btn-outline-primary" value="<<" name="first" />
+                    <input type="submit" class="btn btn-outline-primary" value="<" name="prev" />
+                    <input type="button" class="btn btn-outline-primary" value="<?php echo $_SESSION['paginacion']; ?> / <?php echo $totalPage; ?>" name="page" />
+                    <input type="submit" class="btn btn-outline-primary" value=">" name="next" />
+                    <input type="submit" class="btn btn-outline-primary" value=">>" name="last" />
+                    </form>
                 </div>
             </div>
         </div>
