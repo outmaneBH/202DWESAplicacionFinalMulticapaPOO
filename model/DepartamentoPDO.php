@@ -43,9 +43,9 @@ class DepartamentoPDO {
      * @param String $validDepartamento
      * @return array Departamento
      */
-    public static function buscaDepartamentosPorDesc($validDepartamento = null, $select, $limit=1) {
+    public static function buscaDepartamentosPorDesc($validDepartamento = null, $select, $limit=0) {
         $query = '';
-       $limit=($limit-1)*3;
+       $limit=$limit*3;
         switch ($select) {
             case "all":$query = '';
                 break;

@@ -66,7 +66,6 @@ function createbtn(newTr, codigo) {
     var newTD = document.createElement("td");
     newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='myDelete(event)' name='delete' ><img  class='" + codigo + "' src='webroot/media/delete.png'/></button>";
     newTr.appendChild(newTD);
-
 }
 var casa2 = "https://outmane.local/API/BorrarUsuarioPorCodigo.php?codUsuario=";
 var clase2 = "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/BorrarUsuarioPorCodigo.php?codUsuario=";
