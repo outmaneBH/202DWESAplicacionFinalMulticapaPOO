@@ -12,6 +12,7 @@
                 background-image: url(webroot/media/night.jpg);
                 background-repeat: no-repeat;
                 background-size:  cover;
+               
             }
             .div1{
                 padding: 30px;
@@ -59,9 +60,11 @@
                 font-weight: bold;
             }
             #alert{
-                display: none;
+               
+              display: none;
             }
-
+           
+           
 
         </style>
     </head>
@@ -99,7 +102,7 @@
 <!--                        <th>fechaHoraUltimaConexionAnterior</th>-->
                         <th>Perfil</th>
                         <th>Imagen Usuario</th>
-                        <th style="text-align: center;" colspan="4">Crud</th>
+                        <th style="text-align: center;" colspan="4">Borrar</th>
                     </tr>
                 </thead>
                 <!--contenteditable="true"-->

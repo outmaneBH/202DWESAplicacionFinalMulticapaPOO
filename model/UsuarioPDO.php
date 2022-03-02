@@ -203,16 +203,18 @@ class UsuarioPDO implements interfaceUsuarioDB {
     }
     
      public static function cambiarDatosUsuario($Codigo,$desc,$perfil) {
-        $update=false;
-        $sql2 = "UPDATE T01_Usuario SET T01_DescUsuario='".$desc."',T01_Perfil='".$perfil."', WHERE T01_CodUsuario='".$Codigo."'";
-        $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
+         $cambiado=false;
      
-        $resultado = $resultadoConsulta->rowCount();
-        if($resultado!=0)
-        {
-            $update=true;
+        $sql2 = "UPDATE T01_Usuario SET T01_DescUsuario='".$desc."',T01_Perfil='".$perfil."' WHERE T01_CodUsuario='".$Codigo."'";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql2);
+        
+        if($resultadoConsulta->rowCount()>0){
+            $cambiado=true;
         }
-        return $update;
+     
+        return $cambiado;
+     
+       
     }
 
 }

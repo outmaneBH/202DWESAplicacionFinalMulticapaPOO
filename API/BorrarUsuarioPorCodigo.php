@@ -22,7 +22,7 @@ $aUsuarios = [];
  * sacar el codigo de usario y comprobar que tiene valor
  */
 
-if (isset($_GET["codUsuario"])&& $_GET["key"]=='paso'){
+if (isset($_GET["codUsuario"])&& $_GET["key"]=='administrador'){
     $borrar = UsuarioPDO::borrarUsuarioPorCodigo($_GET["codUsuario"]); //meter el objeto de usuario devuelto en un varibale 
     if ($borrar) {//comprobar si ha borrado bien
         $aUsuarios = [

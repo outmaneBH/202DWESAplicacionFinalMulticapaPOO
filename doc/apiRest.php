@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="icon" href="../webroot/media/fav.png" type="image/ico" sizes="16x16">
     <body>
-
         <div class="w3-container">
             <h3>Use de Api Rest Propio</h3>
             <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
@@ -13,9 +12,7 @@
                     <br>
                     Para usar el Api Rest , hay que copier el url que esta abajo y en el final añadele el codigo <br>
                     de departamento que quieres buscar despues del igual ( = )añade un valor  <br>
-
                     <strong>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BuscarDepPorCodigo.php?codDepartamento=valor</strong>
-
                 </p>
             </div>
             
@@ -25,9 +22,7 @@
                     <br>
                     Para usar el Api Rest , hay que copier el url que esta abajo y en el final añadele la descripcion del usuario <br>
                      que quieres buscar despues del igual ( = )añade el valor  <br>
-
                     <strong>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BuscarUsuarioPorDesc.php?descUsuario=valor</strong>
-
                 </p>
             </div>
             
@@ -37,9 +32,16 @@
                     <br>
                     Para usar el Api Rest , hay que copier el url que esta abajo y en el final añadele la el codigo del usuario con el clave de acceeso  <br>
                      que quieres borrar despues del igual ( = )añade el valor  <br>
-
                     <strong>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BorrarUsuarioPorCodigo.php?codUsuario=valor&key= el calve</strong>
-
+                </p>
+            </div>
+            <h3>Use de Api Rest de Para modfificar los datos de Usuario</h3>
+            <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+                <p>Este api esta programado para cambiar los datos de usuarios con su codigo , descripcion y perfil  dadas como parametro en el URL de mi servidor Usando el <b>AJAX</b>
+                    <br>
+                    Para usar el Api Rest , hay que copier el url que esta abajo y en el final añadele el codigo del usuario , descripcion y Perfil <br>
+                     que quieres borrar despues del igual ( = )añade el valor  <br>
+                    <strong>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/cambiarDatosUsuario.php?codUsuario=valor1&&DescUsuario=valor2&&Perfil=valor3</strong>
                 </p>
             </div>
             <h3>Use de Api Rest de Validar el DNI </h3>
@@ -48,9 +50,7 @@
                     <br>
                     Para usar el Api Rest , hay que copier el url que esta abajo y en el final añadele el DNI que quieres validar  <br>
                      despues del igual ( = ) <br> devuelve un mensaje de validacion
-
-                    <strong>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/BorrarUsuarioPorCodigo.php?dni=valor</strong>
-
+                   <strong>https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/validar.php?dni=valor</strong>
                 </p>
             </div>
         </div>

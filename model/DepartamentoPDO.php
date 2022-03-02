@@ -43,9 +43,9 @@ class DepartamentoPDO {
      * @param String $validDepartamento
      * @return array Departamento
      */
-    public static function buscaDepartamentosPorDesc($validDepartamento = null, $select, $limit=0) {
+    public static function buscaDepartamentosPorDesc($validDepartamento = null, $select, $limit = 1) {
         $query = '';
-       $limit=$limit*3;
+        $limit = ($limit - 1) * 3;
         switch ($select) {
             case "all":$query = '';
                 break;
@@ -111,7 +111,6 @@ class DepartamentoPDO {
     }
 
     public static function Total() {
-
         $sql = "SELECT * FROM T02_Departamento";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultado = $resultadoConsulta->rowCount();
