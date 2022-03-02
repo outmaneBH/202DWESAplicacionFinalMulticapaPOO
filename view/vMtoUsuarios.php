@@ -80,8 +80,8 @@
         </div>
         <div class="div1">
             <div class="botones">
-                <button type="button" class="btn btn-primary" disabled>Export</button>
-                <button type="button" class="btn btn-success" disabled>Import</button>
+<!--                <button type="button" class="btn btn-primary" disabled>Export</button>
+                <button type="button" class="btn btn-success" disabled>Import</button>-->
             </div>
             <div class="buscar">
                 <div class="input-group mb-3">  

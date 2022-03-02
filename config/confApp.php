@@ -51,6 +51,7 @@ $controllers = [
     "borrar" => "controller/cBorrarCuenta.php",
     "mtodepartamentos" => "controller/cMtoDepartamentos.php",
     "mtousuarios" => "controller/cMtoUsuarios.php",
+    "altadepartamento" => "controller/cAltaDepartamento.php",
     "consultarModificarOpiniones" => "controller/cConsultarModificarOpiniones.php"
 ];
 
@@ -70,6 +71,7 @@ $views = [
     "borrar" => "view/vBorrarCuenta.php",
     "mtodepartamentos" => "view/vMtoDepartamentos.php",
     "mtousuarios" => "view/vMtoUsuarios.php",
+    "altadepartamento" => "view/vAltaDepartamento.php",
     "consultarModificarOpiniones" => "view/vConsultarModificarOpiniones.php"
 ];
 

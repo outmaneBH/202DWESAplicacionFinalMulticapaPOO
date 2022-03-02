@@ -64,7 +64,7 @@
         <div class="div1">
             <form action="index.php" method="get" class="row g-3 w3-center">
                 <div class="botones">
-                    <button type="button" name="add" class="btn btn-success mb-3" disabled>Add</button>
+                    <button type="submit" name="add" class="btn btn-success mb-3">Add</button>
                     <button type="button" name="import" class="btn btn-info mb-3"disabled>Import</button>
                     <button type="button" name="export" class="btn btn-dark mb-3" disabled>Export</button>
                 </div>

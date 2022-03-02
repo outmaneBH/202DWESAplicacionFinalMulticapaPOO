@@ -43,7 +43,7 @@ class DepartamentoPDO {
      * @param String $validDepartamento
      * @return array Departamento
      */
-    public static function buscaDepartamentosPorDesc($validDepartamento = null, $select, $limit = 1) {
+    public static function buscaDepartamentosPorDesc($departamentoBuscado = null, $select, $limit = 1) {
         $query = '';
         $limit = ($limit - 1) * 3;
         switch ($select) {
@@ -55,7 +55,7 @@ class DepartamentoPDO {
                 break;
         }
         $aDepartamento = [];
-        $sql = "SELECT * FROM T02_Departamento where T02_DescDepartamento  like  '%" . $validDepartamento . "%' $query limit 3 OFFSET  $limit";
+        $sql = "SELECT * FROM T02_Departamento where T02_DescDepartamento  like  '%" . $departamentoBuscado . "%' $query limit 3 OFFSET  $limit";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultado = $resultadoConsulta->fetchAll();
 
@@ -73,6 +73,24 @@ class DepartamentoPDO {
         }
 
         return $aDepartamento;
+    }
+     public static function contarPaginasDepartamentos($departamentoBuscado = '', $select = "all"){
+        $query = '';
+        switch ($select) {
+            case "all":$query = '';
+                break;
+            case "alta":$query = ' AND T02_FechaBajaDepartamento IS NULL';
+                break;
+            case "baja":$query = ' AND T02_FechaBajaDepartamento IS NOT NULL';
+                break;
+        }
+        
+        $sql = "SELECT COUNT(*) FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%$departamentoBuscado%'".$query;
+   
+        $oResultado = DBPDO::ejecutaConsulta($sql);
+        $oResultado = $oResultado->fetch();
+     
+        return ceil(intval($oResultado[0])/3);
     }
 
     /**

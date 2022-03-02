@@ -33,7 +33,7 @@ function loadDoc() {
 
     }
 
-    xhttp.open("GET", casa + input.value, true);
+    xhttp.open("GET", clase + input.value, true);
     xhttp.send();
 }
 
@@ -82,11 +82,11 @@ function myDelete(event) {
             if (this.readyState == 4 && this.status == 200) {
                 loadDoc();
                 alertId.style.display = "block";
-                alertId.innerHTML += "Se ha borrado el usuario bien";
+                alertId.innerHTML = "Se ha borrado el usuario bien";
                 let msgAlert = setTimeout(msg, 5000);
             }
         };
-        xtp.open("GET", casa2 + x + "&&key=administrador", true);
+        xtp.open("GET", clase + x + "&&key=administrador", true);
         xtp.send();
     }
 }
@@ -123,12 +123,13 @@ function index(x) {
                         loadDoc();
                         j=0;
                         alertId.style.display = "block";
-                        alertId.innerHTML += "Se ha Cambiado el usuario bien";
+                        alertId.innerHTML = "Se ha Cambiado el usuario bien";
                         let msgAlert = setTimeout(msg, 5000);
                     }
                 }
                 ;
-                xtp.open("GET", "https://outmane.local/API/cambiarDatosUsuario.php?codUsuario=" + datos[0] + "&&DescUsuario=" + datos[1] + "&&Perfil=" + datos[2], true);
+                console.log(datos[0],datos[1],datos[2]);
+                xtp.open("GET", "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/cambiarDatosUsuario.php?codUsuario=" + datos[0] + "&&DescUsuario=" + datos[1] + "&&Perfil=" + datos[2], true);
                 xtp.send();
             } else {
                 j=0;
