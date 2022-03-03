@@ -15,8 +15,8 @@
             }
             .div1{
                 padding: 30px;
-                 background: rgb(1,1,1,0.8);
-                 height: 150vh;
+                background: rgb(1,1,1,0.8);
+                height: 150vh;
             }
             img{
                 width: 30px;
@@ -42,7 +42,7 @@
             td{
                 font-weight: bold;
             }
-           
+
         </style>
     </head>
     <body>
@@ -66,7 +66,7 @@
                 <div class="botones">
                     <button type="submit" name="add" class="btn btn-success mb-3">Add</button>
                     <button type="button" name="import" class="btn btn-info mb-3"disabled>Import</button>
-                    <button type="button" name="export" class="btn btn-dark mb-3" disabled>Export</button>
+                    <button type="submit" name="export" class="btn btn-dark mb-3" >Export</button>
                 </div>
                 <div class="buscar">
                     <div class="input-group mb-2">  
@@ -107,9 +107,9 @@
                                 <td><?php echo $aDepartamento['fechaCrea']; ?></td>
                                 <td><?php echo $aDepartamento['volumen']; ?></td>
                                 <td><?php echo $aDepartamento['fechaBaja'] != null ? date('d-m-Y  , H:i:s', $aDepartamento['fechaBaja']) : '-'; ?></td>
-<!--                                <td><button type="button" name="more" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/more.png"></button></td>-->
+        <!--                                <td><button type="button" name="more" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/more.png"></button></td>-->
                                 <td><button type="submit" name="update" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/update.png"></button></td>
-                                <td><button type="submit" name="delete" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/delete.png"></button></td>
+                                <td><button type="button" onclick="index(this)" name="delete" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/delete.png"></button></td>
                                 <td><button type="submit" name="up" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/up.png"></button></td>
                                 <td><button type="submit" name="down" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/down.png"></button></td>
                             </tr>
@@ -130,12 +130,23 @@
             <div style="margin-bottom: 200px" class="w3-center w3-text-cyan w3-hover-text-cyan ">
                 <div class="w3-bar ">
                     <form method="post" action="index.php">
-                    <input type="submit" class="btn btn-outline-primary" value="<<" name="first" />
-                    <input type="submit" class="btn btn-outline-primary" value="<" name="prev" />
-                    <input type="button" class="btn btn-outline-primary" value="<?php echo $_SESSION['paginacion']; ?> / <?php echo $totalPage; ?>" name="page" />
-                    <input type="submit" class="btn btn-outline-primary" value=">" name="next" />
-                    <input type="submit" class="btn btn-outline-primary" value=">>" name="last" />
+                        <input type="submit" class="btn btn-outline-primary" value="<<" name="first" />
+                        <input type="submit" class="btn btn-outline-primary" value="<" name="prev" />
+                        <input type="button" class="btn btn-outline-primary" value="<?php echo $_SESSION['paginacion']; ?> / <?php echo $totalPage; ?>" name="page" />
+                        <input type="submit" class="btn btn-outline-primary" value=">" name="next" />
+                        <input type="submit" class="btn btn-outline-primary" value=">>" name="last" />
                     </form>
                 </div>
             </div>
         </div>
+
+        <script>
+            function index(x){
+                if (confirm("Really you want to delete it ?")) {
+                    x.setAttribute("type", "submit");
+                } else {
+                    x.setAttribute("type", "button");
+                }
+            }
+
+        </script>

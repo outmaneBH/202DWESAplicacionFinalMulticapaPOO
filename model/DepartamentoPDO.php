@@ -178,7 +178,7 @@ class DepartamentoPDO {
         return $validCod;
     }
 
-     /**
+    /**
      * Es una funccion que modifica los datos de un departamento en la base de datos buscado 
      * con el codigo y modificar la descripcion con el volumen de negocio y devuelve un boolean si
      *  ha cambiado bien con true o mal con false
@@ -193,10 +193,35 @@ class DepartamentoPDO {
         $sql = "UPDATE T02_Departamento SET T02_DescDepartamento='$DescDepartamento',T02_VolumenNegocio=$VolumenNegocio  WHERE T02_CodDepartamento='" . $CodDepartamento . "'";
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
         $resultado = $resultadoConsulta->rowCount();
-        if ($resultado >0) {
+        if ($resultado > 0) {
             $modificado = true;
         }
         return $modificado;
+    }
+    
+    /**
+     * funccion que hace un export a los departamentos en un fichero de json en  la carpeta temp
+     * @return int los bytes que han insertado
+     */
+
+    public static function exportarDepartamento() {
+        $aDepartamentos = [];
+        $sql = "SELECT * FROM T02_Departamento";
+        $resultadoConsulta = DBPDO::ejecutaConsulta($sql);
+        $resultados = $resultadoConsulta->fetchAll();
+
+        foreach ($resultados as $valor) {
+            $aDepartamento = [
+                "codeDep" => $valor["T02_CodDepartamento"],
+                "description" => $valor['T02_DescDepartamento'],
+                "salary" => $valor['T02_VolumenNegocio']
+            ];
+            array_push($aDepartamentos, $aDepartamento);
+        }
+        
+        $json = json_encode($aDepartamentos, JSON_PRETTY_PRINT);
+        $bytes = file_put_contents("tmp/tablaDepartamento.json", $json);
+        return $bytes;
     }
 
 }

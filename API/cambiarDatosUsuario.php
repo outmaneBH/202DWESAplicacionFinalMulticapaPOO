@@ -22,8 +22,7 @@ $aUsuarios = [];
  * sacar la descripcion de usario y comprobar que tiene valor
  */
 if (isset($_GET["codUsuario"])&&isset($_GET["DescUsuario"])&&isset($_GET["Perfil"])) {
-    var_dump($_GET["codUsuario"],$_GET["DescUsuario"],$_GET["Perfil"]);
-
+   
    $cambiarUsuario = UsuarioPDO::cambiarDatosUsuario($_GET["codUsuario"],$_GET["DescUsuario"],$_GET["Perfil"]); //meter el objeto de usuario devuelto en un varibale 
 
     if ($cambiarUsuario) {//comprobar si hay datos meterlos en un array

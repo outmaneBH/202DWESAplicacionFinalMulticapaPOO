@@ -33,7 +33,7 @@ function loadDoc() {
 
     }
 
-    xhttp.open("GET", clase + input.value, true);
+    xhttp.open("GET", oneandone + input.value, true);
     xhttp.send();
 }
 
@@ -86,7 +86,7 @@ function myDelete(event) {
                 let msgAlert = setTimeout(msg, 5000);
             }
         };
-        xtp.open("GET", clase + x + "&&key=administrador", true);
+        xtp.open("GET", oneandone2 + x + "&&key=administrador", true);
         xtp.send();
     }
 }
@@ -129,7 +129,7 @@ function index(x) {
                 }
                 ;
                 console.log(datos[0],datos[1],datos[2]);
-                xtp.open("GET", "http://daw202.sauces.local/202DWESAplicacionFinalMulticapaPOO/API/cambiarDatosUsuario.php?codUsuario=" + datos[0] + "&&DescUsuario=" + datos[1] + "&&Perfil=" + datos[2], true);
+                xtp.open("GET", "https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/API/cambiarDatosUsuario.php?codUsuario=" + datos[0] + "&&DescUsuario=" + datos[1] + "&&Perfil=" + datos[2], true);
                 xtp.send();
             } else {
                 j=0;
