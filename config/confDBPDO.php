@@ -2,7 +2,7 @@
 //Entorno de desarollo
 /*define("HOST","mysql:host=daw202.sauces.local;dbname=DB202DWESProyectoTema5" );
 define("USER","User202DWESProyectoTema5" );
-define("PASSWORD","paso" */
+define("PASSWORD","paso" );*/
 
 //Entorno de casa
 /*define("HOST","mysql:host=192.168.3.102;dbname=DB202DWESProyectoTema5" );
@@ -11,7 +11,7 @@ define("PASSWORD","paso" );*/
 
 /*define("HOST","mysql:host=outmane.local;dbname=DB202DWESProyectoTema5" );
 define("USER","User202DWESProyectoTema5" );
-define("PASSWORD","paso" );*/
+define("PASSWORD","paso");*/
 
 
 //Entorno de 1&1

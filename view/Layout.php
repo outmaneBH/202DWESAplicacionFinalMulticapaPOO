@@ -34,7 +34,7 @@ if (isset($_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'])) {
         <span style="color: white; font-size: 20px;font-family: cursive;opacity: 0.5 ;" id="demo3"></span>
         <section class="mb-1">
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: orange"  href="webroot/media/rss.xml" target="_blank"  role="button"><i class="fa fa-rss" > Rss</i></a>
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: green"  href="#!"  role="button"><i class="fas fa-atom"> Atom</i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: green"  href="webroot/media/atom/atom.xml" target="_blank" role="button"><i class="fas fa-atom"> Atom</i></a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;"  href="webroot/media/pdf/C.V_Outmane_Bouhou.pdf" target="_blank" role="button"><img src="https://img.icons8.com/fluency/20/000000/set-as-resume.png"/>C.V.</a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;color: red"  href="../index.html" target="_blank" role="button"><i class="fab fa-firefox-browser"> Mi Web</i></a>
             <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="https://github.com/outmaneBH/202DWESAplicacionFinalMulticapaPOO" target="_blank" role="button"><i class="fab fa-github"> GitHub</i></a>
@@ -62,7 +62,7 @@ if (isset($_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'])) {
         Copyrights © 2021-2022 
         OUTMANE BOUHOU
         . All rights reserved.
-        <p>Ultima actualizacion : 17 / 02 / 2022 , version 2 </p>
+        <p>Ultima actualizacion : 25 / 02 / 2022 , version 2 </p>
     </div>
     <!-- Copyright -->
 </footer>

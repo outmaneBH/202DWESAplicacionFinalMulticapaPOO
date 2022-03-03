@@ -17,11 +17,11 @@ $aUsuarios = [];
 /**
  * sacar 
  */
-if (isset($_GET["dni"])) {
+if (isset($_GET["dni"])&&$_GET["dni"]!=""&& $_GET["dni"]!=0) {
 
     $dni = validacionFormularios::validarDni($_GET["dni"]); //meter el objeto de usuario devuelto en un varibale 
   
-    if ($dni==" El DNI no es válido.") {//comprobar si hay datos meterlos en un array
+    if ($dni!=" El DNI no es válido.") {//comprobar si hay datos meterlos en un array
         $aUsuarios = [
             'respuesta' => true,
             'msg' => "El dni Valido"];

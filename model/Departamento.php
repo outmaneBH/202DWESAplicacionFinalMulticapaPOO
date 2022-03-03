@@ -35,9 +35,15 @@ class Departamento {
     function get_codDepartamento() {
         return $this->codDepartamento;
     }
+    function set_codDepartamento($codDepartamento) {
+       $this->codDepartamento=$codDepartamento;
+    }
 
     function get_descDepartamento() {
         return $this->descDepartamento;
+    }
+    function set_descDepartamento($descDepartamento) {
+         $this->descDepartamento=$descDepartamento;
     }
 
     function get_fechaCreacionDepartamento() {
@@ -46,6 +52,9 @@ class Departamento {
 
     function get_volumenDeNegocio() {
         return $this->volumenDeNegocio;
+    }
+    function set_volumenDeNegocio($volumenDeNegocio) {
+         $this->volumenDeNegocio=$volumenDeNegocio;
     }
 
     function get_fechaBajaDepartamento() {

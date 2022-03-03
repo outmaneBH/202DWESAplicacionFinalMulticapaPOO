@@ -25,9 +25,15 @@
             $sql = <<<OB
                     USE dbs4868775;
                     INSERT INTO T02_Departamento(T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio) VALUES 
-                      ('FOL', 'departamento FOL', 1406149672, 102.4),
-                      ('DAW', 'departamento DAW', 1406149672, 1000.3),
-                      ('DIW', 'departamento DIW', 1406149672, 289.3);
+                       ('FOL', 'departamento FOL', 1406149672, 102.4),
+                       ('DAW', 'departamento DAW', 1406149672, 1000.3),
+                       ('ING', 'departamento ING', 1406149672, 102.4),
+                       ('MAT', 'departamento MATH', 1406149672, 1000.3),
+                       ('PHC', 'departamento PHC', 1406149672, 1000.5),
+                       ('DAM', 'departamento DAM', 1406149672, 1000.2),
+                       ('PPT', 'departamento PPT', 1406149672, 999.5),
+                       ('CVS', 'departamento CVS', 1406149672, 500.3),
+                       ('DIW', 'departamento DIW', 1406149672, 289.3);
 
                     INSERT INTO T01_Usuario(T01_CodUsuario,T01_Password,T01_DescUsuario)  VALUES 
                        ('albertoF',SHA2('albertoFpaso',256),'ALBERTOF'),
