@@ -68,27 +68,27 @@
                         <tr>
                             <!--El campo codeDep obligatorio -->
                             <td><label>Código del Departamento (*)   :</label></td>
-                            <td> <input type="text" name="codeDep" class="form-control" value="<?php echo (isset($_REQUEST['codeDep']) ? $_REQUEST['codeDep'] : null); ?>"/></td>
+                            <td> <input type="text" name="codeDep" class="form-control" disabled value="<?php echo $aModificar["codDepartamento"]; ?>"/></td>
                             <td><span><?php echo ($aErrores["codeDep"] != null ? $aErrores['codeDep'] : null); ?></span></td>
                         </tr>
 
                         <!--El campo description obligatorio -->
                         <tr>
                             <td><label>Descripción(*)   :</label></td>
-                            <td><input type="text"  name="description" class="form-control" value="<?php echo (isset($_REQUEST['description']) ? $_REQUEST['description'] : null); ?>"/></td>
+                            <td><input type="text"  name="description" class="form-control" value="<?php echo $aModificar["descDepartamento"]; ?>"/></td>
                             <td><span><?php echo ($aErrores["description"] != null ? $aErrores['description'] : null); ?></span></td>
                         </tr>
 
                         <!--El campo salary -->
                         <tr>
                             <td> <label>Volumen del negocio (*) :</label></td>
-                            <td> <input type="text"  name="salary" class="form-control" value="<?php echo (isset($_REQUEST['salary']) ? $_REQUEST['salary'] : null); ?>"/></td>
+                            <td> <input type="text"  name="salary" class="form-control" value="<?php echo $aModificar["volumenDepartamento"]; ?>"/></td>
                             <td> <span><?php echo ($aErrores["salary"] != null ? $aErrores['salary'] : null); ?></span></td>
                         </tr>
 
                         <tr> 
                             <td></td>
-                            <td><input type="submit" class="btn btn-success" name="submitbtn" value="Añadir datos"/></td>
+                            <td><input type="submit" class="btn btn-warning" name="submitbtn" value="Modificar datos"/></td>
                         </tr>
                     </form>
                 </table>

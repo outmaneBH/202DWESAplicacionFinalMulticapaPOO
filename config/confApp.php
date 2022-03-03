@@ -52,6 +52,7 @@ $controllers = [
     "mtodepartamentos" => "controller/cMtoDepartamentos.php",
     "mtousuarios" => "controller/cMtoUsuarios.php",
     "altadepartamento" => "controller/cAltaDepartamento.php",
+    "modificardepartamento" => "controller/cModificarDepartamento.php",
     "consultarModificarOpiniones" => "controller/cConsultarModificarOpiniones.php"
 ];
 
@@ -72,6 +73,7 @@ $views = [
     "mtodepartamentos" => "view/vMtoDepartamentos.php",
     "mtousuarios" => "view/vMtoUsuarios.php",
     "altadepartamento" => "view/vAltaDepartamento.php",
+    "modificardepartamento" => "view/vModificarDepartamento.php",
     "consultarModificarOpiniones" => "view/vConsultarModificarOpiniones.php"
 ];
 

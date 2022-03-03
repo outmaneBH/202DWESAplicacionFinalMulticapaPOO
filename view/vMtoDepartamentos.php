@@ -108,7 +108,7 @@
                                 <td><?php echo $aDepartamento['volumen']; ?></td>
                                 <td><?php echo $aDepartamento['fechaBaja'] != null ? date('d-m-Y  , H:i:s', $aDepartamento['fechaBaja']) : '-'; ?></td>
 <!--                                <td><button type="button" name="more" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/more.png"></button></td>-->
-                                <td><button type="button" name="update" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/update.png"></button></td>
+                                <td><button type="submit" name="update" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/update.png"></button></td>
                                 <td><button type="submit" name="delete" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/delete.png"></button></td>
                                 <td><button type="submit" name="up" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/up.png"></button></td>
                                 <td><button type="submit" name="down" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/down.png"></button></td>

@@ -15,7 +15,14 @@ if (isset($_REQUEST['add'])) {
     header("Location:index.php");
     exit;
 }
-
+/* modificar  depatamento seleccionado */
+if (isset($_REQUEST['update'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'modificardepartamento';
+    $_SESSION['DepartamentoEnCurso']= DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['update']);
+    header("Location:index.php");
+    exit;
+}
 
 /* rehabilitar al depatamento seleccionado */
 if (isset($_REQUEST['down'])) {
