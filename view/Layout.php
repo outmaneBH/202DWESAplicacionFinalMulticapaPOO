@@ -62,7 +62,7 @@ if (isset($_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'])) {
         Copyrights © 2021-2022 
         OUTMANE BOUHOU
         . All rights reserved.
-        <p>Ultima actualizacion : 25 / 02 / 2022 , version 2 </p>
+        <p>Ultima actualizacion : 03 / 03 / 2022 , version 2 </p>
     </div>
     <!-- Copyright -->
 </footer>
