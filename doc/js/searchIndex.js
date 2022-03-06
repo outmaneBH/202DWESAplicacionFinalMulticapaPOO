@@ -216,10 +216,20 @@ Search.appendIndex(
             "summary": "get\u0020y\u0020set\u0020de\u0020la\u0020clase\u0020Departamento",
             "url": "classes/Departamento.html#method_get_codDepartamento"
         },                {
+            "fqsen": "\\Departamento\u003A\u003Aset_codDepartamento\u0028\u0029",
+            "name": "set_codDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_set_codDepartamento"
+        },                {
             "fqsen": "\\Departamento\u003A\u003Aget_descDepartamento\u0028\u0029",
             "name": "get_descDepartamento",
             "summary": "",
             "url": "classes/Departamento.html#method_get_descDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003Aset_descDepartamento\u0028\u0029",
+            "name": "set_descDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_set_descDepartamento"
         },                {
             "fqsen": "\\Departamento\u003A\u003Aget_fechaCreacionDepartamento\u0028\u0029",
             "name": "get_fechaCreacionDepartamento",
@@ -230,6 +240,11 @@ Search.appendIndex(
             "name": "get_volumenDeNegocio",
             "summary": "",
             "url": "classes/Departamento.html#method_get_volumenDeNegocio"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003Aset_volumenDeNegocio\u0028\u0029",
+            "name": "set_volumenDeNegocio",
+            "summary": "",
+            "url": "classes/Departamento.html#method_set_volumenDeNegocio"
         },                {
             "fqsen": "\\Departamento\u003A\u003Aget_fechaBajaDepartamento\u0028\u0029",
             "name": "get_fechaBajaDepartamento",
@@ -346,6 +361,11 @@ Search.appendIndex(
             "summary": "La\u0020funcion\u0020busca\u0020departamento\u0020con\u0020descripcion\u0020y\u0020por\u0020defecto\u0020es\u0020null\ndevuelve\u0020un\u0020array\u0020porque\u0020puede\u0020contener\u0020mas\u0020de\u0020un\u0020registro.",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
         },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AcontarPaginasDepartamentos\u0028\u0029",
+            "name": "contarPaginasDepartamentos",
+            "summary": "",
+            "url": "classes/DepartamentoPDO.html#method_contarPaginasDepartamentos"
+        },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbajaLogicaDepartamento\u0028\u0029",
             "name": "bajaLogicaDepartamento",
             "summary": "Dar\u0020a\u0020la\u0020funcion\u0020el\u0020codigo\u0020de\u0020departamento\u0020dar\u0020al\u0020departamento\u0020una\nbaja\u0020logica\u0020,\u0020lo\u0020cambiamos\u0020en\u0020la\u0020base\u0020de\u0020datos",
@@ -365,6 +385,26 @@ Search.appendIndex(
             "name": "Total",
             "summary": "",
             "url": "classes/DepartamentoPDO.html#method_Total"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AaltaDepartamento\u0028\u0029",
+            "name": "altaDepartamento",
+            "summary": "Es\u0020una\u0020funccion\u0020que\u0020inserta\u0020un\u0020nuevo\u0020departamento\u0020en\u0020la\u0020base\u0020de\u0020datos\ncon\u0020el\u0020codigo\u0020y\u0020la\u0020descripcion\u0020con\u0020el\u0020volumen\u0020de\u0020negocio\u0020y\u0020devuelve\u0020un\u0020boolean\u0020si\n\u0020ha\u0020insertado\u0020bien\u0020con\u0020true\u0020o\u0020mal\u0020con\u0020false",
+            "url": "classes/DepartamentoPDO.html#method_altaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AvalidarCodNoExiste\u0028\u0029",
+            "name": "validarCodNoExiste",
+            "summary": "Validamos\u0020el\u0020departamento\u0020si\u0020existe\u0020en\u0020la\u0020base\u0020de\u0020datos\u0020,\u0020si\u0020exsiste\u0020\u0020devolvernos\u0020un\ntrue\u0020para\u0020tarabajar\u0020con\u0020este\u0020boolean\u0020en\u0020la\u0020aplicacion",
+            "url": "classes/DepartamentoPDO.html#method_validarCodNoExiste"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AmodificaDepartamento\u0028\u0029",
+            "name": "modificaDepartamento",
+            "summary": "Es\u0020una\u0020funccion\u0020que\u0020modifica\u0020los\u0020datos\u0020de\u0020un\u0020departamento\u0020en\u0020la\u0020base\u0020de\u0020datos\u0020buscado\ncon\u0020el\u0020codigo\u0020y\u0020modificar\u0020la\u0020descripcion\u0020con\u0020el\u0020volumen\u0020de\u0020negocio\u0020y\u0020devuelve\u0020un\u0020boolean\u0020si\n\u0020ha\u0020cambiado\u0020bien\u0020con\u0020true\u0020o\u0020mal\u0020con\u0020false",
+            "url": "classes/DepartamentoPDO.html#method_modificaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AexportarDepartamento\u0028\u0029",
+            "name": "exportarDepartamento",
+            "summary": "funccion\u0020que\u0020hace\u0020un\u0020export\u0020a\u0020los\u0020departamentos\u0020en\u0020un\u0020fichero\u0020de\u0020json\u0020en\u0020\u0020la\u0020carpeta\u0020temp",
+            "url": "classes/DepartamentoPDO.html#method_exportarDepartamento"
         },                {
             "fqsen": "\\interfaceDB",
             "name": "interfaceDB",

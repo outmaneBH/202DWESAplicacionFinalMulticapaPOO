@@ -183,7 +183,7 @@
                                                     <input name="btnapiFree" type="button" style="margin-right: 5px;" target="_blank" value="Api Propio" class="btn btn-primary" /> 
                                                 </form>-->
 
-                        <a href="doc/apiRest.php"><input name="btnapiFree" type="button" style="margin-right: 5px;"  value="Api Propio" class="btn btn-primary" /></a>
+                        <a href="doc/apiRest.php" target="_blank"><input name="btnapiFree" type="button" style="margin-right: 5px;"   value="Api Info" class="btn btn-info" /></a>
 
                         <input id="sp1" style="padding-left: 10px;padding-right: 10px;font-size: 20px;" type="button" name="t1" onclick="openNav()" value="&#9776;">
 
@@ -198,7 +198,7 @@
                     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST" >
                         <input name="btnlogin" type="submit" style="margin-right: 5px;" value="Login" class="btn btn-primary" /><br>
                         <input name="btnregister" type="submit" style="margin-right: 5px;" value="Register" class="btn btn-primary" /><br>
-                        <select name="select" class="bg-primary">      
+                        <select name="select" disabled class="bg-primary">      
                             <option value="">Idioma </option>
                             <option value="es">Español</option>
                             <option value="en">Ingles</option>

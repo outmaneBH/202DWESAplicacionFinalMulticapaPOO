@@ -70,9 +70,7 @@
                 </div>
                 <div class="buscar">
                     <div class="input-group mb-2">  
-
-                        <input type="text" class="form-control"  value="<?php echo $CodigoDepartamento ? $CodigoDepartamento : null; ?>" name="searchTxt" placeholder="Buscar Deparatmento por Codigo" >
-
+                        <input type="text" class="form-control"  value="<?php echo $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda'] ?? ''; ?>" name="searchTxt" placeholder="Buscar Deparatmento por Desc" >
                         <button class="btn btn-outline-primary" type="submit" name="search" >Buscar</button>
                         <select onchange="this.form.submit()" name="select" style="width: 20%;border: none;margin-left: 10px;padding: 5px;">
                             <option <?php echo $selectValor == 'all' ? 'selected' : ''; ?> value="all">All</option>
@@ -83,7 +81,6 @@
                 </div>
             </form>
             <table class="table table-striped">
-
                 <tr>
                     <th>NO</th>
                     <th>Codigo</th>
@@ -92,7 +89,6 @@
                     <th>Volumen</th>
                     <th>Fecha Baja</th>
                     <th style="text-align: center;" colspan="5">Crud</th>
-
                 </tr>
                 <?php
                 if ($aDepartamentos) {
@@ -132,14 +128,13 @@
                     <form method="post" action="index.php">
                         <input type="submit" class="btn btn-outline-primary" value="<<" name="first" />
                         <input type="submit" class="btn btn-outline-primary" value="<" name="prev" />
-                        <input type="button" class="btn btn-outline-primary" value="<?php echo $_SESSION['paginacion']; ?> / <?php echo $totalPage; ?>" name="page" />
+                        <input type="button" class="btn btn-outline-primary" value="<?php echo $_SESSION['paginacionDepartamentos']['numPagina']; ?> / <?php echo $_SESSION['paginacionDepartamentos']['totalPaginas']; ?>" name="page" />
                         <input type="submit" class="btn btn-outline-primary" value=">" name="next" />
                         <input type="submit" class="btn btn-outline-primary" value=">>" name="last" />
                     </form>
                 </div>
             </div>
         </div>
-
         <script>
             function index(x){
                 if (confirm("Really you want to delete it ?")) {
@@ -148,5 +143,4 @@
                     x.setAttribute("type", "button");
                 }
             }
-
         </script>

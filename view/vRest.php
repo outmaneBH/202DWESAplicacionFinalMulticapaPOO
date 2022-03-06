@@ -8,7 +8,7 @@
         <script src="webroot/js/bootstrap.bundle.min.js"></script>
         <link rel="icon" href="webroot/media/fav.png" type="image/ico" sizes="16x16">
         <style>
-            
+
             table{
                 width: 100%;
                 height: 40px;
@@ -65,7 +65,7 @@
                 text-decoration: underline blue 2px;
             }
 
-
+            
         </style>
 
     </head>
@@ -89,32 +89,88 @@
                     <p id="sp1">Este api busca  universidades de Todo el mundo solamente hay que escribir  en el input el nombre del Pais  y pulsa <strong>Buscar</strong>  para mostrar los resultados , Por ejemplo ( Spain , Morocco , Canada , France ...)
                         para mas informacion <a href="https://apipheny.io/free-api/" target="_blank"> : informacion</a>
                     </p>
-                    <input style="margin-left: 10%;" id="in1" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/>
-                    <input id="btn1" type="submit" name="submitbtn" style="padding: 4px;" class="btn btn-primary"  value="Buscar"/><br>
+                    <input style="margin-left: 10%;" id="in1" type="text" placeholder="Buscar un Universidad"  name="country" value="<?php echo isset($_REQUEST['country']) ? $_REQUEST['country'] : null; ?>"/><br><br>
+                    <input style="margin-left: 10%;" id="btn1" type="submit" name="submitbtn" style="padding: 4px;" class="btn btn-primary"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service busca el Tiemp de Toda españa con un codigo de provincia ( 01,02 , ...) y devuelve el estado de Meteo.<br>
                         Puedes consultar mas informacion desde este web <a href="https://www.el-tiempo.net/api" target="_blank">apiTiempo</a>.
                     </p>
                     <br>
-                    <input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>
-                    <input id="btn2"   type="submit" name="submitbtn" style="padding: 4px;" class="btn btn-success"  value="Buscar"/><br>
+                    <!--<input id="in2" name="codProv" style="margin-left: 10%;" type="text" placeholder="Buscar por Provincia"   value="<?php echo isset($_REQUEST['codProv']) ? $_REQUEST['codProv'] : null; ?>"/>-->
+                    <select required name="codProv" class="form-select"  >
+                        <option value="">Elige Provincia</option>
+                        <option value="01">Álava/Araba</option>
+                        <option value="02">Albacete</option>
+                        <option value="03">Alicante</option>
+                        <option value="04">Almería</option>
+                        <option value="33">Asturias</option>
+                        <option value="05">Ávila</option>
+                        <option value="06">Badajoz</option>
+                        <option value="08">Barcelona</option>
+                        <option value="09">Burgos</option>
+                        <option value="48">Bizkaia</option>
+                        <option value="10">Cáceres</option>
+                        <option value="11">Cádiz</option>
+                        <option value="12">Castellón</option>
+                        <option value="39">Cantabria</option>
+                        <option value="13">Ciudad Real</option>
+                        <option value="14">Córdoba</option>
+                        <option value="51">Ceuta</option>
+                        <option value="16">Cuenca</option>
+                        <option value="17">Gerona/Girona</option>
+                        <option value="18">Granada</option>
+                        <option value="19">Guadalajara</option>
+                        <option value="20">Guipúzcoa/Gipuzkoa</option>
+                        <option value="21">Huelva</option>
+                        <option value="22">Huesca</option>
+                        <option value="23">Jaén</option>
+                        <option value="15">La Coruña/A Coruña</option>
+                        <option value="26">La Rioja</option>
+                        <option value="35">Las Palmas</option>
+                        <option value="24">León</option>
+                        <option value="25">Lérida/Lleida</option>
+                        <option value="27">Lugo</option>
+                        <option value="28">Madrid</option>
+                        <option value="29">Málaga</option>
+                        <option value="52">Melilla</option>
+                        <option value="30">Murcia</option>
+                        <option value="31">Navarra</option>
+                        <option value="32">Orense/Ourense</option>
+                        <option value="34">Palencia</option>
+                        <option value="36">Pontevedra</option>
+                        <option value="37">Salamanca</option>
+                        <option value="40">Segovia</option>
+                        <option value="41">Sevilla</option>
+                        <option value="42">Soria</option>
+                        <option value="43">Tarragona</option>
+                        <option value="38">Tenerife</option>
+                        <option value="44">Teruel</option>
+                        <option value="45">Toledo</option>
+                        <option value="46">Valencia</option>
+                        <option value="47">Valladolid</option>
+                        <option value="51">Vizcaya/Bizkaia</option>
+                        <option value="49">Zamora</option>
+                        <option value="50">Zaragoza</option>
+                    </select>
+                    <br>
+                    <input id="btn2" style="margin-left: 10%;"   type="submit" name="submitbtn" style="padding: 4px;" class="btn btn-success"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Este Web service es mi propio Api Rest , devuelve un deparatamento buscado con el codigo dado en el input de Abajo.
                         Puedes consultar mas informacion en mi web  <a href="https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO/doc/apiRest.php" target="_blank">Api Departamento</a>.
                     </p><br>
 
-                    <input id="in3" name="codDepartamento" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamento']) ? $_REQUEST['codDepartamento'] : null; ?>"/>
-                    <input id="btn2"   type="submit" name="submitbtn"  style="padding: 4px;" class="btn btn-dark"  value="Buscar"/><br>
+                    <input id="in3" name="codDepartamento" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamento']) ? $_REQUEST['codDepartamento'] : null; ?>"/><br><br>
+                    <input id="btn2"style="margin-left: 10%;"   type="submit" name="submitbtn"  style="padding: 4px;" class="btn btn-dark"  value="Buscar"/><br>
                 </div>
                 <div class="w3-panel w3-card">
                     <p id="sp1">Devolver los datos de un depratamento buscado con codigo el input abajo,he sacado la informacion desde el api de Isabel,
                         Puedes consultar mas informacion en la web de Isabel  <a href="https://daw204.ieslossauces.es/AplicacionFinal/index.php" target="_blank">Api Departamento de Compañero</a>.
                     </p>
 
-                    <input id="in3" name="codDepartamentoIsabel" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamentoIsabel']) ? $_REQUEST['codDepartamentoIsabel'] : null; ?>"/>
-                    <input id="btn2"   type="submit" name="submitbtn"  style="padding: 4px;" class="btn btn-info"  value="Buscar"/><br>
+                    <input id="in3" name="codDepartamentoIsabel" style="margin-left: 10%;" type="text" placeholder="Buscar por Codigo"   value="<?php echo isset($_REQUEST['codDepartamentoIsabel']) ? $_REQUEST['codDepartamentoIsabel'] : null; ?>"/><br><br>
+                    <input id="btn2" style="margin-left: 10%;"  type="submit" name="submitbtn"  style="padding: 4px;" class="btn btn-info"  value="Buscar"/><br>
                 </div>
 
             </div>
@@ -151,7 +207,7 @@
                             <td><?php echo $aResultado['max']; ?></td>
                         </tr>
                         <?php
-                    } 
+                    }
                 }
                 ?>
             </table>

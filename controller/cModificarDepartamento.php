@@ -74,9 +74,9 @@ if ($entradaOK) {
     if ($modificarDepartamento) {
         $departamentoEnCurso->set_descDepartamento($aRespuestas["description"]);
         $departamentoEnCurso->set_volumenDeNegocio($aRespuestas["salary"]);
-        header("Location:index.php");
-        exit;
     }
+    header("Location:index.php");
+    exit;
 } else {
     require_once $views['layout'];
 }

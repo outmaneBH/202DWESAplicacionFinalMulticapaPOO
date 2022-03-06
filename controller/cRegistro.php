@@ -49,7 +49,11 @@ if (isset($_REQUEST['btncreate'])) {
         $aErrores["username"] = UsuarioPDO::validarCodNoExiste($_REQUEST['username']);
         $error = $aErrores["username"];
     }
-
+    
+    if($aErrores["password"]){
+        $error = "! Algo mal ¡";
+    }
+    
     /* recorrer el array de errores */
     foreach ($aErrores as $nombreCampo => $value) {
         //Comprobar si el campo ha sido rellenado

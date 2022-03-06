@@ -62,7 +62,7 @@ function CreateTr(campo, valor, newTr) {
 
 function createbtn(newTr, codigo) {
 //    var newTD = document.createElement("td");
-//    newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='myUpdate(event)' name='update' ><img  class='" + codigo + "' src='webroot/media/update.png'/></button>";
+//    newTD.innerHTML = "<button type='button' value='" + codigo + "' name='update' ><img  class='" + codigo + "' src='webroot/media/update.png'/></button>";
 //    newTr.appendChild(newTD);
     var newTD = document.createElement("td");
     newTD.innerHTML = "<button type='button' value='" + codigo + "' onclick='myDelete(event)' name='delete' ><img  class='" + codigo + "' src='webroot/media/delete.png'/></button>";

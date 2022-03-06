@@ -32,7 +32,6 @@ Hola como estas, gracias por la compra o descarga de esta aplicacion, a continua
 * 2.Buscar los archivos CreaDB202DWESProyectoTema5-Desarollo.sql, CargaInicialDB202DWESProyectoTema5-Desarollo.sql, BorraDB202DWESProyectoTema5-Desarollo.sql en 202DWESAplicacionFinalMulticapaPOO/scriptDB/(SqlFile).sql, una vez localizado copiar y pegar el contenido en una ventana de MySQL, PHPMyAdmin o MySQL WorkBench
 * 3.En caso de ser necesario modificar el archivo configDB en config/confDBPDO.php, para los datos asociados al acceso a la base de datos.
 
-Login : host = db5005797200.hosting-data.io  USER = dbu2267480 Password = daw2_Sauces
 
 Dudas y sugerencias aqui esta mi web https://daw202.ieslossauces.es/
 
@@ -43,4 +42,4 @@ Dudas y sugerencias aqui esta mi web https://daw202.ieslossauces.es/
  http://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPOO
 
 ### Ultima actualizacion :
-* 03/03/2022
+* 06/03/2022
