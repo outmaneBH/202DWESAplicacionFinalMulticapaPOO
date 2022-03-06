@@ -3,7 +3,9 @@
 /* Volvernos a inicioPrivado cuando se pulsaado cancel */
 if (isset($_REQUEST['cancel'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    unset($_SESSION['paginacion']);
+    unset($_SESSION['criterioBusquedaDepartamentos']);
+    unset($_SESSION['paginacionDepartamentos']);
+    unset($_SESSION['codDepartamentoEnCurso']);
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header("Location:index.php");
     exit;
@@ -26,7 +28,7 @@ if (isset($_REQUEST['export'])) {
 if (isset($_REQUEST['update'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'modificardepartamento';
-    $_SESSION['DepartamentoEnCurso']= DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['update']);
+    $_SESSION['DepartamentoEnCurso'] = DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['update']);
     header("Location:index.php");
     exit;
 }
@@ -46,28 +48,34 @@ if (isset($_REQUEST['delete'])) {
     DepartamentoPDO::deleteDepartamento($_REQUEST['delete']);
 }
 
-/*meter el total de las paginas en un variable para podemos usar lo desupes*/
-$totalPage = ceil(DepartamentoPDO::Total() / 3);
 
-/*si ha pulsado el buton ultimo , mostramos el total de paginas*/
-if (isset($_REQUEST['last'])) {
-    $_SESSION['paginacion'] = $totalPage;
-}
 
-/*si ha pulsado el buton primero , mostramos uno*/
+/* si ha pulsado el buton primero , mostramos uno */
 if (isset($_REQUEST['first'])) {
-    $_SESSION['paginacion'] = 1;
+    $_SESSION['paginacionDepartamentos']['numPagina'] = 1;
 }
 
-/*Si ha pulsado en el button de atras y el numero no es menor o igual que 2*/
-if (isset($_REQUEST['prev']) && $_SESSION['paginacion'] >= 2) {
-    $_SESSION['paginacion']--;
+/* Si ha pulsado en el button de adelante y el numero no es mas que el total de las paginas */
+if (isset($_REQUEST['next']) && $_SESSION['paginacionDepartamentos']['numPagina'] < $_SESSION['paginacionDepartamentos']['totalPaginas']) {
+    $_SESSION['paginacionDepartamentos']['numPagina']++;
 }
 
-/*Si ha pulsado en el button de adelante y el numero no es mas que el total de las paginas*/
-if (isset($_REQUEST['next']) && $_SESSION['paginacion'] < $totalPage) {
-    $_SESSION['paginacion']++;
+/* Si ha pulsado en el button de atras y el numero no es menor o igual que 2 */
+if (isset($_REQUEST['prev']) && $_SESSION['paginacionDepartamentos']['numPagina'] >= 2) {
+    $_SESSION['paginacionDepartamentos']['numPagina']--;
 }
+
+/* si ha pulsado el buton ultimo , mostramos el total de paginas */
+if (isset($_REQUEST['last'])) {
+    $_SESSION['paginacionDepartamentos']['numPagina'] = $_SESSION['paginacionDepartamentos']['totalPaginas'];
+  
+}
+
+
+
+
+
+
 
 /* definir un array para alamcenar errores del description */
 $aErrores = [
@@ -110,14 +118,34 @@ if ($entradaOK) {
     /* almacenamos los datos
      */
     $aRespuestas["searchTxt"] = $_REQUEST["searchTxt"]; //meter el varibale de la drescripcion en aRespuestas y select value
+    $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda'] = $aRespuestas["searchTxt"];
+    $_SESSION['criterioBusquedaDepartamentos']['estado'] = $aRespuestas["select"];
+    $_SESSION['paginacionDepartamentos']['numPagina'] = 1;
+    $CodigoDepartamento = $_SESSION ["codDepartamentoEnCurso"];
+}
+if (!isset($_SESSION['paginacionDepartamentos']['numPagina'])) {
+    $_SESSION['paginacionDepartamentos']['numPagina'] = 1;
 }
 
 
-$_SESSION ["codDepartamentoEnCurso"] = $aRespuestas["searchTxt"];
-$CodigoDepartamento = $_SESSION ["codDepartamentoEnCurso"];
-if (!isset($_SESSION['paginacion'])) {
-    $_SESSION['paginacion'] = 1;
-}
+$_SESSION['paginacionDepartamentos']['totalPaginas'] = DepartamentoPDO::contarPaginasDepartamentos(
+                $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda'] ?? '',
+                $_SESSION['criterioBusquedaDepartamentos']['estado'] ?? "all");
+
+$objetoDepartamento = DepartamentoPDO::buscaDepartamentosPorDesc(
+                $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda'] ?? '',
+                $_SESSION['criterioBusquedaDepartamentos']['estado'] ?? "all",
+                $_SESSION['paginacionDepartamentos']['numPagina']);
+
+
+
+
+
+//
+//$_SESSION ["codDepartamentoEnCurso"] = $aRespuestas["searchTxt"];
+
+
+
 
 //$contar= DepartamentoPDO::contarPaginasDepartamentos($aRespuestas["searchTxt"],$aRespuestas["select"]);
 
@@ -126,7 +154,7 @@ if (!isset($_SESSION['paginacion'])) {
  * buscamos el departamento con su descripcion metiendole en variable como objeto y reccorerlo para usar
  * el array en la vista de mtodepartamentos.
  */
-$objetoDepartamento = DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas["searchTxt"], $aRespuestas["select"], $_SESSION['paginacion']);
+//$objetoDepartamento = DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas["searchTxt"], $aRespuestas["select"], $_SESSION['paginacion']);
 
 if ($objetoDepartamento) {
     foreach ($objetoDepartamento as $aDepartamento) {
