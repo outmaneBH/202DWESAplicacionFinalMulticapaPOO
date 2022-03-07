@@ -103,8 +103,7 @@ class Provincia {
      function getName() {
         return $this->name;
     }
-
-    
+ 
 
     function getDescripcion() {
         return $this->descripcion;

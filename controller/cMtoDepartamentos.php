@@ -84,8 +84,6 @@ if (isset($_REQUEST['last'])) {
 
 
 
-
-
 /* definir un array para alamcenar errores del description */
 $aErrores = [
     "searchTxt" => null];
