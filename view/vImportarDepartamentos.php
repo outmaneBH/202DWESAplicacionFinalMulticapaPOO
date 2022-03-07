@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Exportar Departamentos</title>
+        <title>Importar Departamentos</title>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -34,12 +34,12 @@
             }
             .buscar{
                 border: 1px solid white;
-                height: 80px;
+                height:140px;
                 margin-bottom: 20px;
                 width: 100%;
                 padding: 20px;
             }
-        
+
         </style>
     </head>
     <body>
@@ -50,18 +50,26 @@
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                 <button style="margin: 10px;font-weight: bold;float: left;" name="cancel" class="btn btn-primary" type="submit">Cancel</button>
             </form>
-            <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Exportar Departamento</p>
+            <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Importar Departamento</p>
         </div>
-
-        <?php  echo ($msg != null ? $msg : null); ?> 
+        <?php echo ($msg != null ? $msg : null); ?> 
         <div id="div2">
             <form action="index.php" method="get" class="row g-3 w3-center">
                 <div class="buscar">
-                    <div class="input-group mb-2">  
-                        <input type="text" style="width: 200px" disabled class="form-control"  value="" name="searchTxt" placeholder="Export Departamentos" >
-                        <!--<button type="submit" name="export" class="btn btn-dark mb-3" >Export</button>-->
-                        <button class="btn btn-outline-primary" type="submit" name="export" >Export</button>
-                        <a href="https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPO/tmp/tablaDepartamento.json" download class="btn btn-outline-success"  >descargar</a>
+                    <div class="input-group mb-2"> 
+                        <div class="mb-3">
+
+                            <input class="form-control" type="file" name="fileDepartamentos" id="formFile">
+
+<!--                        <input type="text" style="width: 200px" disabled class="form-control"  value="" name="searchTxt" placeholder="Export Departamentos" >-->
+        
+                            <br>
+                            <button class="btn btn-outline-primary" type="submit" name="import" >Import</button>
+                            <button type="submit" name="insert" class="btn btn-outline-success" >Insert</button>
+                            <br>
+                            <span style="color: red;"><?php echo $error; ?></span>
+                            <!--<a href="https://daw202.ieslossauces.es/202DWESAplicacionFinalMulticapaPO/tmp/tablaDepartamento.json" download class="btn btn-outline-success"  >descargar</a>-->
+                        </div>
                     </div>
                 </div>
             </form>

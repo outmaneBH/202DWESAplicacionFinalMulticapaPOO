@@ -198,12 +198,11 @@ class DepartamentoPDO {
         }
         return $modificado;
     }
-    
+
     /**
      * funccion que hace un export a los departamentos en un fichero de json en  la carpeta temp
      * @return int los bytes que han insertado
      */
-
     public static function exportarDepartamento() {
         $aDepartamentos = [];
         $sql = "SELECT * FROM T02_Departamento";
@@ -218,10 +217,18 @@ class DepartamentoPDO {
             ];
             array_push($aDepartamentos, $aDepartamento);
         }
-        
+
         $json = json_encode($aDepartamentos, JSON_PRETTY_PRINT);
         $bytes = file_put_contents("tmp/tablaDepartamento.json", $json);
         return $bytes;
+    }
+
+    public static function importarDepartamento($datosImportar) {
+
+        $jsonFile = file_get_contents('./' . $datosImportar);
+        $Departamentos = json_decode($jsonFile, true);
+
+        var_dump($Departamentos);
     }
 
 }

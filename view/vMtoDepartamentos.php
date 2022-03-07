@@ -65,7 +65,7 @@
             <form action="index.php" method="get" class="row g-3 w3-center">
                 <div class="botones">
                     <button type="submit" name="add" class="btn btn-success mb-3">Add</button>
-                    <button type="button" name="import" class="btn btn-info mb-3"disabled>Import</button>
+                    <button type="submit" name="import" class="btn btn-info mb-3">Import</button>
                     <button type="submit" name="export" class="btn btn-dark mb-3" >Export</button>
                 </div>
                 <div class="buscar">

@@ -54,6 +54,7 @@ $controllers = [
     "altadepartamento" => "controller/cAltaDepartamento.php",
     "modificardepartamento" => "controller/cModificarDepartamento.php",
     "exportardepartamentos" => "controller/cExportarDepartamentos.php",
+    "importardepartamentos" => "controller/cImportarDepartamentos.php",
     "consultarModificarOpiniones" => "controller/cConsultarModificarOpiniones.php"
 ];
 
@@ -76,6 +77,7 @@ $views = [
     "altadepartamento" => "view/vAltaDepartamento.php",
     "modificardepartamento" => "view/vModificarDepartamento.php",
     "exportardepartamentos" => "view/vExportarDepartamentos.php",
+    "importardepartamentos" => "view/vImportarDepartamentos.php",
     "consultarModificarOpiniones" => "view/vConsultarModificarOpiniones.php"
 ];
 
