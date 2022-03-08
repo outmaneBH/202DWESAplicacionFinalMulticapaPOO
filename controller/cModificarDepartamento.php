@@ -75,6 +75,7 @@ if ($entradaOK) {
         $departamentoEnCurso->set_descDepartamento($aRespuestas["description"]);
         $departamentoEnCurso->set_volumenDeNegocio($aRespuestas["salary"]);
     }
+    $_SESSION['paginaEnCurso'] = 'mtodepartamentos';
     header("Location:index.php");
     exit;
 } else {

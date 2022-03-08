@@ -15,13 +15,17 @@ if (isset($_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'])) {
             <h3 style="color: black;">Tecnologias utilizadas</h3>
         </div>
 
-        <div style="display: flex;flex-flow: row;justify-content: center" class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <div style="display: flex;flex-flow: row wrap;justify-content: center" class="w3-container w3-border-top w3-padding-16 w3-light-grey">
             <div class="w3-panel w3-card">Css<img src="https://img.icons8.com/color/48/000000/css3.png" alt="alt"/></div>
             <div class="w3-panel w3-card">JS<img src="https://img.icons8.com/color/48/000000/javascript--v1.png"/></div>
             <div class="w3-panel w3-card">HTML5<img src="https://img.icons8.com/color/48/000000/html-5--v1.png"/></div>
             <div class="w3-panel w3-card">Bootstrap<img src="https://img.icons8.com/color/48/000000/bootstrap.png"/></div>
+            <br>
             <div class="w3-panel w3-card">PHP<img src="https://img.icons8.com/officel/48/000000/php-logo.png"/></div>
             <div class="w3-panel w3-card">MYSQL<img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-mysql-an-open-source-relational-database-management-system-logo-color-tal-revivo.png"/></div>
+            <div class="w3-panel w3-card">Ubuntu<img src="https://img.icons8.com/color/48/000000/ubuntu--v1.png"/></div>
+             <div class="w3-panel w3-card">Servidores<img src="https://img.icons8.com/color/48/000000/load-balancer.png"/></div>
+            
         </div>
 
     </div>
@@ -62,7 +66,7 @@ if (isset($_SESSION['usuario202DWESAplicacionFinalMulticapaPOO'])) {
         Copyrights © 2021-2022 
         OUTMANE BOUHOU
         . All rights reserved.
-        <p>Ultima actualizacion : 07 / 03 / 2022 , version 2 </p>
+        <p>Ultima actualizacion : 08 / 03 / 2022 , version 2.7 </p>
     </div>
     <!-- Copyright -->
 </footer>
