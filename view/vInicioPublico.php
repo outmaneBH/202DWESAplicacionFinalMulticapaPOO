@@ -159,10 +159,10 @@
                 width: 80%;
                 height: 300px;
             }
-           
+
             .w3-ul img{
                 margin-top: 30px;
-                 
+
             }
 
         </style>
@@ -209,6 +209,15 @@
             </div>
 
             <div class="w3-row-padding w3-padding-16">
+                <div class="w3-quarter w3-margin-bottom">
+                    <ul class="w3-ul  w3-center ">
+                        <li class="w3-blue w3-large w3-padding-4">Info Api</li>
+                        <img  src="webroot/media/pdf/Api.PNG" alt="Info"  >
+                        <li class=" w3-padding-12">
+                            <button onclick="document.getElementById('id08').style.display = 'block'" class="w3-button w3-green w3-padding-6">Lerr EL PDF</button> 
+                        </li>
+                    </ul>
+                </div>
                 <div class="w3-quarter w3-margin-bottom">
                     <ul class="w3-ul  w3-center ">
                         <li class="w3-blue w3-large w3-padding-4">Estandar deDesarollo</li>
@@ -363,6 +372,16 @@
                             <span onclick="document.getElementById('id07').style.display = 'none'"
                                   class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
                             <iframe src="webroot/media/pdf/201127ModeloFisicoDeDatos20-21.pdf"
+                                    style="width:100%;border:none;height:500px"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div id="id08" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="width: 900px;">
+                        <div class="w3-center"><br>
+                            <span onclick="document.getElementById('id08').style.display = 'none'"
+                                  class="w3-button  w3-white w3-display-topright " title="Close Modal">X</span>
+                            <iframe src="webroot/media/pdf/ApiRest.pdf"
                                     style="width:100%;border:none;height:500px"></iframe>
                         </div>
                     </div>

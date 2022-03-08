@@ -76,6 +76,7 @@ if ($entradaOK) {
 
     $altaDepartamento = DepartamentoPDO::altaDepartamento($aRespuestas["codeDep"], $aRespuestas["description"], $aRespuestas["salary"]);
     if ($altaDepartamento) {
+        $_SESSION['paginaEnCurso'] = 'mtodepartamentos';
         header("Location:index.php");
         exit;
     }

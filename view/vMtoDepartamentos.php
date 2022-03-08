@@ -42,6 +42,13 @@
             td{
                 font-weight: bold;
             }
+            
+            .red{
+                color: red;
+            }
+            .green{
+                color: green;
+            }
 
         </style>
     </head>
@@ -56,16 +63,17 @@
         }
         ?>
         <div class="w3-bar w3-deep-purple  ">
-            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-                <button style="margin: 10px;font-weight: bold;float: left;" name="cancel" class="btn btn-primary" type="submit">Cancel</button>
-            </form>
+
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Mto Departamentos</p>
         </div>
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+            <button style="margin: 10px;font-weight: bold;float: left;" name="cancel" class="btn btn-primary" type="submit">Cancel</button>
+        </form>
         <div class="div1">
-            <form action="index.php" method="get" class="row g-3 w3-center">
+            <form action="index.php" method="POST" class="row g-3 w3-center">
                 <div class="botones">
                     <button type="submit" name="add" class="btn btn-success mb-3">Add</button>
-                    <button type="button" name="import" class="btn btn-info mb-3"disabled>Import</button>
+                    <button type="submit" name="import" class="btn btn-info mb-3">Import</button>
                     <button type="submit" name="export" class="btn btn-dark mb-3" >Export</button>
                 </div>
                 <div class="buscar">
@@ -102,12 +110,22 @@
                                 <td><?php echo $aDepartamento['descripcion']; ?></td>
                                 <td><?php echo $aDepartamento['fechaCrea']; ?></td>
                                 <td><?php echo $aDepartamento['volumen']; ?></td>
-                                <td><?php echo $aDepartamento['fechaBaja'] != null ? date('d-m-Y  , H:i:s', $aDepartamento['fechaBaja']) : '-'; ?></td>
+                                <td class="fecha"><?php echo $aDepartamento['fechaBaja'] != null ? date('d-m-Y  , H:i:s', $aDepartamento['fechaBaja']) : '-'; ?></td>
         <!--                                <td><button type="button" name="more" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/more.png"></button></td>-->
                                 <td><button type="submit" name="update" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/update.png"></button></td>
                                 <td><button type="button" onclick="index(this)" name="delete" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/delete.png"></button></td>
-                                <td><button type="submit" name="up" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/up.png"></button></td>
-                                <td><button type="submit" name="down" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/down.png"></button></td>
+
+                                <?php
+                                if ($aDepartamento['fechaBaja'] == null) {
+                                    ?>
+                                    <td><button type="submit" name="down" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/desactivar.png"></button></td>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <td><button type="submit" name="up" value="<?php echo $aDepartamento['codigo']; ?>"><img src="webroot/media/activar.png"></button></td>-->
+                                    <?php
+                                }
+                                ?>
                             </tr>
                         </form>
                         <?php
@@ -136,7 +154,20 @@
             </div>
         </div>
         <script>
-            function index(x){
+            var fecha=document.getElementsByClassName("fecha");
+            for(var i=0;i<=fecha.length;i++){
+                console.log(fecha[i].innerHTML);
+                if(fecha[i].innerHTML=="-")
+                { fecha[i].classList.remove("red"); 
+                   fecha[i].classList.add("green");
+                       
+                }else{
+                     fecha[i].classList.remove("green"); 
+                   fecha[i].classList.add("red");
+                      
+                }
+            }
+            function index(x) {
                 if (confirm("Really you want to delete it ?")) {
                     x.setAttribute("type", "submit");
                 } else {

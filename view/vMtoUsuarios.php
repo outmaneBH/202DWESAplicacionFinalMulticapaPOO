@@ -114,4 +114,4 @@
             </table>
 
         </div>
-        <script src="webroot/js/ajax.js"></script>
+        <script src="webroot/js/MtoUsuarios.js"></script>

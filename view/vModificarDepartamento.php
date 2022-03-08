@@ -54,9 +54,9 @@
             <p style="padding: 10px;font-size: 18px;font-weight: bold;font-family: cursive;" class="w3-center ">Last Web Application MVC POO</p>
         </div>
         <div class="w3-bar w3-deep-purple  ">
-            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+<!--            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                 <button style="margin: 10px;font-weight: bold;float: left;" name="cancel" class="btn btn-primary" type="submit">Cancel</button>
-            </form>
+            </form>-->
             <p style="padding: 2px;font-size: 18px;font-weight: bold;color: white;font-family: cursive;" class="w3-center ">Añadir Departamento</p>
         </div>
 
@@ -88,7 +88,9 @@
 
                         <tr> 
                             <td></td>
-                            <td><input type="submit" class="btn btn-warning" name="submitbtn" value="Modificar datos"/></td>
+                            <td><input type="submit" class="btn btn-warning" name="submitbtn" value="Modificar datos"/>
+                             <input type="submit" name="cancel" class="btn btn-danger" value="Cancelar">
+                            </td>
                         </tr>
                     </form>
                 </table>

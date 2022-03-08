@@ -17,12 +17,21 @@ if (isset($_REQUEST['add'])) {
     header("Location:index.php");
     exit;
 }
+
+if (isset($_REQUEST['import'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'importardepartamentos';
+    header("Location:index.php");
+    exit;
+}
+
 if (isset($_REQUEST['export'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'exportardepartamentos';
     header("Location:index.php");
     exit;
 }
+
 
 /* modificar  depatamento seleccionado */
 if (isset($_REQUEST['update'])) {
@@ -70,8 +79,6 @@ if (isset($_REQUEST['last'])) {
     $_SESSION['paginacionDepartamentos']['numPagina'] = $_SESSION['paginacionDepartamentos']['totalPaginas'];
   
 }
-
-
 
 
 
