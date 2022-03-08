@@ -225,10 +225,10 @@ class DepartamentoPDO {
 
     public static function importarDepartamento($datosImportar) {
 
-        $jsonFile = file_get_contents('./' . $datosImportar);
-        $Departamentos = json_decode($jsonFile, true);
+//        $jsonFile = file_get_contents('./' . $datosImportar);
+//        $Departamentos = json_decode($jsonFile, true);
 
-        var_dump($Departamentos);
+        var_dump($datosImportar);
     }
 
 }
